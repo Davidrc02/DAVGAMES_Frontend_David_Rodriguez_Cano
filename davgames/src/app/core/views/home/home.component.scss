@@ -1,0 +1,65 @@
+#home {
+    background-color: #333232;
+}
+
+#buscador {
+    background-color: white;
+    border-radius: 45px;
+
+    & input {
+        width: 100%;
+        border: 0;
+
+        &:focus {
+            border: 0;
+            outline: none;
+        }
+    }
+
+    & #icono {
+        padding: 10px;
+        border-radius: 45px;
+        background-color: rgb(241, 172, 69);
+
+        & span {
+            cursor: pointer;
+            transform: scale(1.5);
+        }
+    }
+}
+
+#busquedaAvanzada {
+    color: rgb(241, 172, 69);
+
+    & #botonDropdownBusqueda {
+        cursor: pointer;
+    }
+
+    & .lista {
+        height: 100px;
+
+        & div span {
+            cursor: pointer;
+        }
+    }
+}
+
+.dropdown{
+    & .dropdown-menu {
+        --bs-dropdown-min-width: 0;
+    }
+    & ul{
+        background-color: #333232;
+        & li{
+            
+            & a{
+                cursor: pointer;
+                color:white;
+                &:hover{
+                    background-color: #424141;
+                }
+            }
+        }
+    }
+    
+}

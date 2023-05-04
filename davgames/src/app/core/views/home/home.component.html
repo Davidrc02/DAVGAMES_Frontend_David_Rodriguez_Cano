@@ -1,0 +1,104 @@
+<app-dashboard></app-dashboard>
+<div class="container-fluid" id="home">
+
+    <!-------------- BUSCADOR --------------->
+    <div class="row">
+        <div class="col-12 pt-3 pb-3">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-3">
+                    <div id="buscador" class="row">
+                        <div class="col-10 d-flex justify-content-start align-items-center">
+                            <input type="text" placeholder="Introduzca un título" name="busqueda" id="busqueda">
+                        </div>
+                        <div id="icono" class="col-2 d-flex justify-content-center align-items-center">
+                            <span class="material-symbols-outlined ">
+                                search
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12" id="busquedaAvanzada">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="dropdown col-3">
+                    <span id="botonDropdownBusqueda" class="row" (click)="busquedaAvanzada()">
+                        <div class="col p-0 d-flex">
+                            Busqueda avanzada
+                            <span class="material-symbols-outlined" id="btnDropdown">
+                                expand_more
+                            </span>
+                        </div>
+                    </span>
+
+
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-5">
+                    <div class="lista row ">
+                        <div *ngIf="this.busqueda" class="d-flex justify-content-center pt-3">
+                            <div class="col-3 p-0 d-flex justify-content-center">
+                                <div ngbDropdown class="dropdown">
+                                    <span ngbDropdownToggle>
+                                        Consolas
+                                    </span>
+                                    <ul ngbDropdownMenu>
+                                        <li><a ngbDropdownItem>PC</a></li>
+                                        <li><a ngbDropdownItem>PS4</a></li>
+                                        <li><a ngbDropdownItem>PS5</a></li>
+                                        <li><a ngbDropdownItem>XBOX ONE</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-3 p-0 d-flex justify-content-center">
+                                <div ngbDropdown class="dropdown">
+                                    <span ngbDropdownToggle>
+                                        Género
+                                    </span>
+                                    <ul ngbDropdownMenu>
+                                        <li><a ngbDropdownItem>Terror</a></li>
+                                        <li><a ngbDropdownItem>Aventuras</a></li>
+                                        <li><a ngbDropdownItem>Deportes</a></li>
+                                        <li><a ngbDropdownItem>Acción</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-3 p-0 d-flex justify-content-center">
+                                <div ngbDropdown class="dropdown">
+                                    <span ngbDropdownToggle>
+                                        Modos de juego
+                                    </span>
+                                    <ul ngbDropdownMenu>
+                                        <li><a ngbDropdownItem>Un jugador</a></li>
+                                        <li><a ngbDropdownItem>Multijugador</a></li>
+                                        <li><a ngbDropdownItem>Cooperativo</a></li>
+                                        <li><a ngbDropdownItem>Competitivo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-3 p-0 d-flex justify-content-center">
+                                <div ngbDropdown class="dropdown">
+                                    <span ngbDropdownToggle>
+                                        Ordenar por:
+                                    </span>
+                                    <ul ngbDropdownMenu>
+                                        <li><a ngbDropdownItem>Precio Mayor a Menor</a></li>
+                                        <li><a ngbDropdownItem>Precio Menor a Mayor</a></li>
+                                        <li><a ngbDropdownItem>Alfabeticamente </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------- CUERPO ------------->
+    <div class="container-fluid" id="cuerpo">
+
+    </div>
+</div>

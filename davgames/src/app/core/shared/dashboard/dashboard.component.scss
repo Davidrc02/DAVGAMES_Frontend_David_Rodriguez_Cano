@@ -1,0 +1,46 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+
+#dashboard{
+    background: #333232;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+.material-symbols-outlined {
+    transform: scale(1.9);
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.dropdown-toggle {
+    color:goldenrod;
+    cursor: pointer;
+    &::after{
+        content: none;
+    }
+}
+
+.dropdown-menu {
+    --bs-dropdown-border-radius: 0;
+}
+
+.lista {
+    background-color: rgb(241, 172, 69) !important;
+    transform: translate3d(20px, 44px, 0px) !important;
+    
+    & li a{
+        padding-right:100px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(243, 193, 117);
+        }
+    } 
+}

@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0");
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.container-fluid{
+    background-color: #333232;
+}
+
+#logo{
+    height:0px;
+    transform: scale(0.5);
+}
+
+#cuerpo{
+    & .cuerpo{
+        margin-top:8em;
+        height:31em;
+        margin-bottom: 6em;
+        background-image: url("../../../../assets/fondoDarth.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10px;
+        box-shadow: 18px 18px 40px black;
+
+        & #login{
+            height: 25em;
+            margin-left: 3em;
+            margin-top: 3em;
+            border-radius: 10px;
+            background-color: rgba(233, 94, 94, 0.2);
+
+            & h2{
+                padding-top: 1em;
+                color:white;
+            }
+        }
+    }
+}
+
+.formulario{
+    padding-top: 3em;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 2.5em;
+}
+
+input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #B6EADA;
+    font-size: 16px;
+    width: 100%;
+    color: #B6EADA;
+}
+
+label {
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    color: #B6EADA;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus+label,
+.input-container:focus-within label,
+input:valid+label {
+    color: transparent
+}
+
+button {
+    margin-top: 0.2em;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    &:hover {
+        background-color: #000000;
+        border: 1px solid rgb(223, 151, 68);
+        color:rgb(219, 164, 62);
+    }
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+
+    &:hover {
+        color: rgb(255, 255, 255);
+        text-decoration: underline;
+    }
+}
