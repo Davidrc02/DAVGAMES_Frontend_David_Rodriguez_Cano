@@ -1,32 +1,27 @@
-
-<div class="container-fluid" id="dashboard">
-	<header>
-		<div class="row">
-            <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
-                <app-logo></app-logo>
-            </div>
-			<div class="col-4 d-flex justify-content-end align-items-start">
-				<div class="row">
-					<div class="col-10">
-						<div class="row">
-                            <div class="col-12 d-flex justify-content-end align-items-start pt-5 pb-5">
-                                <div ngbDropdown class="dropdown">
-                                    <span id="dropdownMenuButton2" ngbDropdownToggle class="material-symbols-outlined">
-                                        account_circle
-                                    </span>
-                                    <ul class="lista" ngbDropdownMenu aria-labelledby="dropdownMenuButton2">
-                                        <!-- <li><a ngbDropdownItem>Bienvenido, David</a></li> -->
-                                        <li><a routerLink="/login" ngbDropdownItem>Iniciar Sesión</a></li>
-                                        <li><a routerLink="/registro" ngbDropdownItem><span>Registrarme</span></a></li>
-                                        <li><a ngbDropdownItem><span>Cerrar Sesión</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
+<div class="row">
+    <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+        <app-logo></app-logo>
+    </div>
+    <div class="col-4 d-flex justify-content-end align-items-start">
+        <div class="row">
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-end align-items-start pt-5 pb-5">
+                        <div ngbDropdown class="dropdown">
+                            <span id="dropdownMenuButton2" ngbDropdownToggle class="material-symbols-outlined">
+                                account_circle
+                            </span>
+                            <ul class="lista" ngbDropdownMenu aria-labelledby="dropdownMenuButton2">
+                                <!-- <li><a ngbDropdownItem>Bienvenido, David</a></li> -->
+                                <li><a routerLink="/login" ngbDropdownItem>Iniciar Sesión</a></li>
+                                <li><a routerLink="/registro" ngbDropdownItem><span>Registrarme</span></a></li>
+                                <li><a ngbDropdownItem><span>Cerrar Sesión</span></a></li>
+                            </ul>
                         </div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</header>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

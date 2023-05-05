@@ -8,6 +8,7 @@ import { HomeComponent } from './core/views/home/home.component';
 import { FooterComponent } from './core/shared/footer/footer.component';
 import { LoginComponent } from './core/views/login/login.component';
 import { LogoComponent } from './core/shared/logo/logo.component';
+import { RegistroComponent } from './core/views/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LogoComponent } from './core/shared/logo/logo.component';
     HomeComponent,
     FooterComponent,
     LoginComponent,
-    LogoComponent
+    LogoComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
