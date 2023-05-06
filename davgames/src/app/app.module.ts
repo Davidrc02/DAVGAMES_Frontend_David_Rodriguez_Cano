@@ -11,6 +11,7 @@ import { LogoComponent } from './core/shared/logo/logo.component';
 import { RegistroComponent } from './core/views/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { VentanaModalComponent } from './core/shared/ventana-modal/ventana-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     LoginComponent,
     LogoComponent,
-    RegistroComponent
+    RegistroComponent,
+    VentanaModalComponent
   ],
   imports: [
     BrowserModule,

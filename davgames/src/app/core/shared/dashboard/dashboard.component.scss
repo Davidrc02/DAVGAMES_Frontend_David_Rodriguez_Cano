@@ -28,7 +28,7 @@ a{
 
 .lista {
     background-color: rgb(241, 172, 69) !important;
-    transform: translate3d(20px, 44px, 0px) !important;
+    transform: translate3d(10px, 44px, 0px) !important;
     
     & li a{
         padding-right:100px;
@@ -37,4 +37,38 @@ a{
             background-color: rgb(243, 193, 117);
         }
     } 
+}
+
+h6{
+    color:rgb(241, 172, 69);
+}
+
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+
+    &.underline-simple:hover {
+        background-color: rgb(241, 172, 69);
+        text-decoration: underline;
+    }
+}
+
+.underline-progress {
+    position: relative;
+}
+
+.underline-progress::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(241, 172, 69);
+    transition: width 0.5s ease-in-out;
+}
+
+.underline-progress:hover::before {
+    width: 100%;
 }
