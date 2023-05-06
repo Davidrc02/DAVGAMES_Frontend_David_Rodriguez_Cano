@@ -9,6 +9,8 @@ import { FooterComponent } from './core/shared/footer/footer.component';
 import { LoginComponent } from './core/views/login/login.component';
 import { LogoComponent } from './core/shared/logo/logo.component';
 import { RegistroComponent } from './core/views/registro/registro.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RegistroComponent } from './core/views/registro/registro.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

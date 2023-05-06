@@ -1,24 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0");
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 600,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 48
 }
 
-#logo{
-    height:0px;
+#logo {
+    height: 0px;
     transform: scale(0.5);
 }
 
-#cuerpo{
+#cuerpo {
     background-color: #333232;
     padding-bottom: 5em;
-    & .cuerpo{
-        margin-top:8em;
-        height:31em;
+
+    & .cuerpo {
+        margin-top: 8em;
+        height: 31em;
         padding-bottom: 10em;
         background-image: url("../../../../assets/fondoDarth.jpg");
         background-repeat: no-repeat;
@@ -26,22 +27,22 @@
         border-radius: 10px;
         box-shadow: 18px 18px 40px black;
 
-        & #login{
+        & #login {
             height: 25em;
             margin-left: 3em;
             margin-top: 3em;
             border-radius: 10px;
             background-color: rgba(233, 94, 94, 0.2);
 
-            & h2{
+            & h2 {
                 padding-top: 1em;
-                color:white;
+                color: white;
             }
         }
     }
 }
 
-.formulario{
+.formulario {
     padding-top: 3em;
 }
 
@@ -74,7 +75,7 @@ input:focus {
 input:focus+label,
 .input-container:focus-within label,
 input:valid+label {
-    color: transparent
+    color: transparent;
 }
 
 button {
@@ -82,10 +83,11 @@ button {
     background-color: #000000;
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
+
     &:hover {
         background-color: #000000;
         border: 1px solid rgb(223, 151, 68);
-        color:rgb(219, 164, 62);
+        color: rgb(219, 164, 62);
     }
 }
 
@@ -93,8 +95,27 @@ a {
     color: #ffffff;
     text-decoration: none;
 
-    &:hover {
+    &.underline-simple:hover {
         color: rgb(255, 255, 255);
         text-decoration: underline;
     }
+}
+
+.underline-progress {
+    position: relative;
+}
+
+.underline-progress::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 4px;
+    background-color: #ffffff;
+    transition: width 0.5s ease-in-out;
+}
+
+.underline-progress:hover::before {
+    width: 100%;
 }
