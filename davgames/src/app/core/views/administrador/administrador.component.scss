@@ -1,0 +1,60 @@
+
+#logo {
+    height: 200px;
+    margin-top:-6vh;
+    margin-bottom:-5vh;
+    transform: scale(0.5);
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+
+    &.underline-simple:hover {
+        color: rgb(255, 255, 255);
+        text-decoration: underline;
+    }
+}
+
+.underline-progress {
+    position: relative;
+}
+
+.underline-progress::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 4px;
+    background-color: #ffffff;
+    transition: width 0.5s ease-in-out;
+}
+
+.underline-progress:hover::before {
+    width: 100%;
+}
+
+h1{
+    color:white;
+    cursor: pointer;
+}
+
+.enlaces{
+    margin-top:4vh;
+}
+
+.enlace{
+    margin-inline: 1vw;
+    padding-block: 1vh;
+    border-radius: 15px;
+    border: 1px solid white;
+    background-color: #222222;
+
+    &:hover{
+        border: 1px solid goldenrod;
+        & h5 a{
+            color:goldenrod;
+        }
+    }
+}

@@ -9,4 +9,7 @@ h1[name=logo]{
 
 a{
     text-decoration: none;
+    &:hover{
+        cursor: pointer;
+    }
 }

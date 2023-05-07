@@ -1,1 +1,51 @@
-<p>administrador works!</p>
+<div class="row">
+    <div class="col-6">
+        <div id="logo">
+            <app-logo></app-logo>
+        </div>
+    </div>
+    <div class="col-6">
+        <div id="logo">
+            <div class="row ">
+                <div class="col-12 ms-5 pt-5">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <a routerLink="/" class="underline-progress">
+                                <h1 class="pt-5" name="logo">
+                                    Volver a Inicio</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-8 d-flex justify-content-center align-items-center">
+                <h1>Administración</h1>
+            </div>
+            <div class="col-8 d-flex justify-content-center align-items-center enlaces">
+                <div class="row d-flex justify-content-center">
+                    <div class="enlace col-3 px-5 d-flex justify-content-center align-items-center"><h5><a routerLink="usuarios">Usuarios</a></h5></div>
+                    <div class="enlace col-3 px-5 d-flex justify-content-center align-items-center"><h5><a routerLink="videojuegos">Videojuegos</a></h5></div>
+                    <div class="enlace col-3 px-5 d-flex justify-content-center align-items-center"><h5><a routerLink="facturas">Facturas</a></h5></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-8" id="tabla">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
