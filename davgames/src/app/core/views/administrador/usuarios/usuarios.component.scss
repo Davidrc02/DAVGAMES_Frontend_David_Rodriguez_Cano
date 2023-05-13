@@ -1,0 +1,11 @@
+.tabla{
+    margin-bottom: 15vh;
+    background-color: #ed9e28;
+    border-radius: 1vh;
+    border: 2px solid black;
+    box-shadow: 13px 14px 20px black;
+    & table{
+        
+        color:rgb(44, 42, 42);
+    }
+}
