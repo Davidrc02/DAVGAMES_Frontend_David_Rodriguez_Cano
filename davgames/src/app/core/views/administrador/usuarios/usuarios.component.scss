@@ -1,11 +1,28 @@
 .tabla{
     margin-bottom: 15vh;
-    background-color: #ed9e28;
+    background-color: #222222;
     border-radius: 1vh;
     border: 2px solid black;
     box-shadow: 13px 14px 20px black;
+    
     & table{
-        
-        color:rgb(44, 42, 42);
+        & tr {
+            border-color: black;
+
+            & a{
+                color: goldenrod;
+            }
+
+            & .boton{
+                border-radius: 5px;
+                &.botonEliminar{
+                    background-color: rgb(238, 78, 78);
+                }
+                &.botonEditar{
+                    background-color: rgb(133, 185, 233);
+                }
+            }
+        }
+        color:rgb(255, 255, 255);
     }
 }

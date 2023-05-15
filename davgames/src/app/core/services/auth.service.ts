@@ -45,7 +45,6 @@ export class AuthService {
     };
     return this.http.post<any>(url, body).pipe(
         tap(response => {
-          console.log(response.mensaje)
           return response.mensaje
       })
       );
@@ -55,10 +54,8 @@ export class AuthService {
     var tokenVerificado = this.verifyToken(token);
     if(tokenVerificado){
       let nueva:any = jwtDecode(token)
-      console.log(nueva)
       this.nombre = nueva.sub;
       // this.roles = nueva.roles;
-      console.log(nueva.roles)
       //this.roles = nueva.roles.map((rol:any) => rol.authority);
       
     }
