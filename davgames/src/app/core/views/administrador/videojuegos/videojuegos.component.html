@@ -1,1 +1,39 @@
-<p>videojuegos works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="tabla">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><span class="d-flex justify-content-center align-items-center">Id Videojuego</span></th>
+                            <th><span class="d-flex justify-content-center align-items-center">Nombre Consola</span></th>
+                            <th><span class="d-flex justify-content-center align-items-center">Nombre</span></th>
+                            <th><span class="d-flex justify-content-center align-items-center">Empresa</span></th>
+                            <th><span class="d-flex justify-content-center align-items-center">Fecha Lanzamiento</span></th>
+                            <th><span class="d-flex justify-content-center align-items-center">Franquicia</span></th>
+                            <th><span class="d-flex justify-content-center align-items-center">Clasificación Edad</span></th>
+                            <th><span class="d-flex justify-content-center align-items-center">Editar</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let videojuego of this.videojuegos">
+                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.idVideojuego}}</span></td>
+                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.nombreConsola}}</span></td>
+                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.nombre}}</span></td>
+                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.empresa}}</span></td>
+                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.fechaLanzamiento}}</span></td>
+                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.franquicia}}</span></td>
+                            <td><span class="d-flex justify-content-center align-items-center"><a routerLink=""><h5>...</h5></a></span></td>
+                            <td>
+                                <span class="d-flex justify-content-center align-items-center">
+                                    <input type="button" id="botonEliminar" class="mx-1 boton botonEliminar" value="Eliminar">
+                                    <input type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Actualizar">
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

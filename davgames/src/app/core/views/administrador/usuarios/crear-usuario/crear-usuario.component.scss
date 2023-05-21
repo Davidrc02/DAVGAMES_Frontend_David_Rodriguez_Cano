@@ -1,6 +1,6 @@
 
 #logo {
-    height: 200px;
+    height: 20vh;
     margin-top:-6vh;
     margin-bottom:-5vh;
     transform: scale(0.5);
@@ -40,26 +40,29 @@ h1{
     cursor: pointer;
 }
 
-.enlaces{
-    margin-top:4vh;
-}
-
-.enlace{
-    margin-inline: 1vw;
-    padding-block: 1vh;
-    border-radius: 15px;
-    border: 1px solid white;
-    background-color: #222222;
-    color:rgb(255, 255, 255);
-    cursor: pointer;
-    &:hover{
-        border: 1px solid goldenrod;
-        & h5{
-            color:goldenrod;
-        }
+#creacion{
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    color:white;
+    & hr{
+        padding-top: 0;
+        border: 2px solid rgb(255, 255, 255);
     }
 }
 
-#tabla{
-    margin-top: 5vh;
+.formulario{
+    font-size: 3vh;
+}
+
+.entrada{
+    width: 33vw;
+    border:none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    color:white;
+    font-size: 2.7vh;
+    &:focus{
+        outline: none;
+    }
+    
 }

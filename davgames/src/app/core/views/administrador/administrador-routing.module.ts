@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, createUrlTreeFromSnapshot } from '@angular/router';
 import { AdministradorComponent } from './administrador.component';
 import { VideojuegosComponent } from './videojuegos/videojuegos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FacturasComponent } from './facturas/facturas.component';
+import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 
 const routes: Routes = [
     {
@@ -11,10 +12,12 @@ const routes: Routes = [
         component:AdministradorComponent,
         children:[
             {path:"", component:UsuariosComponent},
+            {path:"usuarios", component:UsuariosComponent},
             {path:"videojuegos", component:VideojuegosComponent},
             {path:"facturas", component:FacturasComponent}
         ]
-    }
+    },
+    {path:"usuarios/crearUsuario", component:CrearUsuarioComponent}
 ];
 
 @NgModule({

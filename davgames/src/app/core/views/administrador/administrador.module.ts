@@ -6,6 +6,7 @@ import { VideojuegosComponent } from './videojuegos/videojuegos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FacturasComponent } from './facturas/facturas.component';
+import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FacturasComponent } from './facturas/facturas.component';
     AdministradorComponent,
     VideojuegosComponent,
     UsuariosComponent,
-    FacturasComponent
+    FacturasComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     CommonModule,

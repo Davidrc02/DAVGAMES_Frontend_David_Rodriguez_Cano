@@ -45,6 +45,9 @@
 }
 
 .dropdown{
+    animation-name: alargar; /* nombre del keyframe */
+    animation-duration: 2s; /* duración de la animación en segundos */
+    animation-fill-mode: forwards;
     & .dropdown-menu {
         --bs-dropdown-min-width: 0;
     }
