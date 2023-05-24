@@ -7,7 +7,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FacturasComponent } from './facturas/facturas.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
-
+import { FormsModule } from '@angular/forms';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,14 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
     VideojuegosComponent,
     UsuariosComponent,
     FacturasComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     CommonModule,
     AdministradorRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class AdministradorModule { }

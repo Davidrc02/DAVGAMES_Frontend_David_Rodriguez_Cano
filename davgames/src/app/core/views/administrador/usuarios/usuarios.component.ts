@@ -29,4 +29,8 @@ export class UsuariosComponent {
       )
       .subscribe();
   }
+
+  eliminarUsuario(id:number | undefined){
+  
+  }
 }

@@ -26,8 +26,8 @@
                             <td><span class="d-flex justify-content-center align-items-center"><a routerLink=""><h5>...</h5></a></span></td>
                             <td>
                                 <span class="d-flex justify-content-center align-items-center">
-                                    <input type="button" id="botonEliminar" class="mx-1 boton botonEliminar" value="Eliminar">
-                                    <input type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Actualizar">
+                                    <input routerLink="/administrador/usuarios/editarUsuario/{{usuario.id}}" type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Actualizar">
+                                    <input (click)="eliminarUsuario(usuario.id)" type="button" id="botonEliminar" class="mx-1 boton botonEliminar" value="Eliminar">
                                 </span>
                             </td>
                         </tr>
@@ -36,7 +36,7 @@
                 
             </div>
             <div class="p-0">
-                <a class="crear" routerLink="usuarios/crearUsuario">Crear un nuevo usuario</a>
+                <a class="crear" routerLink="/administrador/usuarios/crearUsuario">Crear un nuevo usuario</a>
             </div>
         </div>
     </div>

@@ -6,7 +6,8 @@ export interface Usuario {
     "nombre":string,
     "username":string,
     "email":string,
+    "password":string,
     "comunidadAutonoma":string,
-    "fechaNac":Date,
+    "fechaNac"?:Date,
     "facturas": Factura[]
 }
