@@ -1,0 +1,44 @@
+.cuerpo{
+    padding:0;
+    margin-bottom:10vh;
+}
+
+.tabla{
+    margin-bottom: 3vh;
+    background-color: #222222;
+    border-radius: 1vh;
+    border: 2px solid black;
+    box-shadow: 13px 14px 20px black;
+    
+    & table{
+        & tr {
+            border-color: black;
+
+            & a{
+                color: goldenrod;
+            }
+
+            & .boton{
+                border-radius: 5px;
+                &.botonEliminar{
+                    background-color: rgb(238, 78, 78);
+                }
+                &.botonEditar{
+                    background-color: goldenrod;
+                }
+            }
+        }
+        color:rgb(255, 255, 255);
+    }
+}
+
+.crear{
+    text-decoration: none;
+    padding-block: 0.7vh;
+    padding-inline: 0.7vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: green;
+    color:white;
+}
+

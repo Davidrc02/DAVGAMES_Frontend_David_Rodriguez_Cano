@@ -9,6 +9,8 @@ import { FacturasComponent } from './facturas/facturas.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 import { FormsModule } from '@angular/forms';
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
+import { CrearVideojuegoComponent } from './videojuegos/crear-videojuego/crear-videojuego.component';
+import { EditarVideojuegoComponent } from './videojuegos/editar-videojuego/editar-videojuego.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario
     UsuariosComponent,
     FacturasComponent,
     CrearUsuarioComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    CrearVideojuegoComponent,
+    EditarVideojuegoComponent
   ],
   imports: [
     CommonModule,

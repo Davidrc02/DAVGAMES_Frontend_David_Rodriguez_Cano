@@ -28,4 +28,16 @@ export class VideojuegosComponent {
       )
       .subscribe();
   }
+
+  eliminarVideojuego(nombreVideojuego:string | undefined, consola: string){
+    if(nombreVideojuego && consola){
+      this.videojuegosService.eliminarVideojuego(nombreVideojuego, consola).pipe(
+          tap((response) => {
+            if(response){
+              this.getVideojuegos();
+            }
+          })
+        ).subscribe();
+    }
+  }
 }

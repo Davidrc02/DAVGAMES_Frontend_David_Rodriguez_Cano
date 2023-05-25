@@ -73,18 +73,13 @@ export class UsuarioService {
   }
 
   editarUsuario(usuario: Usuario): Observable<any>{
-    console.log("Entra")
-    console.log(usuario)
-    console.log(usuario.id)
     let url = "http://localhost:8080/v0/davgames/api/usuarios/"+usuario.id;
     const body = usuario;
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
     return this.http.put<any>(url, body, { headers, observe: 'response'}).pipe(
       map((response) => {
-        console.log(response)
         if (response.body) {
-          console.log(response.body)
           return response.body;
         }
       }),
@@ -93,5 +88,12 @@ export class UsuarioService {
         return of(null);
       })
     );
+  }
+
+  eliminarUsuario(id: number): Observable<any>{
+    let url = "http://localhost:8080/v0/davgames/api/usuarios/"+id;
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
+
+    return this.http.delete<any>(url, {headers, observe: 'response'}).pipe();
   }
 }

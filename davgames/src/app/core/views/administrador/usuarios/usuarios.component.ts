@@ -15,7 +15,7 @@ export class UsuariosComponent {
   constructor(private usuarioService: UsuarioService){}
 
   ngOnInit(){
-    this.getUsuarios()
+    this.getUsuarios();
   }
 
   getUsuarios():void{
@@ -31,6 +31,14 @@ export class UsuariosComponent {
   }
 
   eliminarUsuario(id:number | undefined){
-  
+    if(id){
+      this.usuarioService.eliminarUsuario(id).pipe(
+          tap((response) => {
+            if(response){
+              this.getUsuarios();
+            }
+          })
+        ).subscribe();
+    }
   }
 }

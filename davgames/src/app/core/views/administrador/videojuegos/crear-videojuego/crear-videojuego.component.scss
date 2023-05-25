@@ -1,0 +1,106 @@
+*{
+    background-color: #333232;
+}
+#logo {
+    height: 20vh;
+    margin-top:-6vh;
+    margin-bottom:-5vh;
+    transform: scale(0.5);
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+
+    &.underline-simple:hover {
+        color: rgb(255, 255, 255);
+        text-decoration: underline;
+    }
+}
+
+.underline-progress {
+    position: relative;
+}
+
+.underline-progress::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 4px;
+    background-color: #ffffff;
+    transition: width 0.5s ease-in-out;
+}
+
+.underline-progress:hover::before {
+    width: 100%;
+}
+
+h1{
+    color:white;
+    cursor: pointer;
+}
+
+
+
+#creacion{
+    margin-top: 10vh;
+    color:white;
+    & hr{
+        padding-top: 0;
+        border: 2px solid rgb(255, 255, 255);
+    }
+}
+
+.formulario{
+    font-size: 3vh;
+    padding-bottom: 14vh;
+    & .caja{
+        border: 2px solid orange;
+        border-radius: 2vh;
+        padding:7vh;
+        background-color: #2a2929 ;
+    }
+}
+
+.dato{
+    margin-block: 2vh;
+    background-color: #2a2929;
+    & div, label{
+        background-color: #2a2929;
+    }
+    & input[type="button"]{
+        padding-inline: 2vh;
+        border-radius: 2vh;
+        color:white;
+        transition: ease-in-out 0.2s;
+        &.crear{
+            color:black;
+            background-color: orange;
+        }
+        &:hover{
+            transform: scale(1.2);
+            transition: ease-in-out 0.2s;
+        }
+    }
+}
+
+.entrada{
+    width:100%;
+    border:none;
+    background-color: #2a2929;
+    border-bottom: 1px solid white;
+    color:white;
+    font-size: 2.7vh;
+    &:focus{
+        outline: none;
+    }
+}
+
+.volver{
+    background-color: #2a2929;
+    &::before{
+        height:2px;
+    }
+}

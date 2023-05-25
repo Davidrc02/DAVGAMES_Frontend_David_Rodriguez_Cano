@@ -6,6 +6,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FacturasComponent } from './facturas/facturas.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
+import { CrearVideojuegoComponent } from './videojuegos/crear-videojuego/crear-videojuego.component';
+import { EditarVideojuegoComponent } from './videojuegos/editar-videojuego/editar-videojuego.component';
 
 const routes: Routes = [
     {
@@ -19,7 +21,9 @@ const routes: Routes = [
         ]
     },
     {path:"usuarios/crearUsuario", component:CrearUsuarioComponent},
-    {path:"usuarios/editarUsuario/:id", component:EditarUsuarioComponent}
+    {path:"usuarios/editarUsuario/:id", component:EditarUsuarioComponent},
+    {path:"videojuegos/crearVideojuego", component:CrearVideojuegoComponent},
+    {path:"videojuegos/editarVideojuego/:id", component:EditarVideojuegoComponent}
 ];
 
 @NgModule({

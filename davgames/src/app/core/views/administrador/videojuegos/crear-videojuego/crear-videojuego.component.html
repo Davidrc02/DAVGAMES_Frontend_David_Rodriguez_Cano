@@ -1,0 +1,163 @@
+<div class="row">
+    <div class="col-6">
+        <div id="logo">
+            <app-logo></app-logo>
+        </div>
+    </div>
+    <div class="col-6">
+        <div id="logo">
+            <div class="row ">
+                <div class="col-12 ms-5 pt-5">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <a routerLink="/" class="underline-progress">
+                                <h1 class="pt-5" name="logo">
+                                    Volver a Inicio</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="creacion">
+    <div class="col-12">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-8">
+                <h3>
+                    Creación de videojuego
+                </h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="formulario justify-content-center d-flex align-items-center">
+                <div class="col-8 caja">
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="nombre">
+                                Nombre videojuego:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="nombre" class="entrada nombre" id="nombre" autocomplete="off" placeholder="Call of Duty: Black Ops 3" [(ngModel)]="videojuego.nombreVideojuego">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="nombreConsola">
+                                Nombre consola:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="nombreConsola" class="entrada nombreConsola" id="nombreConsola" autocomplete="off" placeholder="XBOX" [(ngModel)]="videojuego.nombreConsola">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="clasificacionEdad">
+                                Clasificacion de edad
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="clasificacionEdad" class="entrada clasificacionEdad" id="clasificacionEdad" autocomplete="off" placeholder="0" [(ngModel)]="videojuego.clasificacionEdad">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="empresa">
+                                Empresa:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="empresa" class="entrada empresa" id="empresa" autocomplete="off" placeholder="Activision" [(ngModel)]="videojuego.empresa">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="fechaLanzamiento">
+                                Fecha lanzamiento:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="date" name="fechaLanzamiento" class="entrada fechaLanzamiento" id="fechaLanzamiento" autocomplete="off" [ngModel]="videojuego.fechaLanzamiento | date:'yyyy-MM-dd'"
+                            (ngModelChange)="videojuego.fechaLanzamiento=$event">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="franquicia">
+                                Franquicia:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="franquicia" class="entrada franquicia" id="franquicia" autocomplete="off" placeholder="Call of Duty" [(ngModel)]="videojuego.franquicia">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="genero">
+                                Genero:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="genero" class="entrada genero" id="genero" autocomplete="off" placeholder="Shooter" [(ngModel)]="videojuego.genero">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="numJugadores">
+                                Numero de jugadores:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="numJugadores" class="entrada numJugadores" id="numJugadores" autocomplete="off" [(ngModel)]="videojuego.numJugadores">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="precio">
+                                Precio:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="precio" class="entrada precio" id="precio" autocomplete="off" [(ngModel)]="videojuego.precio">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="stock">
+                                Stock:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="stock" class="entrada stock" id="stock" autocomplete="off" [(ngModel)]="videojuego.stock">
+                        </div>
+                    </div>
+                    <div class="row dato">
+                        <div class="col-5">
+                            <label for="url">
+                                Nombre URL:
+                            </label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="url" class="entrada url" id="url" placeholder="callofdutyblackops3" autocomplete="off" [(ngModel)]="videojuego.url">
+                        </div>
+                    </div>
+                    <div class="row dato mt-5">
+                        <div class="col-2">
+                            <input (click)="crearVideojuego()" type="button" name="crear" class="crear" id="crear" value="Crear">
+                        </div>
+                        <div class="col-2 d-flex justify-content-end">
+                            <input (click)="resetearCampos()" type="button" name="resetear" class="resetear" id="resetear" value="Resetear">
+                        </div>
+                        <div class="col-2 offset-6 d-flex justify-content-end">
+                            <a routerLink=".." class="volver underline-progress">Volver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
