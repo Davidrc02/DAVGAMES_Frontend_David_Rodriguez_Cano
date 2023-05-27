@@ -6,38 +6,132 @@ import { VideojuegosService } from 'src/app/core/services/videojuegos.service';
 @Component({
   selector: 'app-videojuegos',
   templateUrl: './videojuegos.component.html',
-  styleUrls: ['./videojuegos.component.scss']
+  styleUrls: ['./videojuegos.component.scss'],
 })
 export class VideojuegosComponent {
-  videojuegos!: Videojuego[] | null;
+	videojuegos!: Videojuego[] | null;
+	videojuegosOrdenados!: Videojuego[] | null;
+	videojuegosMostrados!: Videojuego[] | null;
+	ordenacionActiva: string = 'videojuego_DES';
+	paginaActiva: number = 1;
 
-  constructor(private videojuegosService: VideojuegosService){}
+	constructor(private videojuegosService: VideojuegosService) {}
 
-  ngOnInit(){
-    this.getVideojuegos()
-  }
+	ngOnInit() {
+		this.getVideojuegos();
+	}
 
-  getVideojuegos():void{
-    this.videojuegosService.getVideojuegos()
-      .pipe(
-        tap((response: Videojuego[]) => {
-          if (response) {
-            this.videojuegos = response;
-          }
-        })
-      )
-      .subscribe();
-  }
+	getVideojuegos(): void {
+		this.videojuegosService
+		.getVideojuegos()
+		.pipe(
+			tap((response: Videojuego[]) => {
+				this.videojuegos = response;
+				this.mostrarOrdenados(this.ordenacionActiva);
+			})
+		)
+		.subscribe();
+	}
 
-  eliminarVideojuego(nombreVideojuego:string | undefined, consola: string){
-    if(nombreVideojuego && consola){
-      this.videojuegosService.eliminarVideojuego(nombreVideojuego, consola).pipe(
+	mostrarOrdenados(ordenacionActiva: string) {
+		if (this.videojuegos) {
+			this.videojuegosOrdenados = this.videojuegos;
+			switch (ordenacionActiva) {
+				case 'consola_DES':
+					this.videojuegosOrdenados.sort((a, b) =>
+						a.nombreConsola.localeCompare(b.nombreConsola)
+					);
+					break;
+				case 'consola_ASC':
+					this.videojuegosOrdenados.sort((a, b) =>
+						b.nombreConsola.localeCompare(a.nombreConsola)
+					);
+					break;
+				case 'videojuego_DES':
+					this.videojuegosOrdenados.sort((a, b) =>
+						a.nombreVideojuego.localeCompare(b.nombreVideojuego)
+					);
+					break;
+				case 'videojuego_ASC':
+					this.videojuegosOrdenados.sort((a, b) =>
+						b.nombreVideojuego.localeCompare(a.nombreVideojuego)
+					);
+					break;
+				case 'lanzamiento_DES':
+					this.videojuegosOrdenados.sort(
+						(a, b) =>
+						new Date(a.fechaLanzamiento).getTime() -
+						new Date(b.fechaLanzamiento).getTime()
+					);
+					break;
+				case 'lanzamiento_ASC':
+					this.videojuegosOrdenados.sort(
+						(a, b) =>
+						new Date(b.fechaLanzamiento).getTime() -
+						new Date(a.fechaLanzamiento).getTime()
+					);
+					break;
+				case 'precio_DES':
+					this.videojuegosOrdenados.sort((a, b) => a.precio - b.precio);
+					break;
+				case 'precio_ASC':
+					this.videojuegosOrdenados.sort((a, b) => b.precio - a.precio);
+					break;
+				case 'stock_DES':
+					this.videojuegosOrdenados.sort((a, b) => a.stock - b.stock);
+					break;
+				case 'stock_ASC':
+					this.videojuegosOrdenados.sort((a, b) => b.stock - a.stock);
+					break;
+				default:
+					this.videojuegosOrdenados.sort((a, b) =>
+						a.nombreConsola.localeCompare(b.nombreConsola)
+					);
+					break;
+			}
+
+			this.mostrarVideojuegos();
+			
+			
+		}
+	}
+
+	mostrarVideojuegos(){
+		
+		if(this.videojuegosOrdenados){
+			var elementosPorPagina = 10;
+			var paginaActiva = this.paginaActiva;
+			var indiceInicio = (paginaActiva - 1) * elementosPorPagina;
+			var indiceFin = indiceInicio + elementosPorPagina;
+			this.videojuegosMostrados = this.videojuegosOrdenados.slice(indiceInicio, indiceFin);
+		}
+	}
+
+  	cambiarOrdenacion(ordenacion: string) {
+		if(ordenacion==this.ordenacionActiva.split("_")[0]){
+			if(this.ordenacionActiva.split("_")[1]=="ASC"){
+				this.ordenacionActiva=ordenacion+"_DES"
+			}else{
+				this.ordenacionActiva=ordenacion+"_ASC"
+			}
+		}else{
+			this.ordenacionActiva=ordenacion+"_DES";
+		}
+		this.mostrarOrdenados(this.ordenacionActiva);
+	}
+
+  eliminarVideojuego(nombreVideojuego: string | undefined, consola: string) {
+    if (nombreVideojuego && consola) {
+      this.videojuegosService
+        .eliminarVideojuego(nombreVideojuego, consola)
+        .pipe(
           tap((response) => {
-            if(response){
+            if (response) {
               this.getVideojuegos();
             }
           })
-        ).subscribe();
+        )
+        .subscribe();
     }
   }
 }

@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0");
 
-@font-face {
-    font-family: MiFuente;
-    src: url('../../../../assets/fuentes/CHLORINP.TTF') format('truetype');
-}
+
 
 @keyframes apareceMario{
     from{
@@ -43,7 +40,7 @@
 
     & .cuerpo {
         & .titulo{
-            font-family: MiFuente, sans-serif;
+            font-family: fuenteMarioBros, sans-serif;
             padding-bottom:2vh;
             & h2{
                 font-size: 8vh;
@@ -141,7 +138,7 @@ a {
     text-decoration: none;
 
     &.underline-simple {
-        font-family: MiFuente, sans-serif;
+        font-family: fuenteMarioBros, sans-serif;
         color: rgb(255, 255, 255);
         &:hover{
             text-decoration: underline;
@@ -181,7 +178,7 @@ a {
     background-image: url(../../../../assets/cajaMisteriosa.png);
     background-size: cover;
     background-color: #333232;
-    font-family: MiFuente;
+    font-family: fuenteMarioBros;
     color:white;
     height: 8vh;
     width:8vh;

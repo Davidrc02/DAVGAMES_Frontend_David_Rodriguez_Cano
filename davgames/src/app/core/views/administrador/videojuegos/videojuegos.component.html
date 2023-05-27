@@ -1,51 +1,96 @@
-<div class="row">
+<div class="row" id="videojuegos">
     <div class="col-12">
         <div class="row cuerpo">
-            <div class="tabla">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th><span class="d-flex justify-content-center align-items-center">Videojuego</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Consola</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Empresa</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Lanzamiento</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Franquicia</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">PEGUI</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Genero</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Jugadores</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Precio</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Stock</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Url</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Editar</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let videojuego of this.videojuegos">
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.nombreVideojuego}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.nombreConsola}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.empresa}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.fechaLanzamiento | date:'dd/MM/yyyy'}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.franquicia}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.clasificacionEdad}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.genero}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.numJugadores}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.precio}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.stock}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{videojuego.url}}</span></td>
-                            <td>
-                                <span class="d-flex justify-content-center align-items-center">
-                                    <input routerLink="/administrador/usuarios/editarUsuario/{{videojuego.nombreVideojuego}}/{{videojuego.nombreConsola}}" type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Actualizar">
-                                    <input (click)="eliminarVideojuego(videojuego.nombreVideojuego, videojuego.nombreConsola)" type="button" id="botonEliminar" class="mx-1 boton botonEliminar" value="Eliminar">
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-            </div>
-            <div class="p-0">
+            <div class="pb-3 p-0">
                 <a class="crear" routerLink="/administrador/videojuegos/crearVideojuego">Crear un nuevo videojuego</a>
             </div>
+            <div class="tabla">
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="col-3">
+                                    <span (click)="cambiarOrdenacion('videojuego')" class="d-flex justify-content-center align-items-center">
+                                        Videojuego
+                                        <span *ngIf="this.ordenacionActiva=='videojuego_DES'" class="material-symbols-outlined">
+                                            arrow_downward
+                                        </span>
+                                        <span *ngIf="this.ordenacionActiva=='videojuego_ASC'" class="material-symbols-outlined">
+                                            arrow_upward
+                                        </span>
+                                    </span>
+                                    
+                                </th>
+                                <th class="col-2">
+                                    <span (click)="cambiarOrdenacion('consola')" class="d-flex justify-content-center align-items-center">
+                                        Consola
+                                        <span *ngIf="this.ordenacionActiva=='consola_DES'" class="material-symbols-outlined">
+                                            arrow_downward
+                                        </span>
+                                        <span *ngIf="this.ordenacionActiva=='consola_ASC'" class="material-symbols-outlined">
+                                            arrow_upward
+                                        </span>
+                                    </span>
+                                </th>
+                                <th class="col-2">
+                                    <span (click)="cambiarOrdenacion('lanzamiento')" class="d-flex justify-content-center align-items-center">
+                                        Lanzamiento
+                                        <span *ngIf="this.ordenacionActiva=='lanzamiento_DES'" class="material-symbols-outlined">
+                                            arrow_downward
+                                        </span>
+                                        <span *ngIf="this.ordenacionActiva=='lanzamiento_ASC'" class="material-symbols-outlined">
+                                            arrow_upward
+                                        </span>
+                                    </span>
+                                </th>
+                                <th class="col-2">
+                                    <span (click)="cambiarOrdenacion('precio')" class="d-flex justify-content-center align-items-center">
+                                        Precio
+                                        <span *ngIf="this.ordenacionActiva=='precio_DES'" class="material-symbols-outlined">
+                                            arrow_downward
+                                        </span>
+                                        <span *ngIf="this.ordenacionActiva=='precio_ASC'" class="material-symbols-outlined">
+                                            arrow_upward
+                                        </span>
+                                    </span>
+                                </th>
+                                <th class="col-1">
+                                    <span (click)="cambiarOrdenacion('stock')" class="d-flex justify-content-center align-items-center">
+                                        Stock
+                                        <span *ngIf="this.ordenacionActiva=='stock_DES'" class="material-symbols-outlined">
+                                            arrow_downward
+                                        </span>
+                                        <span *ngIf="this.ordenacionActiva=='stock_ASC'" class="material-symbols-outlined">
+                                            arrow_upward
+                                        </span>
+                                    </span>
+                                </th>
+                                <th class="col-2">
+                                    <span class="d-flex justify-content-center align-items-center">Actualizar</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let videojuego of this.videojuegosMostrados">
+                                <td class="col-3 td-max-width" ><span class="d-flex justify-content-center align-items-center">{{videojuego.nombreVideojuego}}</span></td>
+                                <td class="col-2 td-max-width" ><span class="d-flex justify-content-center align-items-center">{{videojuego.nombreConsola}}</span></td>
+                                <td class="col-2 td-max-width" ><span class="d-flex justify-content-center align-items-center">{{videojuego.fechaLanzamiento | date:'dd/MM/yyyy'}}</span></td>
+                                <td class="col-2 td-max-width" ><span class="d-flex justify-content-center align-items-center">{{videojuego.precio}}</span></td>
+                                <td class="col-1 td-max-width" ><span class="d-flex justify-content-center align-items-center">{{videojuego.stock}}</span></td>
+                                <td class="col-2 td-max-width" >
+                                    <span class="d-flex justify-content-center align-items-center">
+                                        <input routerLink="/administrador/videojuegos/editarVideojuego/{{videojuego.nombreVideojuego}}/{{videojuego.nombreConsola}}" type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Editar">
+                                        <input (click)="eliminarVideojuego(videojuego.nombreVideojuego, videojuego.nombreConsola)" type="button" id="botonEliminar" class="mx-1 boton botonEliminar" value="Eliminar">
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+            
         </div>
     </div>
 </div>

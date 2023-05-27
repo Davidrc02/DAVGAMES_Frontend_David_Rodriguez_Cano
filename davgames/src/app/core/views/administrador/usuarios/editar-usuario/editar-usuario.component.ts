@@ -45,6 +45,11 @@ export class EditarUsuarioComponent {
   }
 
   editarUsuario(){
-    this.usuarioService.editarUsuario(this.usuario).pipe().subscribe();
+    this.usuarioService.editarUsuario(this.usuario).pipe(
+      tap(response =>{
+        this.router.navigate(['/administrador/usuarios']);
+      }
+      )
+    ).subscribe();
   }
 }

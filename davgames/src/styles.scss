@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@font-face {
+    font-family: fuenteStarWars;
+    src: url('./assets/fuentes/star_wars/stjedise/STJEDISE.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: fuenteMarioBros;
+    src: url('./assets/fuentes/CHLORINP.TTF') format('truetype');
+}
+
 .container-fluid{
     background-color: #333232 ;
     height: 100vh;

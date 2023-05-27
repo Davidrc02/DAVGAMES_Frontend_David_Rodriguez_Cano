@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0");
 
-@font-face {
-    font-family: MiFuente;
-    src: url('../../../../assets/fuentes/star_wars/stjedise/STJEDISE.TTF') format('truetype');
-}
+
 
 @keyframes apareceVader{
     from{
@@ -57,7 +54,7 @@
 
 
                 & .titulo{
-                    font-family: MiFuente, sans-serif;
+                    font-family: fuenteStarWars, sans-serif;
                     & h2{
                         font-size: 6vh;
                     }
@@ -113,7 +110,7 @@ button {
     background-color: #000000;
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
-    font-family: MiFuente, sans-serif;
+    font-family: fuenteStarWars, sans-serif;
     &:hover {
         background-color: #000000;
         border: 1px solid rgb(223, 151, 68);
@@ -126,7 +123,7 @@ a {
     text-decoration: none;
 
     &.underline-simple {
-        font-family: MiFuente, sans-serif;
+        font-family: fuenteStarWars, sans-serif;
         color: rgb(255, 255, 255);
         &:hover{
             text-decoration: underline;

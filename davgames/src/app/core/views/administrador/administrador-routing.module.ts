@@ -23,7 +23,7 @@ const routes: Routes = [
     {path:"usuarios/crearUsuario", component:CrearUsuarioComponent},
     {path:"usuarios/editarUsuario/:id", component:EditarUsuarioComponent},
     {path:"videojuegos/crearVideojuego", component:CrearVideojuegoComponent},
-    {path:"videojuegos/editarVideojuego/:id", component:EditarVideojuegoComponent}
+    {path:"videojuegos/editarVideojuego/:videojuego/:consola", component:EditarVideojuegoComponent}
 ];
 
 @NgModule({

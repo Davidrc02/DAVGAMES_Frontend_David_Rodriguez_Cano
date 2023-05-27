@@ -1,43 +1,46 @@
 <div class="row">
     <div class="col-12">
         <div class="row cuerpo">
-            <div class="tabla">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th><span class="d-flex justify-content-center align-items-center">Id</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Nombre</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Apellidos</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Email</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Username</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Comunidad Autonoma</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Facturas</span></th>
-                            <th><span class="d-flex justify-content-center align-items-center">Editar</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let usuario of this.usuarios">
-                            <td><span class="d-flex justify-content-center align-items-center">{{usuario.id}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{usuario.nombre}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{usuario.apellidos}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{usuario.email}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{usuario.username}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center">{{usuario.comunidadAutonoma}}</span></td>
-                            <td><span class="d-flex justify-content-center align-items-center"><a routerLink=""><h5>...</h5></a></span></td>
-                            <td>
-                                <span class="d-flex justify-content-center align-items-center">
-                                    <input routerLink="/administrador/usuarios/editarUsuario/{{usuario.id}}" type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Actualizar">
-                                    <input (click)="eliminarUsuario(usuario.id)" type="button" id="botonEliminar" class="mx-1 boton botonEliminar" value="Eliminar">
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-            </div>
-            <div class="p-0">
+            <div class="p-0 pb-3">
                 <a class="crear" routerLink="/administrador/usuarios/crearUsuario">Crear un nuevo usuario</a>
             </div>
+            <div class="tabla">
+                <div class="table-responsive">
+                    <table class="table" >
+                        <thead>
+                            <tr>
+                                <th><span class="d-flex justify-content-center align-items-center">Id</span></th>
+                                <th><span class="d-flex justify-content-center align-items-center">Nombre</span></th>
+                                <th><span class="d-flex justify-content-center align-items-center">Apellidos</span></th>
+                                <th><span class="d-flex justify-content-center align-items-center">Email</span></th>
+                                <th><span class="d-flex justify-content-center align-items-center">Username</span></th>
+                                <th><span class="d-flex justify-content-center align-items-center">Comunidad Autonoma</span></th>
+                                <th><span class="d-flex justify-content-center align-items-center">Facturas</span></th>
+                                <th><span class="d-flex justify-content-center align-items-center">Editar</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let usuario of this.usuarios">
+                                <td><span class="d-flex justify-content-center align-items-center">{{usuario.id}}</span></td>
+                                <td><span class="d-flex justify-content-center align-items-center">{{usuario.nombre}}</span></td>
+                                <td><span class="d-flex justify-content-center align-items-center">{{usuario.apellidos}}</span></td>
+                                <td><span class="d-flex justify-content-center align-items-center">{{usuario.email}}</span></td>
+                                <td><span class="d-flex justify-content-center align-items-center">{{usuario.username}}</span></td>
+                                <td><span class="d-flex justify-content-center align-items-center">{{usuario.comunidadAutonoma}}</span></td>
+                                <td><span class="d-flex justify-content-center align-items-center"><a routerLink=""><h5>...</h5></a></span></td>
+                                <td>
+                                    <span class="d-flex justify-content-center align-items-center">
+                                        <input routerLink="/administrador/usuarios/editarUsuario/{{usuario.id}}" type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Actualizar">
+                                        <input (click)="eliminarUsuario(usuario.id)" type="button" id="botonEliminar" class="mx-1 boton botonEliminar" value="Eliminar">
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+            
         </div>
     </div>
 </div>
