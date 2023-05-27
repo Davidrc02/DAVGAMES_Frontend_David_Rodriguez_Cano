@@ -10,6 +10,5 @@ export class HomeComponent {
 
   busquedaAvanzada():void{
     this.busqueda= !this.busqueda
-    console.log(this.busqueda)
   }
 }

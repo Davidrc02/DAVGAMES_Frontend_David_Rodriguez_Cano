@@ -8,11 +8,11 @@
                 <div class="row">
                     <div class="col-12 pt-5 pb-5">
                         <div>
-                            <a class="underline-progress" routerLink="administrador">
-                                <h6>
+                            <h6>
+                                <a class="underline-progress" routerLink="administrador">
                                     Administrar tienda
-                                </h6>
-                            </a>
+                                </a>
+                            </h6>
                         </div>
                     </div>
                 </div>
@@ -39,8 +39,10 @@
                             </span>
                             <ul class="lista" ngbDropdownMenu aria-labelledby="dropdownMenuButton2">
                                 <!-- <li><a ngbDropdownItem>Bienvenido, David</a></li> -->
-                                <li *ngIf="!isAuthenticated()"><a routerLink="/login" ngbDropdownItem>Iniciar Sesión</a></li>
-                                <li *ngIf="isAuthenticated()"><a class="cerrarSesion" (click)="logout()" ngbDropdownItem><span >Cerrar Sesión</span></a></li>
+                                <li *ngIf="!isAuthenticated()"><a routerLink="/login" ngbDropdownItem>Iniciar Sesión</a>
+                                </li>
+                                <li *ngIf="isAuthenticated()"><a class="cerrarSesion" (click)="logout()"
+                                        ngbDropdownItem><span>Cerrar Sesión</span></a></li>
                             </ul>
                         </div>
                     </div>

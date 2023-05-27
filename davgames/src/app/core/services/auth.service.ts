@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   register(usuario: Usuario): Observable<any> {
-    const url = 'http://localhost:8080/v0/proyectoJWT/auth/register';
+    const url = 'http://localhost:8080/v0/davgames/auth/register';
     const body = usuario;
     return this.http.post<any>(url, body).pipe(
         tap(response => {
@@ -80,7 +80,6 @@ export class AuthService {
   }
 
   isAuth():boolean{
-    console.log(this.roles)
     if(this.roles.length==0){
       let token = localStorage.getItem("token");
       if(token){

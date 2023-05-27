@@ -10,6 +10,8 @@ import { Usuario } from '../../interfaces/usuario';
 })
 export class RegistroComponent {
   Rpassword: string = "";
+  ccaa = ["Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla y León", "Castilla-La Mancha", 
+  "Cataluña", "Extremadura", "Galicia", "La Rioja", "Madrid", "Murcia", "Navarra", "País Vasco", "Valencia"];
 
   usuario!: Usuario;
   constructor(private authService: AuthService, private router: Router) { }
@@ -27,11 +29,18 @@ export class RegistroComponent {
     }
   }
 
+  datosCorrectos(){
+    return this.usuario.password == this.Rpassword;
+  }
+
   //Método para enviar los datos a la API e introducir el token en localStorage
   onSubmit(): void {
-    this.authService.register(this.usuario).subscribe(response => {
-      //Podríamos guardar la respuesta aquí pero la vamos a guardar en el local storage
-      this.router.navigate(["/"])
-    })
+    if(this.datosCorrectos()){
+      this.authService.register(this.usuario).subscribe(response => {
+        //Podríamos guardar la respuesta aquí pero la vamos a guardar en el local storage
+        this.router.navigate(["/"])
+      })
+    }
   }
+  
 }
