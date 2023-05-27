@@ -28,7 +28,7 @@ a{
 
 .lista {
     background-color: rgb(241, 172, 69) !important;
-    transform: translate3d(10px, 44px, 0px) !important;
+    transform: translate3d(3vw, 7vh, 0px) !important;
     
     & li a{
         padding-right:100px;
@@ -71,4 +71,8 @@ a {
 
 .underline-progress:hover::before {
     width: 100%;
+}
+
+.cerrarSesion:hover > span{
+    color:rgb(255, 32, 32);
 }

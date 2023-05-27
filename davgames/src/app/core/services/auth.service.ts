@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import jwtDecode from 'jwt-decode';
+import { Usuario } from '../interfaces/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -35,14 +36,9 @@ export class AuthService {
     );
   }
 
-  register(name:string, nick: string, password:string, phone:string): Observable<any> {
+  register(usuario: Usuario): Observable<any> {
     const url = 'http://localhost:8080/v0/proyectoJWT/auth/register';
-    const body = {
-      name:name,
-      nick:nick,
-      password:password,
-      phone:phone
-    };
+    const body = usuario;
     return this.http.post<any>(url, body).pipe(
         tap(response => {
           return response.mensaje
@@ -55,9 +51,8 @@ export class AuthService {
     if(tokenVerificado){
       let nueva:any = jwtDecode(token)
       this.nombre = nueva.sub;
-      // this.roles = nueva.roles;
-      //this.roles = nueva.roles.map((rol:any) => rol.authority);
-      
+      this.roles = nueva.roles;
+      this.roles = nueva.roles.map((rol:any) => rol.authority);
     }
   }
 
@@ -85,6 +80,7 @@ export class AuthService {
   }
 
   isAuth():boolean{
+    console.log(this.roles)
     if(this.roles.length==0){
       let token = localStorage.getItem("token");
       if(token){
@@ -97,7 +93,6 @@ export class AuthService {
   logout(){
     localStorage.removeItem("token");
     localStorage.removeItem("roles");
-    sessionStorage.removeItem("blogs");
     this.roles=[]
     this.nombre=null;
     this.token=null
