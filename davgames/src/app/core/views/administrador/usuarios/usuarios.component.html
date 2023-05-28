@@ -9,19 +9,17 @@
                     <table class="table" >
                         <thead>
                             <tr>
-                                <th><span class="d-flex justify-content-center align-items-center">Id</span></th>
                                 <th><span class="d-flex justify-content-center align-items-center">Nombre</span></th>
                                 <th><span class="d-flex justify-content-center align-items-center">Apellidos</span></th>
                                 <th><span class="d-flex justify-content-center align-items-center">Email</span></th>
                                 <th><span class="d-flex justify-content-center align-items-center">Username</span></th>
                                 <th><span class="d-flex justify-content-center align-items-center">Comunidad Autonoma</span></th>
                                 <th><span class="d-flex justify-content-center align-items-center">Facturas</span></th>
-                                <th><span class="d-flex justify-content-center align-items-center">Editar</span></th>
+                                <th><span class="d-flex justify-content-center align-items-center">Actualizar</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let usuario of this.usuarios">
-                                <td><span class="d-flex justify-content-center align-items-center">{{usuario.id}}</span></td>
                                 <td><span class="d-flex justify-content-center align-items-center">{{usuario.nombre}}</span></td>
                                 <td><span class="d-flex justify-content-center align-items-center">{{usuario.apellidos}}</span></td>
                                 <td><span class="d-flex justify-content-center align-items-center">{{usuario.email}}</span></td>
@@ -30,7 +28,7 @@
                                 <td><span class="d-flex justify-content-center align-items-center"><a routerLink=""><h5>...</h5></a></span></td>
                                 <td>
                                     <span class="d-flex justify-content-center align-items-center">
-                                        <input routerLink="/administrador/usuarios/editarUsuario/{{usuario.id}}" type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Actualizar">
+                                        <input routerLink="/administrador/usuarios/editarUsuario/{{usuario.id}}" type="button" id="botonEditar" class="mx-1 boton botonEditar" value="Editar">
                                         <input (click)="eliminarUsuario(usuario.id)" type="button" id="botonEliminar" class="mx-1 boton botonEliminar" value="Eliminar">
                                     </span>
                                 </td>

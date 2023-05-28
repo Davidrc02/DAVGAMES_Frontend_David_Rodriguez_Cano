@@ -3,20 +3,28 @@
 
 
 @keyframes apareceMario{
-    from{
+    0%{
         background-position: -55vw;
+        transform: none;
+        box-shadow: none;
     }
-    to{
+    80%{
         background-position: -5vw;
+        transform: none;
+        box-shadow: none;
+    }
+    100%{
+        transform: scale(1.05);
+        box-shadow: 18px 18px 40px black;
     }
 }
 
 @keyframes apareceMarioV2{
-    from{
+    0%{
         margin-left:80vw;
         opacity: 0.7;
     }
-    to{
+    80%{
         margin-left:29vw;
     }
 }
@@ -40,11 +48,12 @@
 
     & .cuerpo {
         & .titulo{
+            
             font-family: fuenteMarioBros, sans-serif;
             padding-bottom:2vh;
             & h2{
                 font-size: 8vh;
-                color:white;
+                color:rgb(235, 181, 43);
             }
         }
         
@@ -57,14 +66,15 @@
         background-position: -5vw;
         background-size: cover;
         border-radius: 10px;
+        transform: scale(1.05);
         box-shadow: 18px 18px 40px black;
 
         animation-name: apareceMario;
-        animation-duration: 2s;
+        animation-duration: 3s;
 
         & #registro {
             animation-name: apareceMarioV2;
-            animation-duration: 2s;
+            animation-duration: 3s;
             height: 70vh;
             width:35vw;
             margin-left:29vw;

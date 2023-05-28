@@ -52,11 +52,17 @@ h1{
     background-color: #222222;
     color:rgb(255, 255, 255);
     cursor: pointer;
+    transition: 0.3s;
     &:hover{
-        border: 1px solid goldenrod;
-        & h5{
-            color:goldenrod;
-        }
+        transform: scale(1.10);
+        transition: 0.3s;
+    }
+}
+
+.active{
+    border: 1px solid goldenrod;
+    & h5{
+        color:goldenrod;
     }
 }
 

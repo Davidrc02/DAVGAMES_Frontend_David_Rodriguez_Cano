@@ -9,6 +9,7 @@
 
 tr th span{
     cursor:pointer;
+    color:goldenrod;
 }
 
 .td-max-width {
@@ -62,3 +63,33 @@ tr th span{
     color:white;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background-color: #222222;
+}
+  
+.pagination-link {
+    display: inline-block;
+    padding: 8px 12px;
+    border-inline: 1px solid black;
+    color: #ffffff;
+    text-decoration: none;
+    &.activa{
+        background-color: goldenrod;
+        color: black;
+    }
+}
+  
+  .pagination-link:hover {
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    &.activa{
+        background-color: rgb(164, 124, 23);
+        color: black;
+    }
+  }
