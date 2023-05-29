@@ -3,12 +3,12 @@
     <div class="row" id="home">
         <div class="col-12 pt-3 pb-3">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-3">
-                    <div id="buscador" class="row">
-                        <div class="col-10 d-flex justify-content-start align-items-center">
-                            <input type="text" placeholder="Introduzca un título" name="busqueda" id="busqueda">
+                <div class="col-3 justify-content-center d-flex">
+                    <div id="buscador" [ngClass]="{'busquedaActivada':buscador}" class="row">
+                        <div [ngClass]="{'busquedaActivada':buscador}" id="textoBuscador" class="d-flex justify-content-start align-items-center">
+                            <input [(ngModel)]="this.busqueda" type="text" placeholder="Introduzca un título" name="busqueda" id="busqueda" [ngClass]="{'busquedaActivada':buscador}">
                         </div>
-                        <div id="icono" class="col-2 d-flex justify-content-center align-items-center">
+                        <div (click)="buscar()" id="icono" [ngClass]="{'busquedaActivada':buscador}" class="d-flex justify-content-center align-items-center">
                             <span class="material-symbols-outlined ">
                                 search
                             </span>
@@ -20,7 +20,7 @@
         <div class="col-12" id="busquedaAvanzada">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="dropdown col-3">
-                    <span id="botonDropdownBusqueda" class="row" (click)="busquedaAvanzada()">
+                    <span id="botonDropdownBusqueda" class="row" (click)="changebusquedaAvanzada()">
                         <div class="col d-flex justify-content-center align-items-center p-0 d-flex">
                             Busqueda avanzada
                             <span class="material-symbols-outlined" id="btnDropdown">
@@ -35,7 +35,7 @@
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-5">
                     <div class="lista row ">
-                        <div *ngIf="this.busqueda" class="d-flex justify-content-center pt-3">
+                        <div *ngIf="this.busquedaAvanzada" class="d-flex justify-content-center ">
                             <div class="col-3 p-0 d-flex justify-content-center">
                                 <div ngbDropdown class="dropdown">
                                     <span ngbDropdownToggle>
@@ -97,4 +97,7 @@
 
     <!------------- CUERPO ------------->
     <div id="cuerpo" class="row" >
+        <app-tendencias *ngIf="this.videojuegos" [videojuegosPadre]="this.videojuegos"></app-tendencias>
+        
+
     </div>

@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VentanaModalComponent } from './core/shared/ventana-modal/ventana-modal.component';
 import { SharedModule } from './core/shared/shared.module';
+import { TendenciasComponent } from './core/views/home/tendencias/tendencias.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SharedModule } from './core/shared/shared.module';
     FooterComponent,
     LoginComponent,
     RegistroComponent,
-    VentanaModalComponent
+    VentanaModalComponent,
+    TendenciasComponent
   ],
   imports: [
     BrowserModule,

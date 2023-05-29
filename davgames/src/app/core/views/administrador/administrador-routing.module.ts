@@ -3,7 +3,6 @@ import { RouterModule, Routes, createUrlTreeFromSnapshot } from '@angular/router
 import { AdministradorComponent } from './administrador.component';
 import { VideojuegosComponent } from './videojuegos/videojuegos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { FacturasComponent } from './facturas/facturas.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 import { CrearVideojuegoComponent } from './videojuegos/crear-videojuego/crear-videojuego.component';
@@ -16,8 +15,7 @@ const routes: Routes = [
         children:[
             {path:"", component:UsuariosComponent},
             {path:"usuarios", component:UsuariosComponent},
-            {path:"videojuegos", component:VideojuegosComponent},
-            {path:"facturas", component:FacturasComponent}
+            {path:"videojuegos", component:VideojuegosComponent}
         ]
     },
     {path:"usuarios/crearUsuario", component:CrearUsuarioComponent},

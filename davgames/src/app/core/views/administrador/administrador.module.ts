@@ -5,7 +5,6 @@ import { AdministradorRoutingModule } from './administrador-routing.module';
 import { VideojuegosComponent } from './videojuegos/videojuegos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { SharedModule } from '../../shared/shared.module';
-import { FacturasComponent } from './facturas/facturas.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 import { FormsModule } from '@angular/forms';
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
@@ -17,7 +16,6 @@ import { EditarVideojuegoComponent } from './videojuegos/editar-videojuego/edita
     AdministradorComponent,
     VideojuegosComponent,
     UsuariosComponent,
-    FacturasComponent,
     CrearUsuarioComponent,
     EditarUsuarioComponent,
     CrearVideojuegoComponent,

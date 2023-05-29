@@ -1,22 +1,66 @@
+@keyframes apareceBuscador{
+    0%{
+        display:none;
+        visibility: hidden;
+    }
+    60%{
+        display:block;
+        visibility: hidden;
+    }
+    70%{
+        display:block;
+        visibility: visible;
+    }
+}
+
 #home {
     background-color: #333232;
 }
 
 #buscador {
-    background-color: white;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+
     border-radius: 45px;
 
-    & input {
-        width: 100%;
-        border: 0;
+    background-color: white;
+    & #textoBuscador{
+        display:none;
+        width:0;
+        transition: 0.8s;
+        &.busquedaActivada{
+            transition:1.1s;
+            width:18vw;
+        }
 
-        &:focus {
+        & #busqueda {
+            display:none;
+            visibility: visible;
+            &.busquedaActivada{
+                width:100%;
+                display:block;
+                animation: apareceBuscador;
+                animation-duration: 1.1s;
+            }
             border: 0;
-            outline: none;
+    
+            &:focus {
+                border: 0;
+                outline: none;
+            }
         }
     }
 
+    
+
     & #icono {
+        display: flex;
+        justify-content: end;
+        width:100%;
+        &.busquedaActivada{
+            width:6vw;
+        }
         padding: 10px;
         border-radius: 45px;
         background-color: rgb(241, 172, 69);
@@ -29,6 +73,7 @@
 }
 
 #busquedaAvanzada {
+    user-select: none;
     color: rgb(241, 172, 69);
 
     & #botonDropdownBusqueda {
@@ -36,7 +81,7 @@
     }
 
     & .lista {
-        height: 100px;
+        height: 6vh;
 
         & div span {
             cursor: pointer;
@@ -65,4 +110,8 @@
         }
     }
     
+}
+
+#cuerpo{
+    background-color: #333232;
 }

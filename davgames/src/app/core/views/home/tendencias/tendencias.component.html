@@ -1,0 +1,55 @@
+<div class="col-12">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-10">
+            <h1>Tendencias</h1>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 p-0">
+                            <div class="contenedor">
+                                <span (click)="scrollIzquierda()" class="material-symbols-outlined control prev">
+                                    chevron_left
+                                </span>
+                                <div class="slider" id="slider">
+                                    <div class="videojuego" *ngFor="let videojuego of this.videojuegosTendencias">
+                                        <div class="p-3 contenedorVideojuego">
+                                            <div class="col-12 p-0 caratula">
+                                                <img src="../../../../../assets/caratulas/404-not-found.jpg" alt="">
+                                            </div>
+                                            <div class="col-12 info d-flex justify-content-center ">
+                                                <div class="row">
+                                                    <div class="col-10 d-flex align-items-center justify-content-start">
+                                                        <h5>
+                                                            {{videojuego.nombreVideojuego}}
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-2 d-flex align-items-center justify-content-end">
+                                                        <div class="precio" >
+                                                            <h5>
+                                                                {{videojuego.precio}}€
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span (click)="scrollDerecha()" class="material-symbols-outlined control post">
+                                    chevron_right
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pb-5">
+                        <div class="verMas col-12 justify-content-center d-flex p-0">
+                            <h4 class="pt-2 pb-2 m-0">Ver más</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

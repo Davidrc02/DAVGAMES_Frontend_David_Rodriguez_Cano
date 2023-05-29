@@ -1,0 +1,130 @@
+
+.material-symbols-outlined {
+    user-select: none;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+h1{
+    font-weight: 700;
+    color:goldenrod;
+}
+
+.contenedor{
+    width:100%;
+    position: relative;
+}
+
+.contenedor .slider{
+    border-radius: 2vh 2vh 0 0;
+    display:flex;
+    width:100%;
+    overflow:hidden;
+    height:21.28481012658228vw;
+    scroll-behavior: smooth;
+}
+
+img{
+    border-radius: 2vh 2vh 0 0;
+    width:25.2vw;
+}
+
+.control{
+    color:white;
+    position:absolute;
+    width:8vh;
+    height:100%;
+    
+    background-color: rgba(0,0,0,0.6);
+    cursor:pointer;
+    object-fit:cover;
+    font-size: 4vh;
+    padding-top:2vh;
+    padding-left:2vh;
+
+    &.prev{
+        user-select: none;
+        border-radius: 2vh 0 0 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        left:0;
+        top:0;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+
+    &.post{
+        user-select: none;
+        border-radius: 0 2vh  0 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        right:0;
+        top:0;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+}
+
+.videojuego{
+    background-color: rgb(29, 28, 28);
+    & .contenedorVideojuego{
+        border-radius: 1vw;
+        & .caratula{
+            border-radius:  2vh 2vh 0 0; 
+            background-color: rgb(55, 0, 255); 
+            height:14.1vw;
+        }
+        & .info{
+            
+            border-radius: 0 0 2vh 2vh; 
+            background-color: rgb(90, 93, 90); 
+            color:white;
+            height:4vw;
+            & > .row{
+                width:100%;
+                padding-block: 1vw;
+            }
+            & .precio{
+                cursor: pointer;
+                width:auto;
+                background-color: goldenrod;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding:1vh;
+                border-radius: 1vh;
+                & h5{
+                    margin:0;
+                }
+
+                transition: 0.5s;
+                &:hover{
+                    padding-left: 5vw;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+.verMas{
+    user-select: none;
+    background-color: rgb(113, 105, 105); 
+    border-radius: 0 0 2vh 2vh; 
+    cursor:pointer;
+
+    & h4{
+        color:white;
+    }
+}
