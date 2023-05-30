@@ -14,7 +14,7 @@
                                     <div class="videojuego" *ngFor="let videojuego of this.videojuegosTendencias">
                                         <div class="p-3 contenedorVideojuego">
                                             <div class="col-12 p-0 caratula">
-                                                <img src="../../../../../assets/caratulas/404-not-found.jpg" alt="">
+                                                    <img src="../../../../../assets/caratulas/{{videojuego.url}}.jpg" onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
                                             </div>
                                             <div class="col-12 info d-flex justify-content-center ">
                                                 <div class="row">
@@ -26,7 +26,7 @@
                                                     <div class="col-2 d-flex align-items-center justify-content-end">
                                                         <div class="precio" >
                                                             <h5>
-                                                                {{videojuego.precio}}€
+                                                                {{videojuego.precio}}€ 
                                                             </h5>
                                                         </div>
                                                     </div>
@@ -53,3 +53,4 @@
 
     </div>
 </div>
+  

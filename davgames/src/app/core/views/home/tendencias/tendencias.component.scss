@@ -16,6 +16,7 @@ h1{
 .contenedor{
     width:100%;
     position: relative;
+    
 }
 
 .contenedor .slider{
@@ -25,6 +26,7 @@ h1{
     overflow:hidden;
     height:21.28481012658228vw;
     scroll-behavior: smooth;
+    
 }
 
 img{
@@ -46,6 +48,7 @@ img{
     padding-left:2vh;
 
     &.prev{
+        z-index: 999;
         user-select: none;
         border-radius: 2vh 0 0 0;
         opacity: 0;
@@ -61,6 +64,7 @@ img{
     }
 
     &.post{
+        z-index: 999;
         user-select: none;
         border-radius: 0 2vh  0 0;
         opacity: 0;
@@ -78,8 +82,16 @@ img{
 
 .videojuego{
     background-color: rgb(29, 28, 28);
+   
+
     & .contenedorVideojuego{
+       
         border-radius: 1vw;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            transform: scale(1.05);
+        }
         & .caratula{
             border-radius:  2vh 2vh 0 0; 
             background-color: rgb(55, 0, 255); 

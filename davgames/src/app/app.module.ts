@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VentanaModalComponent } from './core/shared/ventana-modal/ventana-modal.component';
 import { SharedModule } from './core/shared/shared.module';
 import { TendenciasComponent } from './core/views/home/tendencias/tendencias.component';
+import { VideojuegoRecomendadoComponent } from './core/views/home/videojuego-recomendado/videojuego-recomendado.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TendenciasComponent } from './core/views/home/tendencias/tendencias.com
     LoginComponent,
     RegistroComponent,
     VentanaModalComponent,
-    TendenciasComponent
+    TendenciasComponent,
+    VideojuegoRecomendadoComponent
   ],
   imports: [
     BrowserModule,

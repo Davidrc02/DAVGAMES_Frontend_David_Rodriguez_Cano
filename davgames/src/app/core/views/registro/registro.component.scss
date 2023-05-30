@@ -74,7 +74,7 @@
 
         & #registro {
             animation-name: apareceMarioV2;
-            animation-duration: 3s;
+            animation-duration: 2s;
             height: 70vh;
             width:35vw;
             margin-left:29vw;
@@ -189,11 +189,12 @@ a {
     background-size: cover;
     background-color: #333232;
     font-family: fuenteMarioBros;
-    color:white;
+    color:rgb(0, 0, 0);
     height: 8vh;
     width:8vh;
     transition: 0.4s;
     & h5{
+        font-size: 3.2vh;
         visibility: hidden;
     }
 

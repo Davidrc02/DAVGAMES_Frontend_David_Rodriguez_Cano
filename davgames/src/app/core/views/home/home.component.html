@@ -99,5 +99,5 @@
     <div id="cuerpo" class="row" >
         <app-tendencias *ngIf="this.videojuegos" [videojuegosPadre]="this.videojuegos"></app-tendencias>
         
-
+        <app-videojuego-recomendado *ngIf="this.videojuegos" [videojuegosRecomendadosPadre]="this.videojuegos"> </app-videojuego-recomendado>
     </div>

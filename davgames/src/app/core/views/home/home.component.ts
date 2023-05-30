@@ -13,6 +13,7 @@ export class HomeComponent {
   busqueda: string = "";
   buscador: boolean =false;
   videojuegos!: Videojuego[];
+  videojuegosRecomendados!: Videojuego[];
 
   constructor(private videojuegosService: VideojuegosService){}
 

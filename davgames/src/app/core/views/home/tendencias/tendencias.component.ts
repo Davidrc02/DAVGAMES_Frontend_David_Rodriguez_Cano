@@ -1,7 +1,5 @@
 import { Component, Input} from '@angular/core';
-import { HomeComponent } from '../home.component';
 import { Videojuego } from 'src/app/core/interfaces/videojuego';
-
 
 @Component({
   selector: 'app-tendencias',
@@ -11,13 +9,15 @@ import { Videojuego } from 'src/app/core/interfaces/videojuego';
 export class TendenciasComponent {
   @Input("videojuegosPadre") videojuegosPadre: Videojuego[] | undefined;
   videojuegosTendencias!: Videojuego[];
+  stringList!: string[];
 
-  constructor(){}
-
+  constructor() { }
+  
   ngOnInit(){
-    if(this.videojuegosPadre)
+    if(this.videojuegosPadre){
       this.videojuegosTendencias=this.videojuegosPadre;
       this.cargarTendencias();
+    }
   }
 
   cargarTendencias(){
@@ -30,7 +30,6 @@ export class TendenciasComponent {
         }
         return false;
       });
-
       this.videojuegosTendencias.sort(
         (a, b) =>
           new Date(b.fechaLanzamiento).getTime() -
@@ -44,7 +43,6 @@ export class TendenciasComponent {
     if(slider){
       slider.scrollLeft -= 800
     }
-    
   }
 
   scrollDerecha(){
@@ -53,5 +51,6 @@ export class TendenciasComponent {
       slider.scrollLeft += 800
     }
   }
+
 
 }
