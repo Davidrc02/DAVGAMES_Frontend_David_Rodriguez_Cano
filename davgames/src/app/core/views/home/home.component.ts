@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Videojuego } from '../../interfaces/videojuego';
 import { VideojuegosService } from '../../services/videojuegos.service';
 import { tap } from 'rxjs';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent {
   videojuegosRecomendados!: Videojuego[];
   videojuegosFranquicia: Videojuego[][]= [];
 
-  constructor(private videojuegosService: VideojuegosService){}
+  constructor(private videojuegosService: VideojuegosService, private carritoService: CarritoService){}
 
   ngOnInit(){
     this.getVideojuegos();
@@ -81,5 +82,9 @@ export class HomeComponent {
     }else{
       this.buscador=true;
     }
+  }
+
+  get carritoVisible() {
+    return this.carritoService.carritoVisible;
   }
 }

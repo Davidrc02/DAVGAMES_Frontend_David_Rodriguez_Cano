@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private carritoService: CarritoService) {
   }
 
   isAuthenticated(): boolean {
@@ -27,5 +27,13 @@ export class DashboardComponent {
       confirmButtonText: 'OK',
     })
     
+  }
+
+  toggleCarrito() {
+    this.carritoService.toggleCarrito();
+  }
+
+  get carritoVisible() {
+    return this.carritoService.carritoVisible;
   }
 }

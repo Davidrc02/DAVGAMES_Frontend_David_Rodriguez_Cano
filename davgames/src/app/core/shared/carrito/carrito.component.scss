@@ -1,0 +1,70 @@
+@keyframes apareceCarrito{
+    from{
+        width:0;
+    }
+    to{
+        width: 30vw;
+    }
+}
+
+@keyframes apareceContenidoCarrito{
+    0%{
+        opacity: 0;
+    }
+    75%{
+        opacity:0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.carrito {
+    width: 30vw;
+    position: fixed;
+    top: 50%;
+    margin-top: 23vh;
+    right: 0px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    animation: apareceCarrito;
+    animation-duration: 2s;
+    transition: right 0.3s;
+    height: 100%;
+    z-index:1000;
+    overflow:auto;
+}
+
+.contenidoCarrito{
+    background-color: gray;
+    height:100%;
+    width: 27vw;
+    margin-left:3vw;
+    
+}
+
+.contenido{
+    animation: apareceContenidoCarrito;
+    animation-duration: 2s;
+}
+
+.cerrarCarrito{
+    height:100%;
+    position:absolute;
+}
+
+.botonCierre{
+    cursor:pointer;
+    position:absolute;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: black;
+    color:white;
+    transform: translateX(1.5vw);
+    top:35%;
+    z-index:1500;
+}
