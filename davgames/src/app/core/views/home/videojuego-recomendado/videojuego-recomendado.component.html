@@ -1,12 +1,11 @@
 <div class="col-12 ">
-    
     <div class="row ">
         <div class="contenedor-imagen p-0">
             <img src="../../../../../assets/caratulas/{{videojuegoRecomendado.url}}.jpg" alt="">
-            <div class="titulo" [ngClass]="{'assassins': videojuegoRecomendado.nombreVideojuego.startsWith('Assassin')}">
-                <h2>{{videojuegoRecomendado.nombreVideojuego | uppercase}}</h2>
+            <div class="titulo" >
+                <h2 class="{{fuente}}">{{videojuegoRecomendado.nombreVideojuego | uppercase}}</h2>
                 <br>
-                <h3>{{videojuegoRecomendado.precio }}€</h3>
+                <h3>{{videojuegoRecomendado.precio}}€</h3>
             </div>
         </div>
     </div>

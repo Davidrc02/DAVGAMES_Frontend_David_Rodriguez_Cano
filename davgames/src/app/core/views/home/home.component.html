@@ -36,7 +36,7 @@
                 <div class="col-5">
                     <div class="lista row ">
                         <div *ngIf="this.busquedaAvanzada" class="d-flex justify-content-center ">
-                            <div class="col-3 p-0 d-flex justify-content-center">
+                            <div class="col-4 p-0 d-flex justify-content-center">
                                 <div ngbDropdown class="dropdown">
                                     <span ngbDropdownToggle>
                                         Consolas
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-3 p-0 d-flex justify-content-center">
+                            <div class="col-4 p-0 d-flex justify-content-center">
                                 <div ngbDropdown class="dropdown">
                                     <span ngbDropdownToggle>
                                         Género
@@ -63,7 +63,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-3 p-0 d-flex justify-content-center">
+                            <div class="col-4 p-0 d-flex justify-content-center">
                                 <div ngbDropdown class="dropdown">
                                     <span ngbDropdownToggle>
                                         Modos de juego
@@ -76,18 +76,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-3 p-0 d-flex justify-content-center">
-                                <div ngbDropdown class="dropdown">
-                                    <span ngbDropdownToggle>
-                                        Ordenar por:
-                                    </span>
-                                    <ul ngbDropdownMenu>
-                                        <li><a ngbDropdownItem>Precio Mayor a Menor</a></li>
-                                        <li><a ngbDropdownItem>Precio Menor a Mayor</a></li>
-                                        <li><a ngbDropdownItem>Alfabeticamente </a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -96,8 +85,13 @@
     </div>
 
     <!------------- CUERPO ------------->
-    <div id="cuerpo" class="row" >
+    <div id="cuerpo" class="row pb-5" >
         <app-tendencias *ngIf="this.videojuegos" [videojuegosPadre]="this.videojuegos"></app-tendencias>
         
-        <app-videojuego-recomendado *ngIf="this.videojuegos" [videojuegosRecomendadosPadre]="this.videojuegos"> </app-videojuego-recomendado>
+        <app-videojuego-recomendado class="pt-5" *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[0]"> </app-videojuego-recomendado>
+
+        <app-franquicia class="pt-5" *ngIf="this.videojuegosFranquicia.length!=0" [videojuegosFranquiciaPadre]="this.videojuegosFranquicia[0]"></app-franquicia>
+
+        <app-videojuego-recomendado *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[1]"> </app-videojuego-recomendado>
+        <app-videojuego-recomendado *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[2]"> </app-videojuego-recomendado>
     </div>

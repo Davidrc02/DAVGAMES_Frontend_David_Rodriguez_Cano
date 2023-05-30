@@ -13,9 +13,8 @@ export class VideojuegosService {
 
   getVideojuegos(): Observable<any>{
     let url = "http://localhost:8080/v0/davgames/api/videojuegos";
-    const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
-    return this.http.get<any>(url, { headers, observe: 'response' }).pipe(
+    return this.http.get<any>(url, {observe: 'response' }).pipe(
       map((response) => {
         if (response.body) {
           return response.body;
@@ -30,9 +29,9 @@ export class VideojuegosService {
 
   getVideojuego(nombreVideojuego: string, consola:string): Observable<any> {
     let url = "http://localhost:8080/v0/davgames/api/videojuegos/"+nombreVideojuego+"/"+consola;
-    const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
+    
   
-    return this.http.get<any>(url, { headers, observe: 'response' }).pipe(
+    return this.http.get<any>(url, { observe: 'response' }).pipe(
       map((response) => {
         if (response.body) {
           return response.body;

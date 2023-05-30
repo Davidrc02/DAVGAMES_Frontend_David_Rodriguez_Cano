@@ -6,6 +6,11 @@
 }
 
 @font-face {
+    font-family: fuenteCallofDuty;
+    src: url('./assets/fuentes/call_of_duty/Call\ of\ Ops\ Duty.otf') format('truetype');
+}
+
+@font-face {
     font-family: fuenteAssassins;
     src: url('./assets/fuentes/assassins_creed/Assassin$.ttf') format('truetype');
 }
@@ -16,7 +21,7 @@
 }
 
 .container-fluid{
-    background-color: #333232 ;
+    background-color: #e9e3e3 ;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
 }

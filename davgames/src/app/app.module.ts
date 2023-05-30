@@ -14,6 +14,9 @@ import { VentanaModalComponent } from './core/shared/ventana-modal/ventana-modal
 import { SharedModule } from './core/shared/shared.module';
 import { TendenciasComponent } from './core/views/home/tendencias/tendencias.component';
 import { VideojuegoRecomendadoComponent } from './core/views/home/videojuego-recomendado/videojuego-recomendado.component';
+import { DashboardSecundarioComponent } from './core/shared/dashboard-secundario/dashboard-secundario.component';
+import { VideojuegosComponent } from './core/views/videojuegos/videojuegos.component';
+import { FranquiciaComponent } from './core/views/home/franquicia/franquicia.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { VideojuegoRecomendadoComponent } from './core/views/home/videojuego-rec
     RegistroComponent,
     VentanaModalComponent,
     TendenciasComponent,
-    VideojuegoRecomendadoComponent
+    VideojuegoRecomendadoComponent,
+    DashboardSecundarioComponent,
+    VideojuegosComponent,
+    FranquiciaComponent
   ],
   imports: [
     BrowserModule,

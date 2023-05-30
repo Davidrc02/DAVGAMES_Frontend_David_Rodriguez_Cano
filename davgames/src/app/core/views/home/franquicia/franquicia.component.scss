@@ -14,9 +14,6 @@ h1{
 }
 
 .contenedor{
-    border:3px solid goldenrod;
-    border-bottom: 0;
-    border-radius: 2vh 2vh 0 0;
     width:100%;
     position: relative;
     
@@ -84,7 +81,7 @@ img{
 }
 
 .videojuego{
-    background-color: rgb(48, 48, 48);
+    background-color: rgb(29, 28, 28);
    
 
     & .contenedorVideojuego{
@@ -139,7 +136,7 @@ img{
 
                 transition: 0.5s;
                 &:hover{
-                    padding-left:5vw;
+                    padding-left: 5vw;
                     transition: 0.5s;
                 }
             }
@@ -161,13 +158,12 @@ img{
   }
 
 .verMas{
-    border:3px solid rgb(205, 95, 239);
     user-select: none;
-    background-color: rgb(30, 31, 31); 
+    background-color: rgb(113, 105, 105); 
     border-radius: 0 0 2vh 2vh; 
     cursor:pointer;
 
     & h4{
-        color:rgb(255, 255, 255);
+        color:white;
     }
 }

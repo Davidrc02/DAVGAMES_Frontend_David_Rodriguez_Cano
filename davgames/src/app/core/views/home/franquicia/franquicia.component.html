@@ -1,7 +1,7 @@
 <div class="col-12">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-10">
-            <h1>Tendencias</h1>
+            <h1>Franquicia : {{this.videojuegosFranquicia[0].franquicia}}</h1>
             <div class="row">
                 <div class="col-12">
                     <div class="row">
@@ -10,8 +10,8 @@
                                 <span (click)="scrollIzquierda()" class="material-symbols-outlined control prev">
                                     chevron_left
                                 </span>
-                                <div class="slider" id="slider">
-                                    <div class="videojuego" *ngFor="let videojuego of this.videojuegosTendencias">
+                                <div class="slider" id="slider{{this.videojuegosFranquicia[0].franquicia}}">
+                                    <div class="videojuego" *ngFor="let videojuego of this.videojuegosFranquicia">
                                         <div class="p-3 contenedorVideojuego">
                                             <div class="col-12 p-0 caratula">
                                                     <img src="../../../../../assets/caratulas/{{videojuego.url}}.jpg" onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
@@ -53,4 +53,3 @@
 
     </div>
 </div>
-  

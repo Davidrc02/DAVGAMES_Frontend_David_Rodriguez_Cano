@@ -7,13 +7,28 @@ import { Videojuego } from 'src/app/core/interfaces/videojuego';
   styleUrls: ['./videojuego-recomendado.component.scss']
 })
 export class VideojuegoRecomendadoComponent {
-  @Input("videojuegosRecomendadosPadre") videojuegosRecomendadosPadre: Videojuego[] | undefined;
-  videojuegoRecomendado!: Videojuego;
+  @Input("videojuegoRecomendadoPadre") videojuegoRecomendadoPadre:Videojuego | undefined;
+  videojuegoRecomendado!:Videojuego;
+  fuente!:string;
 
   constructor(){}
 
   ngOnInit(){
-    if(this.videojuegosRecomendadosPadre)
-      this.videojuegoRecomendado=this.videojuegosRecomendadosPadre.sort((a,b) => a.stock-b.stock)[0];
+    if(this.videojuegoRecomendadoPadre){
+      this.videojuegoRecomendado=this.videojuegoRecomendadoPadre;
+      this.getFuente();
+    }  
+  }
+
+  getFuente(){
+    if(this.videojuegoRecomendado.nombreVideojuego.toLowerCase().startsWith("assassin")){
+      this.fuente="assassins";
+    }
+    else if(this.videojuegoRecomendado.nombreVideojuego.toLowerCase().startsWith("call of duty")){
+      this.fuente="callofduty";
+    }
+    else{
+      this.fuente="";
+    }
   }
 } 

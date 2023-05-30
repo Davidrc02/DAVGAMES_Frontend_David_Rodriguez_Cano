@@ -9,7 +9,8 @@ const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"login", component:LoginComponent},
   {path:"register", component:RegistroComponent},
-  {path:"administrador", loadChildren: () => import("./core/views/administrador/administrador.module").then((m)=>m.AdministradorModule)}
+  {path:"administrador", loadChildren: () => import("./core/views/administrador/administrador.module").then((m)=>m.AdministradorModule)},
+  //{path:"videojuegos"}
 ];
 
 @NgModule({

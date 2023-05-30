@@ -6,11 +6,11 @@ import { AfterViewInit } from '@angular/core';
 import Swal from 'sweetalert2';
 
 @Component({
-	selector: 'app-videojuegos',
-	templateUrl: './videojuegos.component.html',
-	styleUrls: ['./videojuegos.component.scss'],
+  selector: 'app-videojuegos-administrador',
+  templateUrl: './videojuegos-administrador.component.html',
+  styleUrls: ['./videojuegos-administrador.component.scss']
 })
-export class VideojuegosComponent {
+export class VideojuegosAdministradorComponent {
 	videojuegos!: Videojuego[] | null;
 	videojuegosOrdenados!: Videojuego[] | null;
 	videojuegosMostrados!: Videojuego[] | null;
@@ -179,3 +179,4 @@ cambiaPagina(pagina: number) {
 	}
 }
 }
+

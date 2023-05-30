@@ -1,11 +1,12 @@
 h1[name=logo]{
     user-select: none;
     color:goldenrod;
-    font-size: 70px;
+    font-size: 50px;
     background-image: url("../../../../assets/mando.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 70%;
+    background-size: 60%;
+    transform: translate3d(0,0,50px);
 }
 
 a{

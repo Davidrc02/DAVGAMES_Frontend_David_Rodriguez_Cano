@@ -11,6 +11,10 @@ export class TendenciasComponent {
   videojuegosTendencias!: Videojuego[];
   stringList!: string[];
 
+  animaciones: { [key: string]: boolean } = {};
+
+  
+
   constructor() { }
   
   ngOnInit(){
@@ -52,5 +56,11 @@ export class TendenciasComponent {
     }
   }
 
+  startAnimation(nombreVideojuego: string) {
+    this.animaciones[nombreVideojuego] = true;
+  }
 
+  stopAnimation(nombreVideojuego: string) {
+    this.animaciones[nombreVideojuego] = false;
+  }
 }
