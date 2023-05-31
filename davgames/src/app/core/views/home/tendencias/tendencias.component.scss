@@ -126,24 +126,61 @@ img{
 
             & .precio{
                 cursor: pointer;
-                width:auto;
                 background-color: goldenrod;
+                padding:1vh;
+                border-radius: 1vh;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding:1vh;
-                border-radius: 1vh;
+                height:5vh;
                 & h5{
                     margin:0;
                 }
+                & h6{
+                    display:none;
+                    margin:0;
+                }
 
-                transition: 0.5s;
                 &:hover{
-                    padding-left:5vw;
-                    transition: 0.5s;
+                    animation: apareceBoton;
+                    animation-duration: 1s;
+                    padding-left:4vh;
+                    & h6{
+                        animation: apareceBoton2;
+                        animation-duration: 1s;
+                        display: block;
+                        white-space:nowrap;
+                    }
+                    & h5{
+                        display:none;
+                    }
+                    
                 }
             }
         }
+    }
+}
+
+@keyframes apareceBoton{
+    0%{
+        padding-left: 0vh;
+    }
+    100%{
+        display: block;
+        white-space:nowrap;
+    }
+}
+
+@keyframes apareceBoton2{
+    0%{
+        display:none;
+    }
+    90%{
+        display:none;
+    }
+    100%{
+        display: block;
+        white-space:nowrap;
     }
 }
 

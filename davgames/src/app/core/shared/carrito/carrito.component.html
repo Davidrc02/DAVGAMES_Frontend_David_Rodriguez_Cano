@@ -1,18 +1,44 @@
-<div class="carrito">
-    <div class="cerrarCarrito">
-        <div class="botonCierre">
-            <span (click)="toggleCarrito()" class="material-symbols-outlined control prev">
-                chevron_right
-            </span>
-        </div>
-    </div>
-
-    <div class="contenidoCarrito d-flex justify-content-center">
+<div class="bloqueCarrito">
+    <div class="contenidoCarrito ">
         <div class="contenido">
-            <h2 class="d-flex justify-content-center">
-                Carrito de compra
-            </h2>
+            <h1 class="d-flex justify-content-center">
+                Carrito
+            </h1>
+            <hr>
+            <div *ngIf="carrito" class="carritoVacio">
+                <h2 class="d-flex justify-content-center">¡Vaya!</h2>
+                <h4 class="d-flex justify-content-center">Parece que aún no has añadido ningún juego</h4>
+                <h6 class="d-flex justify-content-center">Vuelve por aquí más tarde cuando ya tengas decidido tu próximo juego o mira nuestras sugerencias</h6>
+            </div>
+            <div *ngIf="!carrito" class="carrito">
+                <div class="pedidos">
+                    <div class="pedido" style="border:1px solid goldenrod; display:flex">
+                        <img style="width:10vw;" src="../../../../assets/caratulas/call-of-duty-black-ops-iii.jpg" alt="">
+                        <div class="datosPedido" style="margin:0; width:100%; padding-left:0.6vw; padding-right:0.6vw">
+                            <h6 style="padding-top:1vh;text-align: start; margin:0;">Call of Duty: Black ops 3</h6>
+                            <h6 style="text-align: start; margin:0;">Activision</h6>
+                            <div style="display:flex; justify-content: space-between;">
+                                <h5 style="padding-top:1vh; text-align: start; margin:0; ">
+                                    <div class="cantidad-caja">
+                                        <button class="cantidad-btn menos">-</button>
+                                        <input type="text" class="cantidad-input" value="1" min="1">
+                                        <button class="cantidad-btn mas">+</button>
+                                      </div>                                      
+                                </h5>
+                                <h5 class="d-flex align-items-center" style="padding-top:1vh; margin:0; ">29.59€</h5>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
         
     </div>
+</div>
+<div class="botonCierre" (click)="toggleCarrito()">
+    <span class="material-symbols-outlined control prev">
+        chevron_right
+    </span>
 </div>

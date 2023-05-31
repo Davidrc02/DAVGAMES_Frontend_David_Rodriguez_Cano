@@ -19,4 +19,8 @@ export class CarritoComponent {
   get carritoVisible() {
     return this.carritoService.carritoVisible;
   }
+
+  get carrito() {
+    return this.carritoService.carrito;
+  }
 }
