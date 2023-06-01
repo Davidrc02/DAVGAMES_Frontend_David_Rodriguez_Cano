@@ -122,7 +122,6 @@ img{
                     }
                 }
             }
-           
 
             & .precio{
                 cursor: pointer;
@@ -133,54 +132,12 @@ img{
                 justify-content: center;
                 align-items: center;
                 height:5vh;
+
                 & h5{
                     margin:0;
-                }
-                & h6{
-                    display:none;
-                    margin:0;
-                }
-
-                &:hover{
-                    animation: apareceBoton;
-                    animation-duration: 1s;
-                    padding-left:4vh;
-                    & h6{
-                        animation: apareceBoton2;
-                        animation-duration: 1s;
-                        display: block;
-                        white-space:nowrap;
-                    }
-                    & h5{
-                        display:none;
-                    }
-                    
-                }
+                }                
             }
         }
-    }
-}
-
-@keyframes apareceBoton{
-    0%{
-        padding-left: 0vh;
-    }
-    100%{
-        display: block;
-        white-space:nowrap;
-    }
-}
-
-@keyframes apareceBoton2{
-    0%{
-        display:none;
-    }
-    90%{
-        display:none;
-    }
-    100%{
-        display: block;
-        white-space:nowrap;
     }
 }
 

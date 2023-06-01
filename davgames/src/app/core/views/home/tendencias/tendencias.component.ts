@@ -9,7 +9,6 @@ import { Videojuego } from 'src/app/core/interfaces/videojuego';
 export class TendenciasComponent {
   @Input("videojuegosPadre") videojuegosPadre: Videojuego[] | undefined;
   videojuegosTendencias!: Videojuego[];
-  stringList!: string[];
 
   animaciones: { [key: string]: boolean } = {};
 

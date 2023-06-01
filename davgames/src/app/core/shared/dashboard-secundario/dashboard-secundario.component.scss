@@ -1,8 +1,19 @@
 #logo {
-    height: 0px;
-    transform: scale(0.5);
+    top: 0;
+    transform: scale(0.7);
 }
 
+.cabeceraContenido{
+    height:20vh;
+    background-color: #333232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size:4vh;
+}
 
 a {
     cursor:pointer;

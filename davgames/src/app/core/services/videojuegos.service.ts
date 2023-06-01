@@ -29,7 +29,6 @@ export class VideojuegosService {
 
   getVideojuego(nombreVideojuego: string, consola:string): Observable<any> {
     let url = "http://localhost:8080/v0/davgames/api/videojuegos/"+nombreVideojuego+"/"+consola;
-    
   
     return this.http.get<any>(url, { observe: 'response' }).pipe(
       map((response) => {

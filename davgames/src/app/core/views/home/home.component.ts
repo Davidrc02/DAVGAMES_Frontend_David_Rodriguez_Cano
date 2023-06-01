@@ -19,6 +19,11 @@ export class HomeComponent {
 
   constructor(private videojuegosService: VideojuegosService, private carritoService: CarritoService){}
 
+  ngOnDestroy(){
+    if(this.carritoService.carritoVisible)
+      this.carritoService.toggleCarrito();
+  }
+
   ngOnInit(){
     this.getVideojuegos();
   }
@@ -41,7 +46,6 @@ export class HomeComponent {
     var cont=0;
     franquicias.forEach((franquicia) => {
       var videojuegosPorFranquicia = this.videojuegos.filter((videojuego) => videojuego.franquicia === franquicia);
-      console.log(videojuegosPorFranquicia)
       this.videojuegosFranquicia[cont]=videojuegosPorFranquicia;
       cont++;
     });
@@ -59,7 +63,6 @@ export class HomeComponent {
         if(!franquiciasUnicas.includes(franquicia))
           franquiciasUnicas.push(franquicia);
     });
-    console.log(franquiciasUnicas)
     return franquiciasUnicas;
   }
 
@@ -86,5 +89,23 @@ export class HomeComponent {
 
   get carritoVisible() {
     return this.carritoService.carritoVisible;
+  }
+
+  getConsolas(){
+    var aux = this.videojuegos;
+    if(aux){
+      const listaNombresConsola = Array.from(new Set(aux.map(v => v.nombreConsola)));
+      return listaNombresConsola;
+    }
+    return null;
+  }
+
+  getGeneros(){
+    var aux = this.videojuegos;
+    if(aux){
+      const listaGeneros = Array.from(new Set(aux.map(v => v.genero)));
+      return listaGeneros;
+    }
+    return null;
   }
 }

@@ -8,17 +8,11 @@
         'opsz' 48
 }
 
-#logo {
-    height: 0px;
-    transform: scale(0.5);
-}
-
 #cuerpo {
     background-color: #333232;
     padding-bottom: 5em;
 
     & .cuerpo {
-        margin-top: 8em;
         height: 77vh;
         padding-bottom: 10em;
         background-image: url("../../../../assets/fondoDarth.jpg");

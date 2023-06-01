@@ -12,7 +12,7 @@
                                 </span>
                                 <div class="slider" id="slider">
                                     <div class="videojuego" *ngFor="let videojuego of this.videojuegosTendencias">
-                                        <div class="p-3 contenedorVideojuego">
+                                        <div class="p-3 contenedorVideojuego" routerLink="/videojuegos/{{videojuego.nombreVideojuego}}/{{videojuego.nombreConsola}}">
                                             <div class="col-12 p-0 caratula">
                                                     <img src="../../../../../assets/caratulas/{{videojuego.url}}.jpg" onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
                                             </div>
@@ -25,9 +25,6 @@
                                                     </div>
                                                     <div class="col-3 d-flex align-items-center justify-content-end">
                                                         <div class="precio">
-                                                            <h6>
-                                                                Añadir al carrito 
-                                                            </h6>
                                                             <h5>
                                                                 {{videojuego.precio}}€ 
                                                             </h5>
@@ -47,7 +44,7 @@
                     </div>
                     <div class="row pb-5">
                         <div class="verMas col-12 justify-content-center d-flex p-0">
-                            <h4 class="pt-2 pb-2 m-0">Ver más</h4>
+                            <h4 routerLink="/videojuegos" class="pt-2 pb-2 m-0">Ver todos</h4>
                         </div>
                     </div>
                 </div>

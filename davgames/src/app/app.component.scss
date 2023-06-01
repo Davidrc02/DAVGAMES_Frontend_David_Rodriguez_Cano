@@ -1,0 +1,77 @@
+.cargando{
+    height:100vh;
+    background-color: #333232;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    transform: scale(0.1);
+    animation: rotate 1s linear infinite;
+}
+
+h1[name=logo]{
+    width:min-content;
+    font-size: 5vh;
+    user-select: none;
+    color:goldenrod;
+    background-image: url("../assets/mando.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: goldenrod;
+  
+    animation: spin 1s ease infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .scrollUp {
+    animation: apareceScroll;
+    animation-duration:0.4s;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.scrollUp:hover {
+    background-color: goldenrod;
+    color:black;
+}
+
+@keyframes apareceScroll {
+  0% {
+    bottom: -40px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}

@@ -1,4 +1,17 @@
-<div class="row">
+<div class="row" *ngIf="cargado">
     <router-outlet></router-outlet>
     <app-footer></app-footer>   
+    <div *ngIf="apareceScrollUp"  class="scrollUp" (click)="scrollUp()">
+        <span class="material-symbols-outlined">
+            arrow_upward
+        </span>
+    </div>
+</div>
+<div class="row cargando" *ngIf="!cargado">
+    <div class="col-12 d-flex justify-content-center align-items-end h-50">
+        <h1 class="p-5" id="logo" name="logo">DAVGAMES</h1>
+    </div>
+    <div class="col-12 d-flex justify-content-center h-50">
+        <div class="spinner"></div>
+    </div>
 </div>

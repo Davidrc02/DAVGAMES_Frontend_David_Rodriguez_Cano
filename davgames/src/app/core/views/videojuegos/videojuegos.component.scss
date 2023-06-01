@@ -1,0 +1,157 @@
+.videojuegosComponent{
+    background-color: #424141;
+    color: #f1ac45;
+
+    .titulo{
+        margin-top: 5vh;
+
+        & .input-wrapper{
+            position:relative;
+        }
+        & #busquedaTexto{
+            background: linear-gradient(200deg, #5e5b5b, #5e5b5b);
+            box-shadow:  11px 11px 44px #000000;
+            box-sizing: border-box;
+            background-color: #5e5b5b;
+            outline:none;
+            border:2px solid black;
+            border-radius: 4px;
+            color:white;
+            &::placeholder{
+                color:white;
+                opacity:0.8;
+            }
+        }
+        & .icono{
+            position:absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left:90%;
+            color:white;
+
+        }
+    }
+}
+.filtros{
+    color:white;
+}
+
+img{
+    border-radius: 2vh 2vh 0 0;
+    width:100%;
+}
+
+.videojuegos{
+
+    margin-bottom: 20vh;
+}
+
+.videojuego{
+    
+    & .contenedorVideojuego{
+        border-radius: 1vw;
+        transition: 0.5s;
+        
+        &:hover{
+            transition: 0.5s;
+            transform: scale(1.05);
+        }
+        & .caratula{
+            box-shadow:  11px 16px 14px #000000;
+            cursor:pointer;
+            border-radius:  2vh 2vh 0 0; 
+            background-color: rgb(55, 0, 255); 
+            width:auto;
+        }
+        & .info{
+            box-shadow:  11px 16px 24px #000000;
+            cursor:pointer;
+            border-radius: 0 0 2vh 2vh; 
+            background-color: rgb(90, 93, 90); 
+            color:white;
+            height:4vw;
+            & > .row{
+                width:100%;
+                padding-block: 1vw;
+            }
+            & .texto{
+                overflow: hidden; /* Oculta el contenido que excede el ancho */
+                & .truncate-text {
+                    font-size: 2.5vh;
+                    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+                    overflow: hidden; /* Oculta cualquier contenido que exceda el ancho */ /* Agrega puntos suspensivos al final del texto */
+                    &.animacion{
+                        animation: slideIn 5s linear infinite;
+                        overflow: visible;
+                    }
+                }
+            }
+
+            & .precio{
+                cursor: pointer;
+                background-color: goldenrod;
+                padding:1vh;
+                border-radius: 1vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height:5vh;
+
+                & h5{
+                    margin:0;
+                }                
+            }
+        }
+    }
+}
+
+
+@keyframes slideIn {
+    0% {
+      transform: translateX(0%);
+    }
+    90% {
+      transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+.dropdown{
+    color:white;
+    animation-name: alargar; /* nombre del keyframe */
+    animation-duration: 2s; /* duración de la animación en segundos */
+    animation-fill-mode: forwards;
+    & .ddtoggle{
+        cursor: pointer;
+        padding:2vh;
+        border: 2px solid black;
+        background-color: #5e5b5b;
+        border-radius: 1vh;
+        background: linear-gradient(200deg, #5e5b5b, #5e5b5b);
+        box-shadow:  11px 11px 44px #000000;
+    }
+    & .dropdown-menu {
+        --bs-dropdown-min-width: 0;
+    }
+    & ul{
+        background-color: #333232;
+        & li{
+            min-width: 9vw;
+            & a{
+                cursor: pointer;
+                color:white;
+                &:hover{
+                    background-color: #424141;
+                }
+            }
+        }
+    }
+    
+}
+
+.material-symbols-outlined{
+    transform: scale(1);
+}
