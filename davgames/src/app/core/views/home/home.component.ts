@@ -46,9 +46,26 @@ export class HomeComponent {
     var cont=0;
     franquicias.forEach((franquicia) => {
       var videojuegosPorFranquicia = this.videojuegos.filter((videojuego) => videojuego.franquicia === franquicia);
-      this.videojuegosFranquicia[cont]=videojuegosPorFranquicia;
-      cont++;
+        if(videojuegosPorFranquicia.length>=3){
+          let videojuegosUnicos = new Set(videojuegosPorFranquicia.map(videojuego => videojuego.nombreVideojuego));
+          if(videojuegosUnicos.size>=3){
+            this.videojuegosFranquicia[cont]=videojuegosPorFranquicia;
+            cont++;
+          }
+          
+        }
     });
+    // franquicias.forEach((franquicia) => {
+    //   var videojuegosPorFranquicia:Videojuego[] = this.videojuegos.filter((videojuego) => {
+    //     return videojuego.franquicia === franquicia &&
+    //            !videojuegosPorFranquicia.some((vj:Videojuego) => vj.nombreVideojuego === videojuego.nombreVideojuego);
+    //   });
+    
+    //   if (videojuegosPorFranquicia.length >= 3) {
+    //     this.videojuegosFranquicia[cont] = videojuegosPorFranquicia;
+    //     cont++;
+    //   }
+    // });
   }
   
   obtenerFranquiciasUnicas(): string[] {

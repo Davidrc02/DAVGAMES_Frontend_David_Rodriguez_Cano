@@ -5,7 +5,7 @@
                 Carrito
             </h1>
             <hr>
-            <div *ngIf="!carrito" class="carritoVacio">
+            <div *ngIf="pedidos.length==0" class="carritoVacio">
                 <h2 class="d-flex justify-content-center">¡Vaya!</h2>
                 <h4 class="d-flex justify-content-center">Parece que aún no has añadido ningún juego</h4>
                 <h6 class="d-flex justify-content-center">Vuelve por aquí más tarde cuando ya tengas decidido tu próximo juego o mira nuestras sugerencias</h6>
@@ -14,22 +14,22 @@
                     <a class="sugerencias" id="sugerencias" routerLink="/videojuegos">Ir a sugerencias</a>
                 </div>
             </div>
-            <div *ngIf="carrito" class="carrito">
+            <div *ngIf="pedidos.length!=0" class="carrito">
                 <div class="pedidos">
-                    <div class="pedido">
-                        <img class="caratula" src="../../../../assets/caratulas/call-of-duty-black-ops-iii.jpg" alt="">
+                    <div class="pedido mb-2" *ngFor="let pedido of pedidos">
+                        <img class="caratula" src="../../../../assets/caratulas/{{pedido.videojuego.url}}.jpg" alt="">
                         <div class="datosPedido">
-                            <h6 class="titulo">Call of Duty: Black ops 3</h6>
-                            <h6 class="empresa">Activision</h6>
+                            <h6 class="titulo">{{pedido.videojuego.nombreVideojuego}}</h6>
+                            <h6 class="empresa">{{pedido.videojuego.nombreConsola}}</h6>
                             <div class="cantidadPrecio">
                                 <h5 class="cantidad">
                                     <div class="cantidadCaja">
                                         <button class="cantidadBtn menos">-</button>
-                                        <input type="text" class="cantidadValue" value="1" min="1">
+                                        <input type="text" (ngModelChange)="verificarNumero(pedido)" [ngModel]="pedido.cantidad" id="cantidad{{pedido.videojuego.nombreVideojuego}}{{pedido.videojuego.nombreConsola}}" class="cantidadValue" value="1" min="1">
                                         <button class="cantidadBtn mas">+</button>
                                       </div>                                      
                                 </h5>
-                                <h5 class="d-flex align-items-center precio">29.59€</h5>
+                                <h5 class="d-flex align-items-center precio">{{pedido.videojuego.precio * pedido.cantidad | number}}€</h5>
                             </div>
                             
                         </div>

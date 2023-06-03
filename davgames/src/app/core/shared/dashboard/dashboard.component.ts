@@ -16,6 +16,14 @@ export class DashboardComponent {
     return this.authService.isAuth();
   }
 
+  ngOnInit(){
+    let pedidos =sessionStorage.getItem("carrito");
+    if(pedidos){
+      this.carritoService.pedidos= JSON.parse(pedidos);
+    }
+    
+  }
+
   logout() {
     this.authService.logout();
     Swal.fire({
@@ -35,5 +43,9 @@ export class DashboardComponent {
 
   get carritoVisible() {
     return this.carritoService.carritoVisible;
+  }
+
+  get pedidos() {
+    return this.carritoService.pedidos;
   }
 }

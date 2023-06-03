@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { CarritoService } from './core/services/carrito.service';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,18 @@ export class AppComponent {
   ngOnInit(){
     setTimeout(() => {
       this.cargado = true;
-    }, 100);
+    }, 1500);
+  }
+
+  constructor(private carritoService: CarritoService){
+  }
+
+  get carritoVisible() {
+    return this.carritoService.carritoVisible;
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll(){
-    console.log(document.documentElement.scrollTop)
     if(document.documentElement.scrollTop>= 400){
       this.apareceScrollUp=true
     }

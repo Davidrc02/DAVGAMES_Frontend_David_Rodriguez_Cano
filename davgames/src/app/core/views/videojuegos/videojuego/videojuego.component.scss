@@ -1,0 +1,86 @@
+
+.videojuego{
+    background-color: #464646;
+    padding-top:7vh;
+    padding-bottom:7vh;
+    & .caratula{
+        width:100%;
+        border-radius: 3vh;
+    }
+
+    & .contenedorDatos{
+        height:100%;
+        & .datosVideojuego{
+            padding-top: 3vh;
+            height:22.5vw;
+            margin-inline:1vw;
+
+            box-shadow: 18px 18px 60px black;
+            color:rgb(255, 255, 255);
+            border-radius: 3vh;
+            
+            & .nombre{
+                text-align: center;
+                font-size: 5.5vh;
+                font-weight: 900;
+                background-color: rgb(81, 6, 122);
+                height:14vh;
+                display:flex;
+                align-items: center;
+            }
+
+            & .consolas{
+                padding-top: 2vh;
+
+                & .consola{
+                    cursor:pointer;
+                    margin-block:1vh;
+                    max-width: max-content;
+                    padding-block: 1vh;
+                    padding-inline:0.8vw;
+                    color:white;
+                    border-radius: 1vh;
+                    margin-inline: 1vw;
+                    background-color: rgb(16, 15, 107);
+                    &.activa{
+                        border:5px solid rgba(1, 2, 53, 0.877);
+                    }
+                    
+                    & h5{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin:0;
+                    }
+                }
+            }
+
+            & .precio{
+                margin-top:1vh;
+            }
+            
+            & .botonesPago{
+                height:10vh;
+
+                & .btnCompra{
+                    cursor: pointer;
+                    height:8vh;
+                    background-color: goldenrod;
+                    border-radius:6px;
+                    
+                    margin-inline: 0.5vw;
+                    & h4, h5{
+                        margin:0;
+                    }
+                    &.comprar{
+                        border:5px solid orangered;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.material-symbols-outlined{
+    transform: scale(1.3);
+}

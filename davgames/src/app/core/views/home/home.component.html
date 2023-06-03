@@ -133,8 +133,10 @@
 
         <app-franquicia class="pt-5" *ngIf="this.videojuegosFranquicia.length!=0" [videojuegosFranquiciaPadre]="this.videojuegosFranquicia[0]"></app-franquicia>
 
-        <app-videojuego-recomendado *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[1]"> </app-videojuego-recomendado>
+        <app-videojuego-recomendado *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[80]"> </app-videojuego-recomendado>
+        
+        <app-franquicia class="pt-5" *ngIf="this.videojuegosFranquicia.length!=0" [videojuegosFranquiciaPadre]="this.videojuegosFranquicia[1]"></app-franquicia>
+        
         <app-videojuego-recomendado *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[2]"> </app-videojuego-recomendado>
     </div>
 
-<app-carrito *ngIf="carritoVisible"></app-carrito>

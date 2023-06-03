@@ -13,9 +13,29 @@ a{
     text-decoration: none;
 }
 
+.carrito{
+    height:100%;
+
+    & .contadorCarrito{
+        cursor: pointer;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: fixed;
+        top: 3.6vw;
+        right: 7.55vw;
+        background-color: goldenrod;
+        color: #fff;
+        width: 1.3vw;
+        height: 1.3vw;
+        text-align: center;
+    }
+}
+
 .material-symbols-outlined {
     user-select: none;
-    transform: scale(1.9);
+    transform: scale(2);
     font-variation-settings:
         'FILL' 0,
         'wght' 400,
@@ -37,7 +57,7 @@ a{
 
 .lista {
     background-color: rgb(241, 172, 69) !important;
-    transform: translate3d(3vw, 7vh, 0px) !important;
+    transform: translate3d(2.01vw, 7vh, 0px) !important;
     
     & li a{
         padding-right:100px;

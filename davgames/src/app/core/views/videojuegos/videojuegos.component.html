@@ -24,7 +24,7 @@
                                                 Consolas
                                             </span>
                                             <ul ngbDropdownMenu>
-                                                <li *ngFor="let consola of getConsolas()"><a ngbDropdownItem >{{consola}}</a></li>
+                                                <li (click)="anadeFiltro('consola', consola)" *ngFor="let consola of getConsolas()"><a ngbDropdownItem >{{consola}}</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -34,7 +34,7 @@
                                                 Generos
                                             </span>
                                             <ul ngbDropdownMenu>
-                                                <li *ngFor="let genero of getGeneros()"><a ngbDropdownItem >{{genero}}</a></li>
+                                                <li (click)="anadeFiltro('genero', genero)" *ngFor="let genero of getGeneros()"><a ngbDropdownItem >{{genero}}</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                     <div class="videojuegos">
                         <div class="row" *ngIf="this.videojuegosMostrados">
                             <div  class="videojuego col-4 p-0" *ngFor="let videojuego of this.videojuegosMostrados">
-                                <div class="p-3 contenedorVideojuego">
+                                <div class="p-3 contenedorVideojuego" routerLink="/videojuegos/{{videojuego.nombreVideojuego}}/{{videojuego.nombreConsola}}">
                                     <div class="col-12 p-0 caratula">
                                             <img src="../../../../../assets/caratulas/{{videojuego.url}}.jpg" onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
                                     </div>
@@ -165,8 +165,7 @@
                                         <h1>¡Vaya!</h1>
                                     </div>
                                     <div class="col-12 pt-5 justify-content-center d-flex">
-                                        <h2>Parece que el juego "{{busquedaTexto}}" </h2>
-                                        <h2>&nbsp;que estás buscando no existe</h2>
+                                        <h2>Parece que el juego que estás buscando no existe </h2>
                                     </div>
                                 </div>
                             </div>

@@ -6,6 +6,8 @@ import { DashboardSecundarioComponent } from './dashboard-secundario/dashboard-s
 import { SharedRoutingModule } from './shared-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     LogoComponent,
@@ -16,7 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     SharedRoutingModule,
     CommonModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   exports: [
     CommonModule,

@@ -93,4 +93,10 @@ export class VideojuegosService {
 
     return this.http.delete<any>(url, {headers, observe: 'response'}).pipe();
   }
+
+  obtenerConsolasPorNombreVideojuego(nombreVideojuego: string): Observable<any>{
+    let url = "http://localhost:8080/v0/davgames/api/videojuegos/obtenerConsolasPorNombreVideojuego/"+nombreVideojuego;
+
+    return this.http.get<any>(url, { observe: 'response'}).pipe();
+  }
 }
