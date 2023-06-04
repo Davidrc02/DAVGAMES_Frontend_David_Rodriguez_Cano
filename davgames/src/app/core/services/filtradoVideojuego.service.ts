@@ -24,4 +24,11 @@ export class FiltradoVideojuegoService {
             this.filtros.push(filtro); // Añadir nuevo filtro a la lista
         }
     }
+
+    quitarFiltro(nombre:string){
+        const indice = this.filtros.findIndex(filtro => filtro.nombre === nombre);
+        if (indice !== -1) {
+            this.filtros.splice(indice, 1);
+          }
+    }
 }

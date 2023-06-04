@@ -11,7 +11,7 @@
                     <div class="col-8 p-0 d-flex justify-content-center filtros">
                         <div class="row w-100 h-100 d-flex align-items-center">
                             <div class="col-6 input-wrapper p-0">
-                                <input (keyup)="buscarJuego()" id="busquedaTexto" class="input w-100 py-2" type="text" placeholder="Introduzca el titulo a buscar">
+                                <input (keyup)="buscarJuegos()" id="busquedaTexto" class="input w-100 py-2" type="text" placeholder="Introduzca el titulo a buscar">
                                 <span class="icono material-symbols-outlined ">
                                     search
                                 </span>
@@ -45,6 +45,30 @@
                                                 Ordenar por 
                                             </span>
                                             <ul ngbDropdownMenu>
+                                                <li >
+                                                    <div class="d-flex align-items-center">
+                                                        <a ngbDropdownItem class="h-100 d-flex">
+                                                            <span>
+                                                                 Alfabeticamente (A-Z) &nbsp;
+                                                            </span>
+                                                            <span class="material-symbols-outlined">
+                                                                arrow_downward
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="d-flex align-items-center">
+                                                        <a ngbDropdownItem class="h-100 d-flex">
+                                                            <span>
+                                                                Alfabeticamente (Z-A) &nbsp;
+                                                            </span>
+                                                            <span class="material-symbols-outlined">
+                                                                arrow_upward
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </li>
                                                 <li >
                                                     <div class="d-flex align-items-center">
                                                         <a ngbDropdownItem class="h-100 d-flex">
@@ -93,30 +117,7 @@
                                                         </a>
                                                     </div>
                                                 </li>
-                                                <li >
-                                                    <div class="d-flex align-items-center">
-                                                        <a ngbDropdownItem class="h-100 d-flex">
-                                                            <span>
-                                                                 Alfabeticamente (A-Z) &nbsp;
-                                                            </span>
-                                                            <span class="material-symbols-outlined">
-                                                                arrow_downward
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex align-items-center">
-                                                        <a ngbDropdownItem class="h-100 d-flex">
-                                                            <span>
-                                                                Alfabeticamente (Z-A) &nbsp;
-                                                            </span>
-                                                            <span class="material-symbols-outlined">
-                                                                arrow_upward
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -125,15 +126,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 pt-4 filtros">
-                        <h4>Filtros:</h4>
+                    <div class="col-12 pt-4 filtrado">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <h4 class="m-0 filtroTitle">Filtros:</h4>
+                            <div class="d-flex filtrosActivos">
+                                <div class="filtro " *ngFor="let filtro of getFiltros()"><h6>{{filtro.valor}}</h6><span (click)="quitarFiltro(filtro.nombre)" class="quitarFiltro ps-2 material-symbols-outlined">
+                                    close
+                                </span></div>
+                            </div>
+                            
+                        </div>
+                        
+                        
                     </div>
                 </div>
 
                 <div class="row cuerpo">
                     <div class="videojuegos">
-                        <div class="row" *ngIf="this.videojuegosMostrados">
-                            <div  class="videojuego col-4 p-0" *ngFor="let videojuego of this.videojuegosMostrados">
+                        <div class="row" *ngIf="getVideojuegosMostrados()?.length!=0">
+                            <div  class="videojuego col-4 p-0" *ngFor="let videojuego of getVideojuegosMostrados()">
                                 <div class="p-3 contenedorVideojuego" routerLink="/videojuegos/{{videojuego.nombreVideojuego}}/{{videojuego.nombreConsola}}">
                                     <div class="col-12 p-0 caratula">
                                             <img src="../../../../../assets/caratulas/{{videojuego.url}}.jpg" onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
@@ -158,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row" *ngIf="videojuegosMostrados.length==0">
+                        <div class="row" *ngIf="getVideojuegosMostrados()?.length==0">
                             <div class="col-12 pt-5">
                                 <div class="row">
                                     <div class="col-12 justify-content-center d-flex">

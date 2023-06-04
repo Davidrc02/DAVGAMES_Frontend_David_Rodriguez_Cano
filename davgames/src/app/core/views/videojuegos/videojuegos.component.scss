@@ -32,8 +32,34 @@
         }
     }
 }
-.filtros{
+.filtrado{
     color:white;
+}
+
+.filtrosActivos, .filtroTitle{
+    width:min-content;
+}
+
+.filtro{
+    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:max-content;
+    background-color: gray;
+    padding: 0.3vw;
+    margin-right:0.5vw;
+    border-radius: 1vh;
+    & h6{
+        margin:0;
+    }
+
+    & .quitarFiltro{
+        cursor:pointer;
+        &:hover{
+            color:rgb(65, 62, 62);
+        }
+    }
 }
 
 img{
@@ -153,5 +179,6 @@ img{
 }
 
 .material-symbols-outlined{
+    user-select: none;
     transform: scale(1);
 }
