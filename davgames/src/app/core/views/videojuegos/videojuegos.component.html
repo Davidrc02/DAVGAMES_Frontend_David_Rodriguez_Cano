@@ -7,11 +7,12 @@
                     <div class="col-4">
                         <h1>Videojuegos</h1>
                     </div>
-    
+
                     <div class="col-8 p-0 d-flex justify-content-center filtros">
                         <div class="row w-100 h-100 d-flex align-items-center">
                             <div class="col-6 input-wrapper p-0">
-                                <input (keyup)="buscarJuegos()" id="busquedaTexto" class="input w-100 py-2" type="text" placeholder="Introduzca el titulo a buscar">
+                                <input (keyup)="buscarJuegos()" id="busquedaTexto" class="input w-100 py-2" type="text"
+                                    placeholder="Introduzca el titulo a buscar">
                                 <span class="icono material-symbols-outlined ">
                                     search
                                 </span>
@@ -24,7 +25,9 @@
                                                 Consolas
                                             </span>
                                             <ul ngbDropdownMenu>
-                                                <li (click)="anadeFiltro('consola', consola)" *ngFor="let consola of getConsolas()"><a ngbDropdownItem >{{consola}}</a></li>
+                                                <li (click)="anadeFiltro('consola', consola)"
+                                                    *ngFor="let consola of getConsolas()"><a
+                                                        ngbDropdownItem>{{consola}}</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -34,22 +37,24 @@
                                                 Generos
                                             </span>
                                             <ul ngbDropdownMenu>
-                                                <li (click)="anadeFiltro('genero', genero)" *ngFor="let genero of getGeneros()"><a ngbDropdownItem >{{genero}}</a></li>
+                                                <li (click)="anadeFiltro('genero', genero)"
+                                                    *ngFor="let genero of getGeneros()"><a
+                                                        ngbDropdownItem>{{genero}}</a></li>
                                             </ul>
                                         </div>
                                     </div>
-                        
+
                                     <div class="dropContainer col-4 d-flex justify-content-center align-items-center">
                                         <div ngbDropdown class="dropdown">
                                             <span ngbDropdownToggle class="ddtoggle">
-                                                Ordenar por 
+                                                Ordenar por
                                             </span>
                                             <ul ngbDropdownMenu>
-                                                <li >
+                                                <li (click)="cambiaOrdenacion('alfabeticamente_DES')">
                                                     <div class="d-flex align-items-center">
                                                         <a ngbDropdownItem class="h-100 d-flex">
                                                             <span>
-                                                                 Alfabeticamente (A-Z) &nbsp;
+                                                                Alfabeticamente (A-Z) &nbsp;
                                                             </span>
                                                             <span class="material-symbols-outlined">
                                                                 arrow_downward
@@ -57,7 +62,7 @@
                                                         </a>
                                                     </div>
                                                 </li>
-                                                <li>
+                                                <li (click)="cambiaOrdenacion('alfabeticamente_ASC')">
                                                     <div class="d-flex align-items-center">
                                                         <a ngbDropdownItem class="h-100 d-flex">
                                                             <span>
@@ -69,7 +74,7 @@
                                                         </a>
                                                     </div>
                                                 </li>
-                                                <li >
+                                                <li (click)="cambiaOrdenacion('precio_ASC')">
                                                     <div class="d-flex align-items-center">
                                                         <a ngbDropdownItem class="h-100 d-flex">
                                                             <span>
@@ -81,11 +86,11 @@
                                                         </a>
                                                     </div>
                                                 </li>
-                                                <li>
+                                                <li (click)="cambiaOrdenacion('precio_DES')">
                                                     <div class="d-flex align-items-center">
                                                         <a ngbDropdownItem class="h-100 d-flex">
                                                             <span>
-                                                                 Menor a Mayor precio &nbsp;
+                                                                Menor a Mayor precio &nbsp;
                                                             </span>
                                                             <span class="material-symbols-outlined">
                                                                 arrow_upward
@@ -93,11 +98,11 @@
                                                         </a>
                                                     </div>
                                                 </li>
-                                                <li >
+                                                <li (click)="cambiaOrdenacion('fecha_DES')">
                                                     <div class="d-flex align-items-center">
                                                         <a ngbDropdownItem class="h-100 d-flex">
                                                             <span>
-                                                                 Por fecha de lanzamiento &nbsp;
+                                                                Por fecha de lanzamiento &nbsp;
                                                             </span>
                                                             <span class="material-symbols-outlined">
                                                                 arrow_downward
@@ -105,7 +110,7 @@
                                                         </a>
                                                     </div>
                                                 </li>
-                                                <li>
+                                                <li (click)="cambiaOrdenacion('fecha_ASC')">
                                                     <div class="d-flex align-items-center">
                                                         <a ngbDropdownItem class="h-100 d-flex">
                                                             <span>
@@ -117,54 +122,67 @@
                                                         </a>
                                                     </div>
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
                     <div class="col-12 pt-4 filtrado">
-                        <div class="row d-flex justify-content-start align-items-center">
-                            <h4 class="m-0 filtroTitle">Filtros:</h4>
-                            <div class="d-flex filtrosActivos">
-                                <div class="filtro " *ngFor="let filtro of getFiltros()"><h6>{{filtro.valor}}</h6><span (click)="quitarFiltro(filtro.nombre)" class="quitarFiltro ps-2 material-symbols-outlined">
-                                    close
-                                </span></div>
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="col-8">
+                                <h4 class="m-0 filtroTitle">Filtros:</h4>
+                                <div class="d-flex filtrosActivos">
+                                    <div class="filtro " *ngFor="let filtro of getFiltros()">
+                                        <h6>{{filtro.valor}}</h6><span (click)="quitarFiltro(filtro.nombre)"
+                                            class="quitarFiltro ps-2 material-symbols-outlined">
+                                            close
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            
+
+                            <div class="col-4 d-flex justify-content-end ordenado">
+                                Ordenado por: {{ordenacionTxt}}
+                            </div>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
 
                 <div class="row cuerpo">
                     <div class="videojuegos">
                         <div class="row" *ngIf="getVideojuegosMostrados()?.length!=0">
-                            <div  class="videojuego col-4 p-0" *ngFor="let videojuego of getVideojuegosMostrados()">
-                                <div class="p-3 contenedorVideojuego" routerLink="/videojuegos/{{videojuego.nombreVideojuego}}/{{videojuego.nombreConsola}}">
+                            <div class="videojuego col-4 p-0" *ngFor="let videojuego of getVideojuegosMostrados()">
+                                <div class="p-3 contenedorVideojuego"
+                                    routerLink="/videojuegos/{{videojuego.nombreVideojuego}}/{{videojuego.nombreConsola}}">
                                     <div class="col-12 p-0 caratula">
-                                            <img src="../../../../../assets/caratulas/{{videojuego.url}}.jpg" onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
+                                        <img src="../../../../../assets/caratulas/{{videojuego.url}}.jpg"
+                                            onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
                                     </div>
                                     <div class="col-12 info d-flex justify-content-center ">
                                         <div class="row">
                                             <div class="col-9 d-flex align-items-center justify-content-start texto">
-                                                <h5 class="truncate-text" [ngClass]="{'animacion':animaciones[videojuego.nombreVideojuego]}" (mouseenter)="startAnimation(videojuego.nombreVideojuego)" (mouseleave)="stopAnimation(videojuego.nombreVideojuego)">
+                                                <h5 class="truncate-text"
+                                                    [ngClass]="{'animacion':animaciones[videojuego.nombreVideojuego]}"
+                                                    (mouseenter)="startAnimation(videojuego.nombreVideojuego)"
+                                                    (mouseleave)="stopAnimation(videojuego.nombreVideojuego)">
                                                     {{videojuego.nombreVideojuego}}
                                                 </h5>
                                             </div>
                                             <div class="col-3 d-flex align-items-center justify-content-end">
                                                 <div class="precio">
                                                     <h5>
-                                                        {{videojuego.precio}}€ 
+                                                        {{videojuego.precio}}€
                                                     </h5>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -181,10 +199,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

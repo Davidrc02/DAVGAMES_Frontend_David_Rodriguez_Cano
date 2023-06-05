@@ -16,6 +16,8 @@ export class VideojuegosComponent {
     videojuegosMostrados!: Videojuego[];
     animaciones: { [key: string]: boolean } = {};
     busquedaTexto: string = "";
+    ordenacion: string = "alfabeticamente_DES";
+    ordenacionTxt: string = "alfabeticamente (A-Z)"
 
     constructor(private videojuegosService: VideojuegosService, private filtroService: FiltradoVideojuegoService) {
     }
@@ -56,7 +58,6 @@ export class VideojuegosComponent {
 
     busquedaJuegos(){
         var busquedaTexto = (<HTMLInputElement>document.getElementById("busquedaTexto"))?.value;
-        console.log("Busqueda:'"+busquedaTexto+"'")
         this.busquedaTexto = busquedaTexto;
         var aux = this.videojuegosFiltrados;
         this.videojuegosFiltrados= aux.filter((videojuego: Videojuego) => {
@@ -103,9 +104,55 @@ export class VideojuegosComponent {
                 }
                 return false;
             });
+            this.ordenarMostrados();
             return this.videojuegosMostrados;
         }
         return null
+    }
+
+    ordenarMostrados(){
+        switch(this.ordenacion){
+            case "alfabeticamente_DES":
+                this.ordenacionTxt="Alfabeticamente (A-Z)"
+                this.videojuegosMostrados.sort((a, b) =>
+						a.nombreVideojuego.localeCompare(b.nombreVideojuego)
+					);
+                break;
+            case "alfabeticamente_ASC":
+                this.ordenacionTxt="Alfabeticamente (Z-A)"
+                this.videojuegosMostrados.sort((a, b) =>
+						b.nombreVideojuego.localeCompare(a.nombreVideojuego)
+					);
+                break;
+            case "precio_DES":
+                this.ordenacionTxt="Precio (más baratos primero)"
+                this.videojuegosMostrados.sort((a, b) =>
+						a.precio - b.precio
+					);
+                break;
+            case "precio_ASC":
+                this.ordenacionTxt="Precio (más caros primero)"
+                this.videojuegosMostrados.sort((a, b) =>
+						b.precio - a.precio
+					);
+                break;
+            case "fecha_DES":
+                this.ordenacionTxt="Fecha (más recientes primero)"
+                this.videojuegosMostrados.sort(
+                    (a, b) =>
+                        new Date(b.fechaLanzamiento).getTime() -
+                        new Date(a.fechaLanzamiento).getTime()
+                );
+                break;
+            case "fecha_ASC":
+                this.ordenacionTxt="Fecha (más antiguos primero)"
+                this.videojuegosMostrados.sort(
+                    (a, b) =>
+                        new Date(a.fechaLanzamiento).getTime() -
+                        new Date(b.fechaLanzamiento).getTime()
+                );
+                break;
+        }
     }
 
     getFiltros() {
@@ -147,5 +194,10 @@ export class VideojuegosComponent {
         await this.buscarJuegos();
     }
 
+    async cambiaOrdenacion(ordenacion:string){
+        this.ordenacion=ordenacion;
+        await this.cargarVideojuegos();
+
+    }
 }
 

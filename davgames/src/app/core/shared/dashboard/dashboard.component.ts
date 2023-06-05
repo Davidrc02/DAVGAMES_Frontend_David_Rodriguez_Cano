@@ -48,4 +48,8 @@ export class DashboardComponent {
   get pedidos() {
     return this.carritoService.pedidos;
   }
+
+  isAdmin(){
+    return this.authService.isAdmin();
+  }
 }
