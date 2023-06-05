@@ -6,9 +6,9 @@
                 <div class="col-4 offset-4 justify-content-center d-flex">
                     <div id="buscador" [ngClass]="{'busquedaActivada':buscador}" class="row">
                         <div [ngClass]="{'busquedaActivada':buscador}" id="textoBuscador" class="d-flex justify-content-start align-items-center">
-                            <input [(ngModel)]="this.busqueda" type="text" placeholder="Introduzca un título" name="busqueda" id="busqueda" [ngClass]="{'busquedaActivada':buscador}">
+                            <input [(ngModel)]="this.busqueda" type="text" placeholder="Introduzca un título" name="busqueda" id="busqueda" >
                         </div>
-                        <div (click)="buscar()" id="icono" [ngClass]="{'busquedaActivada':buscador}" class="d-flex justify-content-center align-items-center">
+                        <div (click)="buscar()" id="icono" class="d-flex justify-content-center align-items-center">
                             <span class="material-symbols-outlined ">
                                 search
                             </span>

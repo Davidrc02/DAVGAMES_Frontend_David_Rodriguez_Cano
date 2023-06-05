@@ -23,10 +23,6 @@ export class VideojuegosAdministradorComponent {
 		this.getVideojuegos();
 	}
 
-	ngAfterViewInit(): void {
-		window.scrollTo(0, 200); // Desplaza la ventana al borde superior
-	}
-
 	getVideojuegos(): void {
 		this.videojuegosService
 			.getVideojuegos()
@@ -110,7 +106,6 @@ export class VideojuegosAdministradorComponent {
 			var indiceInicio = (paginaActiva - 1) * elementosPorPagina;
 			var indiceFin = indiceInicio + elementosPorPagina;
 			this.videojuegosMostrados = this.videojuegosOrdenados.slice(indiceInicio, indiceFin);
-			this.ngAfterViewInit();
 		}
 	}
 

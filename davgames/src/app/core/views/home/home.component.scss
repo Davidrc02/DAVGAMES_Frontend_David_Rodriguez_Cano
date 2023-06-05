@@ -25,28 +25,14 @@
     justify-content: center;
     border-radius: 45px;
     background-color: white;
-     &.busquedaActivada{
-        transform: translateX(0.0vw);
-     }
+     
     & #textoBuscador{
-        display:none;
-        width:0;
-        transition: 0.8s;
-        &.busquedaActivada{
-            transition:1.1s;
-            width:21.3vw;
+        width:21.3vw;
             
-        }
-
         & #busqueda {
-            display:none;
+            width:100%;
+            display:block;
             visibility: visible;
-            &.busquedaActivada{
-                width:100%;
-                display:block;
-                animation: apareceBuscador;
-                animation-duration: 1.1s;
-            }
             border: 0;
     
             &:focus {
@@ -59,10 +45,7 @@
     & #icono {
         display: flex;
         justify-content: end;
-        width:100%;
-        &.busquedaActivada{
-            width:6vw;
-        }
+        width:6vw;
         padding: 10px;
         border-radius: 45px;
         background-color: rgb(241, 172, 69);

@@ -10,6 +10,19 @@
             <div class="col-3 pb-3 p-0">
                 <a class="crear" routerLink="/administrador/videojuegos/crearVideojuego">Crear un nuevo videojuego</a>
             </div>
+            <div class="col-6 justify-content-center d-flex pb-3 p-0">
+                <div class="pagination" *ngIf="this.videojuegosOrdenados && this.videojuegosOrdenados.length>10">
+                    <a (click)="cambiaPagina(this.paginaActiva-1)" class="pagination-link">&lt;</a>
+                    <a (click)="cambiaPagina(1)" [ngClass]="{'activa': this.paginaActiva == 1}" class="pagination-link">1</a>
+                    <a class="pagination-link">...</a>
+                    <a (click)="cambiaPagina(paginaActiva+1)" *ngIf="this.paginaActiva == 1" class="pagination-link">{{paginaActiva+1}}</a>
+                    <a [ngClass]="{'activa': this.paginaActiva != 1 && (this.paginaActiva != (roundToInteger(this.videojuegosOrdenados.length/10) + 1))}" *ngIf="this.paginaActiva != 1 && (this.paginaActiva != (roundToInteger(this.videojuegosOrdenados.length/10) + 1))" class="pagination-link">{{paginaActiva}}</a>
+                    <a (click)="cambiaPagina(paginaActiva-1)" *ngIf="this.paginaActiva == (roundToInteger(this.videojuegosOrdenados.length/10) + 1)"class="pagination-link">{{paginaActiva-1}}</a>
+                    <a class="pagination-link">...</a>
+                    <a (click)="cambiaPagina(roundToInteger(this.videojuegosOrdenados.length/10) + 1)" [ngClass]="{'activa': this.paginaActiva == (roundToInteger(this.videojuegosOrdenados.length/10) + 1)}" class="pagination-link">{{roundToInteger(this.videojuegosOrdenados.length/10) + 1}}</a>
+                    <a (click)="cambiaPagina(this.paginaActiva+1)" class="pagination-link">&gt;</a>
+                </div>  
+            </div>   
 
             <div class="tabla">
                 
@@ -97,19 +110,6 @@
                 </div>
                 
             </div>
-            <div class="col-12 justify-content-center d-flex pb-3 p-0">
-                <div class="pagination" *ngIf="this.videojuegosOrdenados && this.videojuegosOrdenados.length>10">
-                    <a (click)="cambiaPagina(this.paginaActiva-1)" class="pagination-link">&lt;</a>
-                    <a (click)="cambiaPagina(1)" [ngClass]="{'activa': this.paginaActiva == 1}" class="pagination-link">1</a>
-                    <a class="pagination-link">...</a>
-                    <a (click)="cambiaPagina(paginaActiva+1)" *ngIf="this.paginaActiva == 1" class="pagination-link">{{paginaActiva+1}}</a>
-                    <a [ngClass]="{'activa': this.paginaActiva != 1 && (this.paginaActiva != (roundToInteger(this.videojuegosOrdenados.length/10) + 1))}" *ngIf="this.paginaActiva != 1 && (this.paginaActiva != (roundToInteger(this.videojuegosOrdenados.length/10) + 1))" class="pagination-link">{{paginaActiva}}</a>
-                    <a (click)="cambiaPagina(paginaActiva-1)" *ngIf="this.paginaActiva == (roundToInteger(this.videojuegosOrdenados.length/10) + 1)"class="pagination-link">{{paginaActiva-1}}</a>
-                    <a class="pagination-link">...</a>
-                    <a (click)="cambiaPagina(roundToInteger(this.videojuegosOrdenados.length/10) + 1)" [ngClass]="{'activa': this.paginaActiva == (roundToInteger(this.videojuegosOrdenados.length/10) + 1)}" class="pagination-link">{{roundToInteger(this.videojuegosOrdenados.length/10) + 1}}</a>
-                    <a (click)="cambiaPagina(this.paginaActiva+1)" class="pagination-link">&gt;</a>
-                </div>  
-            </div>     
         </div>
     </div>
 </div>
