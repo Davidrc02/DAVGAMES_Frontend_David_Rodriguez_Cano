@@ -12,7 +12,7 @@
                         <div class="row w-100 h-100 d-flex align-items-center">
                             <div class="col-6 input-wrapper p-0">
                                 <input (keyup)="buscarJuegos()" id="busquedaTexto" class="input w-100 py-2" type="text"
-                                    placeholder="Introduzca el titulo a buscar">
+                                    placeholder="Introduzca el titulo a buscar" [(ngModel)]="busquedaTexto">
                                 <span class="icono material-symbols-outlined ">
                                     search
                                 </span>

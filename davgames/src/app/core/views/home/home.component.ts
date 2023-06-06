@@ -3,6 +3,8 @@ import { Videojuego } from '../../interfaces/videojuego';
 import { VideojuegosService } from '../../services/videojuegos.service';
 import { tap } from 'rxjs';
 import { CarritoService } from '../../services/carrito.service';
+import { Router } from '@angular/router';
+import { BusquedaService } from '../../services/busqueda.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +19,7 @@ export class HomeComponent {
   videojuegosRecomendados!: Videojuego[];
   videojuegosFranquicia: Videojuego[][]= [];
 
-  constructor(private videojuegosService: VideojuegosService, private carritoService: CarritoService){}
+  constructor(private videojuegosService: VideojuegosService, private carritoService: CarritoService, private router: Router, private busquedaService: BusquedaService){}
 
   ngOnDestroy(){
     if(this.carritoService.carritoVisible)
@@ -55,17 +57,6 @@ export class HomeComponent {
           
         }
     });
-    // franquicias.forEach((franquicia) => {
-    //   var videojuegosPorFranquicia:Videojuego[] = this.videojuegos.filter((videojuego) => {
-    //     return videojuego.franquicia === franquicia &&
-    //            !videojuegosPorFranquicia.some((vj:Videojuego) => vj.nombreVideojuego === videojuego.nombreVideojuego);
-    //   });
-    
-    //   if (videojuegosPorFranquicia.length >= 3) {
-    //     this.videojuegosFranquicia[cont] = videojuegosPorFranquicia;
-    //     cont++;
-    //   }
-    // });
   }
   
   obtenerFranquiciasUnicas(): string[] {
@@ -92,16 +83,10 @@ export class HomeComponent {
   }
 
   buscar(){
-    if(this.buscador){
       if(this.busqueda!=""){
-        //buscar
-      }else{
-        //esconder buscador
-        this.buscador=false;
+        this.busquedaService.setBusqueda(this.busqueda);
+        this.router.navigate(["/videojuegos"])
       }
-    }else{
-      this.buscador=true;
-    }
   }
 
   get carritoVisible() {

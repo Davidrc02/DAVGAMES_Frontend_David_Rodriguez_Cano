@@ -4,6 +4,7 @@ import { VideojuegosService } from '../../services/videojuegos.service';
 import { tap } from 'rxjs';
 import { Filtro } from '../../interfaces/filtro';
 import { FiltradoVideojuegoService } from '../../services/filtradoVideojuego.service';
+import { BusquedaService } from '../../services/busqueda.service';
 
 @Component({
     selector: 'app-videojuegos',
@@ -19,10 +20,13 @@ export class VideojuegosComponent {
     ordenacion: string = "alfabeticamente_DES";
     ordenacionTxt: string = "alfabeticamente (A-Z)"
 
-    constructor(private videojuegosService: VideojuegosService, private filtroService: FiltradoVideojuegoService) {
+    constructor(private videojuegosService: VideojuegosService, private filtroService: FiltradoVideojuegoService, private busquedaService: BusquedaService) {
     }
 
     ngOnInit() {
+        if(this.busquedaService.getBusqueda()!=""){
+            this.busquedaTexto=this.busquedaService.getBusqueda()
+        }
         this.cargarVideojuegos();
     }
 

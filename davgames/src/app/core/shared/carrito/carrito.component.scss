@@ -196,3 +196,22 @@
         color: black;
     }
 }
+
+.pagar{
+    cursor:pointer;
+    user-select: none;
+    border: 4px solid rgb(177, 132, 20);
+    border-radius: 1vh;
+    background-color: goldenrod;
+    color:black;
+    padding-block: 1vh;
+    padding-inline: 1vw;
+    transition:0.2s;
+    &:hover{
+        transform: scale(1.05);
+        transition:0.2s;
+        background-color: rgb(236, 209, 56);
+        border: 4px solid goldenrod;
+
+    }
+}
