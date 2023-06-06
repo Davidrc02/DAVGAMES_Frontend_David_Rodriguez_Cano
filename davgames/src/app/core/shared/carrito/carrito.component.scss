@@ -189,3 +189,10 @@
         }
     }
 }
+
+.quitarPedido{
+    cursor:pointer;
+    &:hover{
+        color: black;
+    }
+}

@@ -8,7 +8,7 @@
                         <img class="caratula" src="../../../../../assets/caratulas/{{videojuego.url}}.jpg" onerror="this.src='../../../../../assets/caratulas/404-not-found.jpg'" alt="Imagen">
                     </div>
                     <div class="col-lg-6 contenedorDatos">
-                        <div class="row datosVideojuego">
+                        <div class="row datosVideojuego m-0">
                             <div class="col-12 ">
                                 <div class="row nombre justify-content-center d-flex">
                                     <h1 class="justify-content-center d-flex nombre">
@@ -16,7 +16,7 @@
                                     </h1>
                                 </div>
                                 <div class="row consolas justify-content-center d-flex">
-                                    <div class="col-10">
+                                    <div class="col-12">
                                         <div class="row justify-content-center d-flex">
                                             <div [ngClass]="{'activa':isConsolaActiva(consola)}" (click)="cambiarConsola(consola)" *ngFor="let consola of consolas" class="col justify-content-center d-flex consola"><h5>{{consola}}</h5></div>
                                         </div>
@@ -56,6 +56,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-10 d-flex justify-content-center align-items-center mt-5">
+                <h4 class="verTodos" routerLink="/videojuegos">
+                    Ver todos
+                </h4>
             </div>
         </div>
     </div>

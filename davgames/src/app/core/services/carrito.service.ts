@@ -19,7 +19,6 @@ export class CarritoService {
   ngOnInit(){
     let pedidos =sessionStorage.getItem("carrito");
     if(pedidos){
-      console.log(JSON.parse(pedidos))
       this.pedidos= JSON.parse(pedidos);
     }
     
@@ -33,6 +32,24 @@ export class CarritoService {
     }
     else{
       pedidoExistente.cantidad++;
+    }
+    sessionStorage.setItem("carrito", JSON.stringify(this.pedidos))
+  }
+
+  eliminaPedido(pedidoAntiguo:Pedido){
+    const pedidoExistente = this.pedidos.find(pedido => pedido.videojuego.nombreVideojuego === pedidoAntiguo.videojuego.nombreVideojuego 
+      && pedido.videojuego.nombreConsola === pedidoAntiguo.videojuego.nombreConsola);
+    if(pedidoExistente){
+      this.pedidos.splice(this.pedidos.indexOf(pedidoExistente), 1);
+    }
+    sessionStorage.setItem("carrito", JSON.stringify(this.pedidos))
+  }
+  
+  reduceCantidad(pedidoNuevo:Pedido){
+    const pedidoExistente = this.pedidos.find(pedido => pedido.videojuego.nombreVideojuego === pedidoNuevo.videojuego.nombreVideojuego 
+      && pedido.videojuego.nombreConsola === pedidoNuevo.videojuego.nombreConsola);
+    if(pedidoExistente){
+      pedidoExistente.cantidad--;
     }
     sessionStorage.setItem("carrito", JSON.stringify(this.pedidos))
   }
