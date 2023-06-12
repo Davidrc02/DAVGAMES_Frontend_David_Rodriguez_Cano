@@ -7,13 +7,19 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { PagoComponent } from './pago/pago.component';
+import { DavcoinComponent } from './davcoin/davcoin.component';
+import { PagarComponent } from './pago/pagar/pagar.component';
 
 @NgModule({
   declarations: [
     LogoComponent,
     CarritoComponent,
     DashboardSecundarioComponent,
-    DashboardComponent
+    DashboardComponent,
+    PagoComponent,
+    DavcoinComponent,
+    PagarComponent
   ],
   imports: [
     SharedRoutingModule,
@@ -26,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     LogoComponent,
     CarritoComponent,
     DashboardSecundarioComponent,
-    DashboardComponent
+    DashboardComponent,
+    PagarComponent
   ]
 })
 export class SharedModule { }

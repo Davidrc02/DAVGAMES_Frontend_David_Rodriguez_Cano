@@ -1,27 +1,26 @@
 import { Component } from '@angular/core';
-import { CarritoService } from '../../services/carrito.service';
 import { Pedido } from '../../interfaces/pedido';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
-  selector: 'app-carrito',
-  templateUrl: './carrito.component.html',
-  styleUrls: ['./carrito.component.scss']
+  selector: 'app-pago',
+  templateUrl: './pago.component.html',
+  styleUrls: ['./pago.component.scss']
 })
-export class CarritoComponent {
+export class PagoComponent {
+  pagar:Boolean=false;
+  pedidos:Pedido[]=[];
 
-  constructor(private carritoService: CarritoService) {
+  constructor(private carritoService: CarritoService){
   }
 
-  toggleCarrito() {
-    this.carritoService.toggleCarrito();
-  }
+  ngOnInit(){
+    this.carritoService.getPedidos().then(resultado => {
+      console.log(resultado)
+      this.pedidos = resultado;
+    });
+    this.pedidos = this.carritoService.pedidos;
 
-  get carritoVisible() {
-    return this.carritoService.carritoVisible;
-  }
-
-  get pedidos() {
-    return this.carritoService.pedidos;
   }
 
   verificarNumero(pedido: any) {
@@ -70,5 +69,9 @@ export class CarritoComponent {
       });
       return total;
     }
+  }
+
+  confirmarPago(){
+    this.pagar=true;
   }
 }

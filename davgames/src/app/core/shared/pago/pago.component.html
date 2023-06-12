@@ -1,0 +1,84 @@
+<app-dashboard></app-dashboard>
+<div class="row" id="pago">
+    <div class="col-12">
+        <div class="row justify-content-center d-flex align-items-center">
+            <div class="col-10" id="titulo">
+                <h1>Pago</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="row justify-content-center d-flex align-items-center">
+            <div class="col-10 p-0">
+                <div class="row">
+                    <div class="col-8 pedidos ps-0">
+                        <div class="row pedido" *ngFor="let pedido of pedidos">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-4 p-0">
+                                        <img class="caratula " src="../../../../assets/caratulas/{{pedido.videojuego.url}}.jpg" onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
+                                    </div>
+                                    <div class="col-8 p-0">
+                                        <div class="datosPedido">
+                                            <h2 class="titulo">{{pedido.videojuego.nombreVideojuego}}</h2>
+                                            <h5 class="empresa">{{pedido.videojuego.nombreConsola}}</h5>
+                                            <div class="cantidadPrecio">
+                                                <h5 class="cantidad">
+                                                    <div class="cantidadCaja">
+                                                        <button (click)="reduceCantidad(pedido)" class="cantidadBtn menos">-</button>
+                                                        <input type="text" (ngModelChange)="verificarNumero(pedido)" [ngModel]="pedido.cantidad" id="cantidad{{pedido.videojuego.nombreVideojuego}}{{pedido.videojuego.nombreConsola}}" class="cantidadValue" value="1" min="1">
+                                                        <button (click)="aumentaCantidad(pedido)" class="cantidadBtn mas">+</button>
+                                                    </div>                                      
+                                                </h5>
+                                                <h5 class="d-flex align-items-center precio">{{pedido.videojuego.precio * pedido.cantidad | number}}€</h5>
+                                            </div>
+                                        </div>
+                                        <span (click)="quitarPedido(pedido)" class="quitarPedido material-symbols-outlined">
+                                            close
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row d-flex justify-content-center align-items-center">
+                                    <div class="total ">
+                                        <h3 class="d-flex justify-content-center align-items-center">
+                                            Resumen
+                                        </h3>
+                                        <div class="col-12">
+                                            <div class="row d-flex justify-content-center align-items-center">
+                                                <div class="col-10 d-flex justify-content-between align-items-center totalPago">
+                                                    <h4>Pago total:</h4>
+                                                    <h4>{{total | number}} €</h4>
+                                                </div>
+                                            </div>
+                                            <div class="row d-flex justify-content-center align-items-center">
+                                                <div class="col-10 d-flex justify-content-between align-items-center">
+                                                    <h5>En davCoins:</h5>
+                                                    <h5 class="d-flex align-items-center">{{total * 10 | number}} <app-davcoin></app-davcoin></h5>
+                                                </div>
+                                            </div>
+                                            <div class="pagar row d-flex justify-content-center align-items-center">
+                                                <div class="col-10 d-flex justify-content-center align-items-center">
+                                                    <h5 class="botonPagar" (click)="confirmarPago()">Pagar</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<app-pagar *ngIf="!pagar"></app-pagar>

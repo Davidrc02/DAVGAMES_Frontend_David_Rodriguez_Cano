@@ -33,12 +33,10 @@ export class RegistroComponent {
     return this.usuario.password == this.Rpassword;
   }
 
-  //Método para enviar los datos a la API e introducir el token en localStorage
   onSubmit(): void {
     if(this.datosCorrectos()){
       this.authService.register(this.usuario).subscribe(response => {
-        //Podríamos guardar la respuesta aquí pero la vamos a guardar en el local storage
-        this.router.navigate(["/"])
+        this.router.navigate(["/login"])
       })
     }
   }

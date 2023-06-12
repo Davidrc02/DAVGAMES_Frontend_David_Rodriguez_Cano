@@ -17,11 +17,20 @@ export class CarritoService {
   constructor() { }
 
   ngOnInit(){
-    let pedidos =sessionStorage.getItem("carrito");
+    this.cargarPedidos(); 
+  }
+
+  cargarPedidos(){
+    let pedidos = sessionStorage.getItem("carrito");
     if(pedidos){
       this.pedidos= JSON.parse(pedidos);
     }
-    
+  }
+
+  async getPedidos(){
+    await this.cargarPedidos();
+
+    return this.pedidos
   }
 
   anadePedido(pedidoNuevo:Pedido){
@@ -53,4 +62,5 @@ export class CarritoService {
     }
     sessionStorage.setItem("carrito", JSON.stringify(this.pedidos))
   }
+
 }

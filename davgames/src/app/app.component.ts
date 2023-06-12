@@ -13,7 +13,7 @@ export class AppComponent {
   ngOnInit(){
     setTimeout(() => {
       this.cargado = true;
-    }, 1500);
+    }, 200);
   }
 
   constructor(private carritoService: CarritoService){

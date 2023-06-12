@@ -39,17 +39,16 @@
                 </div>
             </div>
             <hr>
-            <div class="total d-flex justify-content-between align-items-center">
+            <div *ngIf="pedidos.length!=0" class="total d-flex justify-content-between align-items-center">
                 <h4>
                     Total:
                 </h4>
                 <h4>
                     {{total | currency:'EUR':'symbol':'1.2-2'}}
                 </h4>
-                
             </div>
-            <div class="total mt-4 d-flex justify-content-center align-items-center">
-                <h5 class="pagar">Proceder al pago</h5>
+            <div *ngIf="pedidos.length!=0" class="total d-flex justify-content-center align-items-center">
+                <h5 routerLink="/pago" class="pagar">Proceder al pago</h5>
             </div>
         </div>
         
