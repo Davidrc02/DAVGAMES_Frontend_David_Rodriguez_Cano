@@ -128,15 +128,12 @@
     <!------------- CUERPO ------------->
     <div id="cuerpo" class="row pb-5" >
         <app-tendencias *ngIf="this.videojuegos" [videojuegosPadre]="this.videojuegos"></app-tendencias>
-        
-        <app-videojuego-recomendado class="pt-5" *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[0]"> </app-videojuego-recomendado>
 
-        <app-franquicia class="pt-5" *ngIf="this.videojuegosFranquicia.length!=0" [videojuegosFranquiciaPadre]="this.videojuegosFranquicia[0]"></app-franquicia>
+        <div *ngFor="let number of generateNumbers(0, 2)">
+            <app-videojuego-recomendado *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[number]"> </app-videojuego-recomendado>
 
-        <app-videojuego-recomendado *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[80]"> </app-videojuego-recomendado>
+            <app-franquicia *ngIf="this.videojuegosFranquicia.length!=0" [videojuegosFranquiciaPadre]="this.videojuegosFranquicia[number]"></app-franquicia>
+        </div>
         
-        <app-franquicia class="pt-5" *ngIf="this.videojuegosFranquicia.length!=0" [videojuegosFranquiciaPadre]="this.videojuegosFranquicia[1]"></app-franquicia>
-        
-        <app-videojuego-recomendado *ngIf="this.videojuegosRecomendados" [videojuegoRecomendadoPadre]="this.videojuegosRecomendados[2]"> </app-videojuego-recomendado>
     </div>
 

@@ -65,7 +65,7 @@
                                             </div>
                                             <div class="pagar row d-flex justify-content-center align-items-center">
                                                 <div class="col-10 d-flex justify-content-center align-items-center">
-                                                    <h5 class="botonPagar" (click)="confirmarPago()">Pagar</h5>
+                                                    <h5 class="botonPagar" (click)="confirmarPago()">Efectuar pago</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,4 +81,4 @@
         </div>
     </div>
 </div>
-<app-pagar *ngIf="!pagar"></app-pagar>
+<app-pagar *ngIf="getPagar()==true" [pagoAbierto]="pagar" (valueEmitter)="cerrarPago()"></app-pagar>

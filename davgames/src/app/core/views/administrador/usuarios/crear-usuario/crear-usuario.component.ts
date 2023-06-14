@@ -26,7 +26,8 @@ export class CrearUsuarioComponent {
       email:"",
       password:"",
       comunidadAutonoma:"",
-      facturas:[]
+      facturas:[],
+      saldo:0
     }
   }
 

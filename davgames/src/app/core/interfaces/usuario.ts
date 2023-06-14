@@ -9,5 +9,6 @@ export interface Usuario {
     "password":string,
     "comunidadAutonoma":string,
     "fechaNac"?:Date,
-    "facturas": Factura[]
+    "facturas": Factura[],
+    "saldo": number
 }

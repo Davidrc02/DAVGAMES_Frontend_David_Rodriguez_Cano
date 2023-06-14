@@ -12,14 +12,53 @@
 }
 
 .cajaPago{
+    position: relative;
     width:40vw;
-    height:40vh;
     background-color: rgb(53, 49, 49);
     border-radius: 4vh;
-    
+    color:white;
     & h3{
         padding-top: 6vh;
         color:white;
         height:max-content;
+    }
+}
+
+.eleccion{
+    padding-top: 2vh;
+    font-size: 3vh;
+}
+
+hr{
+    width:100%;
+    padding-top:0.3vh;
+    font-size: 2vh;
+    color:goldenrod;
+    background-color: rgb(223, 255, 44);
+}
+
+.botonPago{
+    cursor:pointer;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding-inline: 3vw;
+    padding-block: 2vh;
+    color:rgb(0, 0, 0);
+    background-color: goldenrod;
+    font-weight: 900;
+    border:0.6vh solid rgb(173, 130, 21);
+    border-radius: 2vh;
+}
+
+.cerrarPago {
+    position: absolute;
+    top:0;
+    right:0;
+    padding-right: 1.5vh;
+    padding-top: 1.5vh;
+    
+    cursor: pointer;
+    &:hover {
+        color: rgb(0, 0, 0);
     }
 }

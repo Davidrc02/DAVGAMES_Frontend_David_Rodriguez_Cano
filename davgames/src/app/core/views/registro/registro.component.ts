@@ -25,7 +25,8 @@ export class RegistroComponent {
       username: "",
       comunidadAutonoma:"",
       email: "",
-      facturas: []
+      facturas: [],
+      saldo:0
     }
   }
 

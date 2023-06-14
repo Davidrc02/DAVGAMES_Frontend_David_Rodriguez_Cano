@@ -8,7 +8,6 @@ import { Usuario } from '../interfaces/usuario';
 })
 export class UsuarioService {
   usuarios: Usuario[] = [];
-  
   constructor(private http: HttpClient) { }
 
   getUsuarios(): Observable<any>{

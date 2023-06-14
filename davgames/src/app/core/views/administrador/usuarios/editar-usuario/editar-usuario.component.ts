@@ -25,7 +25,8 @@ export class EditarUsuarioComponent {
       password:"",
       username:"",
       fechaNac:new Date,
-      facturas:[]
+      facturas:[],
+      saldo:0
     }
     this.obtenerUsuario();
   }

@@ -66,6 +66,16 @@ export class VideojuegoComponent {
     this.carritoService.anadePedido(pedido);
   }
 
+  async compraJuego(){
+    await this.cargarVideojuego();
+    var pedido: Pedido = {
+      "videojuego": this.videojuego,
+      "cantidad": 1
+    }
+    await this.carritoService.anadePedido(pedido);
+    this.router.navigate(['pago']);
+  }
+
   async cambiarConsola(consola:string){
     var urlActual = this.router.url.split("/")
     urlActual[urlActual.length-1]=consola

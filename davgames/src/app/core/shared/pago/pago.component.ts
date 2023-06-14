@@ -74,4 +74,13 @@ export class PagoComponent {
   confirmarPago(){
     this.pagar=true;
   }
+
+  cerrarPago(){
+    console.log("Se cierra")
+    this.pagar=false;
+  }
+
+  getPagar(){
+    return this.pagar;
+  }
 }

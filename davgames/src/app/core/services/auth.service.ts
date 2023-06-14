@@ -11,11 +11,12 @@ export class AuthService {
   nombre!:string | null;
   roles : string[] = [];
   token!:string | null;
+  usuario!:Usuario;
 
   constructor(private http: HttpClient) {
     this.token=localStorage.getItem("token")
     if(this.token){
-      this.obtenerDatos(this.token)
+      this.obtenerDatos(this.token);
     }
   }
   
@@ -43,17 +44,30 @@ export class AuthService {
         tap(response => {
           return response.mensaje
       })
-      );
+    );
   }
 
-  obtenerDatos(token:string){
+  async obtenerDatos(token:string){
     var tokenVerificado = this.verifyToken(token);
     if(tokenVerificado){
       let nueva:any = jwtDecode(token)
       this.nombre = nueva.sub;
-      this.roles = nueva.roles;
       this.roles = nueva.roles.map((rol:any) => rol.authority);
+      await this.obtenerUsuario(token);
     }
+  }
+
+  obtenerUsuario(token:string){
+    const url = 'http://localhost:8080/v0/davgames/api/usuarios/'+this.nombre;
+
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
+
+    this.http.get<any>(url, {headers:headers, observe:'response'}).pipe(
+      tap((response)=>{
+        console.log(response.body)
+        this.usuario=response.body;
+      })
+    ).subscribe();
   }
 
   verifyToken(token:string| null): Observable<boolean> {

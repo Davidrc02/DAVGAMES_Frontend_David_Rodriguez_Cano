@@ -7,20 +7,68 @@
                         ¿Como desea realizar su pago?
                     </h3>
                 </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-6 d-flex justify-content-around align-items-center">
-                        <div class="d-flex justify-content-center align-items-center">
+                <div class="row d-flex justify-content-center eleccion">
+                    <div class="col-8 d-flex justify-content-around align-items-center ">
+                        <div (click)="cambiaEleccion('davcoins')" class="d-flex justify-content-center align-items-center">
                             <label class="px-2" for="davcoins">En davcoins</label>
                             <input class="px-2" type="radio" name="moneda" id="davcoins">
                         </div>
-                        <div class="d-flex justify-content-center align-items-center">
+                        <div (click)="cambiaEleccion('dinero')" class="d-flex justify-content-center align-items-center">
                             <label class="px-2" for="dinero">En dinero</label>
                             <input class="px-2" type="radio" name="moneda" id="dinero">    
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div *ngIf="eleccion!='davcoins' && eleccion!='dinero'" class="row d-flex justify-content-center align-items-center pt-3 pb-5">
+                    <div class="col-8 d-flex justify-content-center align-items-center">
+                        <h3 class="d-flex justify-content-center align-items-center">*Elija un modo de pago*</h3> 
+                    </div>
+                </div>
+                <div *ngIf="eleccion=='davcoins'" class="row d-flex justify-content-center align-items-center pt-4">
+                    <div class="col-8 d-flex justify-content-between align-items-center saldoActual">
+                        <h6>Tu saldo actual en Davcoins es de: </h6>
+                        <h6 class="d-flex">{{saldo | number}}<app-davcoin></app-davcoin></h6>
+                    </div>
+                    <div class="col-8 d-flex justify-content-between align-items-center totalAPagar">
+                        <h6>El total a pagar es de:</h6>
+                        <h6 class="d-flex">{{total * 10 | number}}<app-davcoin></app-davcoin></h6>
+                    </div>
+                    <div class="col-8 d-flex justify-content-between align-items-center">
+                        <hr>
+                    </div>
+                    <div class="col-8 d-flex justify-content-between align-items-center restante">
+                        <h6>Tu salario restante será de:</h6>
+                        <h6 class="d-flex">{{saldo - (total*10) | number}}<app-davcoin></app-davcoin> </h6>
+                    </div>
+                    <div class="col-8 d-flex justify-content-center align-items-center">
+                        <h4 (click)="pagar()" class="botonPago">Pagar</h4>
+                    </div>
+                </div>
+                <div *ngIf="eleccion=='dinero'" class="row d-flex justify-content-center align-items-center pt-4">
+                    <div class="col-8 d-flex justify-content-between align-items-center saldoActual">
+                        <h6>Tu saldo actual en dinero es de: </h6>
+                        <h6 class="d-flex">0€</h6>
+                    </div>
+                    <div class="col-8 d-flex justify-content-between align-items-center totalAPagar">
+                        <h6>El total a pagar es de:</h6>
+                        <h6 class="d-flex">{{total | number}}€</h6>
+                    </div>
+                    <div class="col-8 d-flex justify-content-between align-items-center">
+                        <hr>
+                    </div>
+                    <div class="col-8 d-flex justify-content-between align-items-center restante">
+                        <h6>Tu salario restante será de:</h6>
+                        <h6 class="d-flex">0€ </h6>
+                    </div>
+                    <div class="col-10 d-flex justify-content-center align-items-center pb-5">
+                        <h3 class="d-flex justify-content-center align-items-center">*Función aún no implementada*</h3> 
+                    </div>
+                </div>
+                <div class="material-symbols-outlined cerrarPago" (click)="cerrarPago()">
+                    close
+                </div>
+            </div>    
+        </div> 
     </div>
     
     
