@@ -40,7 +40,9 @@ export class CarritoService {
       this.pedidos.push(pedidoNuevo);
     }
     else{
-      pedidoExistente.cantidad++;
+      if(pedidoExistente.videojuego.stock>pedidoExistente.cantidad){
+        pedidoExistente.cantidad++;
+      }
     }
     sessionStorage.setItem("carrito", JSON.stringify(this.pedidos))
   }
@@ -65,5 +67,6 @@ export class CarritoService {
 
   vaciarCarrito(){
     this.pedidos=[];
+    sessionStorage.setItem("carrito", JSON.stringify(this.pedidos))
   }
 }

@@ -30,10 +30,13 @@ export class CarritoComponent {
 
     if (inputElement) {
       const inputValue = inputElement.value;
-
       if (isNaN(Number(inputValue))) {
         inputElement.value = "1";
         pedido.cantidad=1;
+      }
+      if((Number(inputValue))>pedido.videojuego.stock){
+        inputElement.value = ""+pedido.videojuego.stock;
+        pedido.cantidad=pedido.videojuego.stock;
       }
     }
   }
@@ -48,7 +51,12 @@ export class CarritoComponent {
   }
 
   aumentaCantidad(pedido:Pedido){
-    this.carritoService.anadePedido(pedido);
+    const index = this.carritoService.pedidos.indexOf(pedido);
+    var pedidoArray:any = this.carritoService.pedidos.at(index)
+    var cantidad = pedidoArray?.cantidad
+    if(cantidad && cantidad<pedido.videojuego.stock){
+      this.carritoService.anadePedido(pedido);
+    }
   }
 
   quitarPedido(pedido: Pedido) {

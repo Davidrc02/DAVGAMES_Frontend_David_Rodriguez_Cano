@@ -25,7 +25,7 @@
                                 <h5 class="cantidad">
                                     <div class="cantidadCaja">
                                         <button (click)="reduceCantidad(pedido)" class="cantidadBtn menos">-</button>
-                                        <input type="text" (ngModelChange)="verificarNumero(pedido)" [ngModel]="pedido.cantidad" id="cantidad{{pedido.videojuego.nombreVideojuego}}{{pedido.videojuego.nombreConsola}}" class="cantidadValue" value="1" min="1">
+                                        <input type="text" (ngModelChange)="verificarNumero(pedido)" [ngModel]="pedido.cantidad" id="cantidad{{pedido.videojuego.nombreVideojuego}}{{pedido.videojuego.nombreConsola}}" class="cantidadValue" value="1">
                                         <button (click)="aumentaCantidad(pedido)" class="cantidadBtn mas">+</button>
                                       </div>                                      
                                 </h5>
