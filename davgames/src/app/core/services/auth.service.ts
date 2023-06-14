@@ -11,7 +11,7 @@ export class AuthService {
   nombre!:string | null;
   roles : string[] = [];
   token!:string | null;
-  usuario!:Usuario;
+  usuario!:Usuario |null;
 
   constructor(private http: HttpClient) {
     this.token=localStorage.getItem("token")
@@ -64,7 +64,6 @@ export class AuthService {
 
     this.http.get<any>(url, {headers:headers, observe:'response'}).pipe(
       tap((response)=>{
-        console.log(response.body)
         this.usuario=response.body;
       })
     ).subscribe();
@@ -108,7 +107,8 @@ export class AuthService {
     localStorage.removeItem("roles");
     this.roles=[]
     this.nombre=null;
-    this.token=null
+    this.token=null;
+    this.usuario=null;
   }
 
   get nombreValue(){

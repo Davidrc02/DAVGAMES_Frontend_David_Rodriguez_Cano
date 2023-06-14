@@ -59,7 +59,6 @@ export class UsuariosComponent {
           icon: 'info',
           confirmButtonColor: 'goldenrod'})
       }
-    
     })
   }
 }

@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { tap } from 'rxjs';
+import { Router } from '@angular/router';
+import { catchError, of, tap } from 'rxjs';
 import { Pedido } from 'src/app/core/interfaces/pedido';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { CarritoService } from 'src/app/core/services/carrito.service';
 import { PagoService } from 'src/app/core/services/pago.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pagar',
@@ -17,16 +19,17 @@ export class PagarComponent {
   @Input('pagoAbierto') pagoAbierto!:Boolean;
   @Output() valueEmitter: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
-  constructor(private carritoService: CarritoService, private authService:AuthService, private pagoService: PagoService){
+  constructor(private carritoService: CarritoService, private authService:AuthService, private pagoService: PagoService, private router: Router){
   }
 
   ngOnInit(){
     this.carritoService.getPedidos().then(resultado => {
-      console.log(resultado)
       this.pedidos = resultado;
     });
     this.pedidos = this.carritoService.pedidos;
-    this.saldo = this.authService.usuario.saldo
+    if(this.authService.usuario){
+      this.saldo = this.authService.usuario.saldo
+    }
   }
 
   get total():number{
@@ -51,13 +54,36 @@ export class PagarComponent {
   }
 
   pagar(){
-    this.pagoService.pagar(this.authService.usuario, this.carritoService.pedidos).pipe(
-      tap(response=>{
-        console.log("Test 2 superado: recoge la info del controlador")
-        console.log("Info: "+response)
-        console.log("Body de la info: "+response.body)
-        console.log("Mensaje del body de la info: "+response.body.mensaje)
-      })
-    ).subscribe();
+    if(this.authService.usuario){
+      this.pagoService.pagar(this.authService.usuario, this.carritoService.pedidos).pipe(
+        tap(response=>{
+          Swal.fire({
+            title: response.body.mensaje,
+            icon: 'info',
+            confirmButtonColor: 'goldenrod',
+            background:'#474747',
+            color:'#ffffff',
+            confirmButtonText: 'OK',
+          })
+          this.cerrarPago();
+          this.carritoService.vaciarCarrito();
+          this.router.navigate(['']);
+        }),
+        catchError(error=>{
+          console.error("Ocurrió un error al realizar el pago")
+          Swal.fire({
+            title: 'Ocurrió un error al realizar el pago',
+            icon: 'warning',
+            confirmButtonColor: 'goldenrod',
+            background:'#474747',
+            color:'#ffffff',
+            confirmButtonText: 'OK',
+          })
+          this.cerrarPago();
+          return of(null);
+        })
+      ).subscribe();
+    }
+    
   }
 }

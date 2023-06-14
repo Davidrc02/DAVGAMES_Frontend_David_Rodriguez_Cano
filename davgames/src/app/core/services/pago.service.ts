@@ -14,18 +14,12 @@ export class PagoService {
   pagar(usuario:Usuario, pedidos:Pedido[]): Observable<any> {
     var url = "http://localhost:8080/v0/davgames/api/realizarFactura";
     var token = localStorage.getItem("token");
-
-    console.log("Test 1 superado: llega al servicio")
-    console.log("Token: "+token)
-
-    const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
-
-    const body = {
+    var headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
+    var body = {
       fechaHora: new Date(),
       usuario:usuario,
       pedidos:pedidos
     }
-    console.log("Body peticion: "+body)
     
     return this.http.put<any>(url, body, {headers:headers, observe:'response'});
   }

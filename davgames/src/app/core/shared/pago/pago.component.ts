@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Pedido } from '../../interfaces/pedido';
 import { CarritoService } from '../../services/carrito.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pago',
@@ -11,12 +14,11 @@ export class PagoComponent {
   pagar:Boolean=false;
   pedidos:Pedido[]=[];
 
-  constructor(private carritoService: CarritoService){
+  constructor(private carritoService: CarritoService, private authService: AuthService, private router:Router){
   }
 
   ngOnInit(){
     this.carritoService.getPedidos().then(resultado => {
-      console.log(resultado)
       this.pedidos = resultado;
     });
     this.pedidos = this.carritoService.pedidos;
@@ -72,11 +74,28 @@ export class PagoComponent {
   }
 
   confirmarPago(){
-    this.pagar=true;
+    if(this.authService.isAuth()){
+      this.pagar=true;
+    }
+    else{
+      Swal.fire({
+        title: 'Para efectuar el pago primero debe iniciar sesión.',
+        icon: 'warning',
+        confirmButtonColor: 'goldenrod',
+        background:'#474747',
+        color:'#ffffff',
+        confirmButtonText: 'OK',
+      }).then((result)=>{
+          if(result.isConfirmed){
+            this.router.navigate(['/login'])
+          }
+      })
+      
+    }
+   
   }
 
   cerrarPago(){
-    console.log("Se cierra")
     this.pagar=false;
   }
 

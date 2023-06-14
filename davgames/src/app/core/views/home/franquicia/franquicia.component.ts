@@ -41,7 +41,6 @@ export class FranquiciaComponent {
   }
 
   scrollIzquierda(){
-    console.log("a")
     var slider=document.getElementById("slider"+this.videojuegosFranquicia[0].franquicia);
     if(slider){
       slider.scrollLeft -= 830

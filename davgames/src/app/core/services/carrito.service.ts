@@ -63,4 +63,7 @@ export class CarritoService {
     sessionStorage.setItem("carrito", JSON.stringify(this.pedidos))
   }
 
+  vaciarCarrito(){
+    this.pedidos=[];
+  }
 }
