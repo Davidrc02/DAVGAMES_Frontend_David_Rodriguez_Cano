@@ -13,6 +13,7 @@ import { SharedModule } from './core/shared/shared.module';
 import { VideojuegosComponent } from './core/views/videojuegos/videojuegos.component';
 import { VideojuegoComponent } from './core/views/videojuegos/videojuego/videojuego.component';
 import { HomeModule } from './core/views/home/home.module';
+import { PerfilComponent } from './core/views/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeModule } from './core/views/home/home.module';
     RegistroComponent,
     VentanaModalComponent,
     VideojuegosComponent,
-    VideojuegoComponent
+    VideojuegoComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

@@ -41,6 +41,14 @@ export class DashboardComponent {
     this.carritoService.toggleCarrito();
   }
 
+  get usuario(){
+    return this.authService.usuario?.email;
+  }
+
+  get saldo(){
+    return this.authService.usuario?.saldo;
+  }
+
   get carritoVisible() {
     return this.carritoService.carritoVisible;
   }

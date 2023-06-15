@@ -8,9 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { TendenciasModule } from './tendencias/tendencias.module';
 import { FranquiciaModule } from './franquicia/franquicia.module';
+import { VideojuegoRecomendadoModule } from './videojuego-recomendado/videojuego-recomendado.module';
 @NgModule({
   declarations: [
-    VideojuegoRecomendadoComponent,
     HomeComponent
   ],
   imports: [
@@ -19,10 +19,10 @@ import { FranquiciaModule } from './franquicia/franquicia.module';
     FormsModule,
     NgbModule,
     TendenciasModule,
-    FranquiciaModule
+    FranquiciaModule,
+    VideojuegoRecomendadoModule
   ],
   exports: [
-    VideojuegoRecomendadoComponent,
     CommonModule,
     HomeRoutingModule,
     HomeComponent

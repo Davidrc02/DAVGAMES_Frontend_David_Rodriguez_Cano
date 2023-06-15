@@ -60,10 +60,23 @@ a{
     transform: translate3d(4vh, 7vh, 0px) !important;
     
     & li a{
-        padding-right:100px;
+        width:20vw;
         cursor: pointer;
+        & .usuario:hover{
+            color:rgb(71, 71, 233);    
+            text-decoration: underline;
+        }
+
+        & .davcoins{
+            color:black;
+            font-weight: 700;
+            & .moneda{
+                transform: scale(0.9);
+            }
+        }
         &:hover{
             background-color: rgb(243, 193, 117);
+            
         }
     } 
 }

@@ -3,7 +3,9 @@
         <div class="contenedor-imagen p-0">
             <img src="../../../../../assets/caratulas/{{videojuegoRecomendado.url}}.jpg" alt="">
             <div class="titulo" >
-                <h2 class="{{fuente}}">{{videojuegoRecomendado.nombreVideojuego | uppercase}}</h2>
+                <a routerLink="/videojuegos/{{videojuegoRecomendado.nombreVideojuego}}/{{videojuegoRecomendado.nombreConsola}}">
+                    <h2 class="{{fuente}}" >{{videojuegoRecomendado.nombreVideojuego | uppercase}}</h2>
+                </a>
                 <br>
                 <h3>{{videojuegoRecomendado.precio}}€</h3>
             </div>

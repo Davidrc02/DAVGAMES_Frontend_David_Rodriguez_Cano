@@ -7,6 +7,7 @@ import { VideojuegosComponent } from './core/views/videojuegos/videojuegos.compo
 import { VideojuegoComponent } from './core/views/videojuegos/videojuego/videojuego.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { AdminGuard } from './core/guards/admin.guard';
+import { PerfilComponent } from './core/views/perfil/perfil.component';
 
 const routes: Routes = [
   
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"register", component:RegistroComponent},
   {path:"administrador", loadChildren: () => import("./core/views/administrador/administrador.module").then((m)=>m.AdministradorModule), canActivate:[AuthGuard, AdminGuard]},
   {path:"videojuegos", component: VideojuegosComponent},
-  {path:"videojuegos/:nombreVideojuego/:nombreConsola", component: VideojuegoComponent}
+  {path:"videojuegos/:nombreVideojuego/:nombreConsola", component: VideojuegoComponent},
+  {path:"perfil", component: PerfilComponent}
   
 ];
 

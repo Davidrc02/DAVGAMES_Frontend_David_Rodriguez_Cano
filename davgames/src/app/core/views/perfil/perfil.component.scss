@@ -1,0 +1,11 @@
+.perfil{
+    background-color: #464646;
+    color:goldenrod;
+
+    & .titulo{
+        margin-top: 8vh;
+        & h1{
+            font-weight: 600;
+        }
+    }
+}

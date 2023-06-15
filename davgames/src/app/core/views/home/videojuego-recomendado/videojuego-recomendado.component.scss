@@ -30,7 +30,7 @@
     & h2{
         cursor: pointer;
         &:hover{
-            text-decoration: underline 1px solid rgba(0,0,0,0.7);
+            text-decoration: underline 1.5px solid rgba(0,0,0,0.7);
         }
 
     }
@@ -43,17 +43,12 @@
         width:min-content;
         transition: 0.3s;
         border: 2px solid black;
-        &:hover{
-            transform: scale(1.2);
-            transition: 0.3s;
-        }
+        transform: scale(1.2);     
     }
 }
 
 
-
-.boton-comprar:hover {
-    transition: 0.4s;
-    transform: scale(1.1);
-    background-color: rgb(181, 134, 16);
+a{
+    text-decoration: none;
+    color:black;
 }
