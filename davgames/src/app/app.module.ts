@@ -14,6 +14,7 @@ import { VideojuegosComponent } from './core/views/videojuegos/videojuegos.compo
 import { VideojuegoComponent } from './core/views/videojuegos/videojuego/videojuego.component';
 import { HomeModule } from './core/views/home/home.module';
 import { PerfilComponent } from './core/views/perfil/perfil.component';
+import { PerfilModule } from './core/views/perfil/perfil.module';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,7 @@ import { PerfilComponent } from './core/views/perfil/perfil.component';
     RegistroComponent,
     VentanaModalComponent,
     VideojuegosComponent,
-    VideojuegoComponent,
-    PerfilComponent
+    VideojuegoComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,8 @@ import { PerfilComponent } from './core/views/perfil/perfil.component';
     HttpClientModule,
     FormsModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    PerfilModule
   ],
   providers: [],
   bootstrap: [AppComponent]

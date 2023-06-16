@@ -1,0 +1,63 @@
+.contenido{
+    height:100%;
+    border:0.3vh solid black;
+    
+    border-left: none;
+    padding-bottom:7vh;
+    & .titulo{
+        padding-top: 3vh;
+        padding-inline:2vw;
+        & hr{
+            margin-top:0;
+        }
+    }
+
+    & .apartado{
+        padding-left:2vw;
+        & hr{
+            margin-block:0;
+        }
+    }
+
+    & .descripcion{
+        padding-top: 1vh;
+        padding-left:2vw;
+        & h6{
+            color:rgb(131, 97, 12);
+            font-size:1.6vh;
+        }
+
+    }
+
+    & .dato{
+        padding-block: 0.7vh;
+        padding-left:2vw;
+
+        & input{
+            background-color: black;
+            color:rgb(175, 175, 175);
+            border-radius: 1vh;
+            width: 100%;
+        }
+    }
+
+    & .boton{
+        padding-top:1vh;
+        padding-left:2vw;
+        & button{
+            border-radius: 1vh;
+            color:rgb(255, 255, 255);
+            background-color: green;
+        }
+        
+    }
+
+    & .foto{
+        transform: scale(7);
+    }
+}
+
+.error-message{
+    font-size: 1.6vh;
+    color:red;
+}

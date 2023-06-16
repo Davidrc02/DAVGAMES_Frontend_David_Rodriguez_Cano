@@ -1,11 +1,60 @@
 .perfil{
-    background-color: #464646;
     color:goldenrod;
+    padding-bottom:8vh;
+    background-color: #464646;
+    
 
     & .titulo{
-        margin-top: 8vh;
+        margin-top: 5vh;
         & h1{
             font-weight: 600;
+        }
+    }
+
+    & .contenedor{
+        background-color: #181818;
+        padding:0;
+        margin:0;
+
+        & .navBar{
+            border: 0.3vh solid black;
+            display:flex;
+            flex-direction: column;
+        }
+
+        & .menu{
+            height: 100%;
+            align-items: start;
+            display: flex;
+            justify-content: center;
+            cursor:pointer;
+            
+            .col-12{
+                border-bottom:0.3vh solid black;
+                & .opcionMenu{
+                    
+                    & h4, h5{
+                        
+                        margin:0;
+                        padding-block:2vh;
+                    }   
+                }
+            }
+            
+        }
+
+        & .cerrarSesion{
+            & > div{
+                border-top: 0.3vh solid black;
+                & h5{
+                    cursor:pointer;
+                    margin:0;
+                    margin-block: 2vh;
+                    transition: 0.3s;
+                    color:rgb(255, 0, 0);
+                }
+            }
+            align-items: end;
         }
     }
 }

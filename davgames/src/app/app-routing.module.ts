@@ -17,7 +17,8 @@ const routes: Routes = [
   {path:"administrador", loadChildren: () => import("./core/views/administrador/administrador.module").then((m)=>m.AdministradorModule), canActivate:[AuthGuard, AdminGuard]},
   {path:"videojuegos", component: VideojuegosComponent},
   {path:"videojuegos/:nombreVideojuego/:nombreConsola", component: VideojuegoComponent},
-  {path:"perfil", component: PerfilComponent}
+  {path:"perfil", loadChildren: () => import("./core/views/perfil/perfil.module").then((m)=>m.PerfilModule), canActivate:[AuthGuard]},
+  
   
 ];
 

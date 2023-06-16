@@ -1,10 +1,35 @@
 <app-dashboard></app-dashboard>
 <div class="row perfil">
     <div class="col-12">
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-9">
-                <div class="titulo">
-                    <h1>Mi Perfil</h1>
+        <div class="row d-flex justify-content-center align-items-center mt-5">
+            <div class="col-8 contenedor mt-5">
+                <div class="row m-0">
+                    <div class="col-3 p-0 navBar">
+                        <div class="menu">
+                            <div class="row w-100 navBar-items">
+                                <div class="col-12 navBar-item">
+                                    <div class="opcionMenu d-flex justify-content-center">
+                                        <h4 routerLink="{{usuario.username}}">Perfil</h4>
+                                    </div>
+                                </div>
+                                <div class="col-12 navBar-item">
+                                    <div class="opcionMenu d-flex justify-content-center">
+                                        <h4 routerLink="{{usuario.username}}/facturas">Facturas</h4>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="row cerrarSesion w-100 m-0 d-flex justify-content-center">
+                            <div class="d-flex justify-content-center ">
+                                <h5 (click)="cerrarSesion()">Cerrar Sesión</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9 p-0 ">
+                        <router-outlet></router-outlet>
+                    </div>
                 </div>
             </div>
         </div>

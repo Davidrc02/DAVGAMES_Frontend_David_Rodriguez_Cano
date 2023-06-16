@@ -1,0 +1,125 @@
+<div class="contenido">
+    <div class="row p-0 m-0">
+        <div class="col-12 titulo">
+            <h3>{{usuario.nombre}} {{usuario.apellidos}}</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row p-0 m-0">
+        <div class="col-8 p-0">
+            <div class="apartado">
+                <h5>Datos personales</h5>
+                <hr>
+            </div>
+            <div class="descripcion">
+                <h6>Aquí podrás ver y modificar tús datos personales, entre tus posibilidades podrás cambiar tu nombre de usuario, tu nombre y tus apellidos.
+                </h6>
+            </div>
+            <div class="dato">
+                <div class="row d-flex">
+                    <div><label for="">Email: </label></div>
+                    <div><input type="text" class="campoInput" value="{{usuario.email}}" disabled></div>
+                </div>
+            </div>
+            <div class="datos">
+                <form [formGroup]="cambioDatosForm" (ngSubmit)="submitFormCambios()">
+                    <div class="dato">
+                        <div class="row d-flex">
+                            <div><label for="usuario">Usuario: </label></div>
+                            <div>
+                                <input type="text" class="campoInput" id="usuario" formControlName="usuario">
+                            </div>
+                            <div class="error-message" *ngIf="cambioDatosForm.get('usuario')?.invalid && cambioDatosForm.get('usuario')?.touched">
+                                {{ getErrorMessage('usuario') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dato">
+                        <div class="row d-flex">
+                            <div><label for="nombre">Nombre: </label></div>
+                            <div>
+                                <input type="text" class="campoInput" id="nombre" formControlName="nombre">
+                            </div>
+                            <div class="error-message" *ngIf="cambioDatosForm.get('nombre')?.invalid && cambioDatosForm.get('nombre')?.touched">
+                                {{ getErrorMessage('nombre') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dato">
+                        <div class="row d-flex">
+                            <div><label for="apellidos">Apellidos: </label></div>
+                            <div>
+                                <input type="text" class="campoInput" id="apellidos" formControlName="apellidos">
+                            </div>
+                            <div class="error-message" *ngIf="cambioDatosForm.get('apellidos')?.invalid && cambioDatosForm.get('apellidos')?.touched">
+                                {{ getErrorMessage('apellidos') }}
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="dato">
+                        <div class="row d-flex">
+                            <div><label for="">Fecha Nacimiento: </label></div>
+                            <div>
+                                <input type="text" class="campoInput" value="{{usuario.fechaNac | date:'yyyy-MM-dd'}}" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boton">
+                        <button type="submit" [disabled]="cambioDatosForm.invalid" class="botonEnviar">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+                
+            </div>
+            
+            <div class="apartado pt-3">
+                <h5>Cambio de contraseña</h5>
+                <hr>
+            </div>
+            <div class="descripcion">
+                <h6>Aquí puedes cambiar tu contraseña</h6>
+            </div>
+            
+            <div class="contrasenna">
+                <form [formGroup]="cambioContrasenaForm" (ngSubmit)="submitFormContrasenna()">
+                    <div class="dato">
+                        <div class="row d-flex">
+                            <div><label for="contrasenna">Contraseña: </label></div>
+                            <div><input type="text" name="contrasenna" id="contrasenna" formControlName="contrasenna" class="campoInput"></div>
+                            <div class="error-message" *ngIf="cambioContrasenaForm.get('contrasenna')?.invalid && cambioContrasenaForm.get('contrasenna')?.touched">
+                                {{ getErrorCCMessage('contrasenna') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dato">
+                        <div class="row d-flex">
+                            <div><label for="confirContrasenna">Confirmar Contraseña: </label></div>
+                            <div><input type="text" name="confirContrasenna" id="confirContrasenna" formControlName="confirContrasenna" class="campoInput"></div>
+                            <div class="error-message" *ngIf="cambioContrasenaForm.get('contrasenna')?.invalid && cambioContrasenaForm.get('contrasenna')?.touched">
+                                {{ getErrorCCMessage('confirContrasenna') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="descripcion d-flex align-items-center">
+                        <h6>¡Ambas contraseñas deberán ser identicas, ademas requiere que tengan entre 8-16 caracteres, una letra minuscula, una letra mayúscula y un número al menos!</h6>
+                    </div>
+                    <div class="boton">
+                        <button type="submit" [disabled]="cambioContrasenaForm.invalid" class="botonEnviar">
+                            Cambiar
+                        </button>
+                    </div>
+                </form>
+                
+            </div>
+            
+        </div>
+        <div class="col-4 p-0 d-flex justify-content-center align-items-start">
+            <span class="pt-4 foto material-symbols-outlined">
+                account_circle
+            </span>
+        </div>
+    </div>
+   
+</div>
