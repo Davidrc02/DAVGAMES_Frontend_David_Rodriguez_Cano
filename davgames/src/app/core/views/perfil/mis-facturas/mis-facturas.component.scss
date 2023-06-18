@@ -1,0 +1,95 @@
+.facturasVacias{
+    padding-top:8vh;
+
+    & .sugerencias{
+        margin-block:6vh;
+        text-decoration: none;
+        background-color: #f1ac45;
+        padding-block: 2vh;
+        padding-inline: 1vw;
+        border-radius: 4px;
+        border: 2px solid #c98623;
+        color:rgb(255, 255, 255);
+        font-weight: 900;
+        width: max-content;
+    }
+}
+
+.facturas{
+    padding-bottom:7vh;
+    padding-inline:2vw;
+    
+    & .titulo{
+        margin:0;
+        padding-top: 3vh;
+        
+        & h2{
+            padding:0;
+        }
+    }
+
+    & .contenedorFacturas{
+        user-select: none;
+        & .facturaCargada{
+            margin-bottom: 1vh;
+
+            & .factura{
+                cursor: pointer;
+                position:relative;
+                background-color: rgb(14, 13, 13);
+                height:10vh;
+                border:0.3vh solid black;
+    
+    
+                & .nFactura{
+                    margin:0;
+                    position: absolute;
+                    padding-left: 1vw;
+                }
+    
+                & .total{
+                    position: absolute;
+                    right:45%;
+                    display: flex;
+                    margin: 0;
+                }
+    
+                & .fecha{
+                    position: absolute;
+                    right:10%;
+                    display: flex;
+                    margin: 0;
+                }
+    
+                & .ddown{
+                    position: absolute;
+                    right:1vw;
+                    transform: scale(1.4);
+                }
+            }
+    
+            & .pedidos{               
+                border:0.3vh solid black;
+                border-top:none;
+                & .pedido{
+                    min-height:4vh;
+                    padding-block:1.5vh;
+                    display:flex;
+                    align-items: center;
+                    background-color: rgb(78, 76, 76);
+                    border-bottom: 0.3vh solid black;
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                    & h5, h6{
+                        margin:0;
+                        font-weight: 500;
+                        color:rgb(255, 255, 255);
+                    }
+                }
+            }
+            
+        }
+        
+    }
+}

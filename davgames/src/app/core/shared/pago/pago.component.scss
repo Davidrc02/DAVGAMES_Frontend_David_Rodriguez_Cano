@@ -1,159 +1,501 @@
-#pago {
-    background-color: #464646;
 
-    & #titulo {
-        padding-top: 5vh;
 
-        & h1 {
-            color: goldenrod;
-        }
-    }
-
-    & .pedidos{
-        overflow:auto;
-        margin-bottom: 10vh;
-        height:50vh;
-        & .pedido {
-            margin-left:0;
-            margin-bottom:0.5vh;
-            padding:0.7vh;
-            background-color: rgb(41, 38, 38);
-            position: relative;
-            border: 1px solid goldenrod;
-            display: flex;
-            color: goldenrod;
+@media (min-width:0px) and (max-width:576px){
+    #pago {
+        background-color: #464646;
+        padding-bottom: 10vh;
     
-            & .caratula {
-                width: 100%;
-                border-radius: 2vh;
+        & #titulo {
+            padding-top: 5vh;
+    
+            & h1 {
+                color: goldenrod;
             }
+        }
     
-            & .datosPedido {
-                margin: 0;
-                width: 100%;
-    
-                & .titulo {
-                    padding-left: 0.5vw;
-                    text-align: start;
-                    margin: 0;
+        & .pedidos{
+            overflow:auto;
+            margin-bottom: 10vh;
+            max-height:50vh;
+            & .pedido {
+                margin-left:0;
+                margin-bottom:0.5vh;
+                padding:0.7vh;
+                background-color: rgb(41, 38, 38);
+                position: relative;
+                border: 1px solid goldenrod;
+                display: flex;
+                color: goldenrod;
+        
+                & .caratula {
+                    width: 100%;
+                    border-radius: 2vh;
                 }
-    
-                & .empresa {
-                    padding-left: 0.5vw;
-                    text-align: start;
+        
+                & .datosPedido {
                     margin: 0;
-                }
-    
-                & .cantidadPrecio {
-                    display: flex;
-                    justify-content: space-between;
-    
-                    & .cantidad {
-                        position: absolute;
-                        bottom:0;
+                    width: 100%;
+        
+                    & .titulo {
+                        padding-left: 0.5vw;
                         text-align: start;
                         margin: 0;
-                        padding-bottom: 1vh;
-                        padding-left: 1vw;
-                        transform: scale(1.2);
-                        & .cantidadCaja {
-                            display: flex;
-                            align-items: center;
-    
-                            &:focus-visible {
-                                text-decoration: none;
-                                outline: none;
-                                border: 0;
-                            }
-    
-                            & .cantidadBtn {
-                                width: 2vw;
-                                height: 1.8vw;
-                                font-size: 18px;
-                                border: none;
-                                background-color: #f1f1f1;
-                                cursor: pointer;
-                            }
-    
-                            & .cantidadValue {
-                                width: 2vw;
-                                height: 1.8vw;
-                                text-align: center;
-                                border: 1px solid #ccc;
-                            }
-    
-                            & .cantidadBtn.menos {
-                                border-top-left-radius: 5px;
-                                border-bottom-left-radius: 5px;
-                            }
-    
-                            & .cantidadBtn.mas {
-                                border-top-right-radius: 5px;
-                                border-bottom-right-radius: 5px;
+                    }
+        
+                    & .empresa {
+                        padding-left: 0.5vw;
+                        text-align: start;
+                        margin: 0;
+                    }
+        
+                    & .cantidadPrecio {
+                        display: flex;
+                        justify-content: space-between;
+        
+                        & .cantidad {
+                            position: absolute;
+                            bottom:0;
+                            text-align: start;
+                            margin: 0;
+                            padding-bottom: 1vh;
+                            padding-left: 1vw;
+                            transform: scale(1.2);
+                            & .cantidadCaja {
+                                display: flex;
+                                align-items: center;
+        
+                                &:focus-visible {
+                                    text-decoration: none;
+                                    outline: none;
+                                    border: 0;
+                                }
+        
+                                & .cantidadBtn.menos {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+        
+                                & .cantidadBtn.mas {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
                             }
                         }
-                    }
-    
-                    & .precio {
-                        font-size:5vh;
-                        position: absolute;
-                        bottom:0;
-                        right:0;
-                        margin: 0;
-                        padding-bottom: 0.4vh;
-                        padding-right: 0.2vw;
+        
+                        & .precio {
+                            font-size:5vh;
+                            position: absolute;
+                            bottom:0;
+                            right:0;
+                            margin: 0;
+                            padding-bottom: 0.4vh;
+                            padding-right: 0.2vw;
+                        }
                     }
                 }
             }
-        }
+        
+            .quitarPedido {
+                position: absolute;
+                @media (min-width: 0px) and (max-width:450px){
+                    top:55vw;
+                }
+                @media (min-width: 450px) and (max-width:576px){
+                    top:52vw;
+                }
+                right:2%;
     
-        .quitarPedido {
-            position: absolute;
-            top:0;
-            right:0;
-
-            cursor: pointer;
-            &:hover {
-                color: black;
+                cursor: pointer;
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        
+        & .total{
+            margin-left:1vw;
+            border-radius: 3vh;
+            height:50vh;
+            border: 1px solid goldenrod;
+            background-color: rgb(41, 38, 38);
+    
+            & h3{
+                padding-top:6vh;
+                color:white;
+                font-size:5.5vh;
+            }
+    
+            & h4, h5{
+                color:white;
+            }
+    
+            & .totalPago{
+                padding-top:6vh;
             }
         }
     }
     
-    & .total{
-        margin-left:1vw;
-        border-radius: 3vh;
-        height:50vh;
-        border: 1px solid goldenrod;
-        background-color: rgb(41, 38, 38);
-
-        & h3{
-            padding-top:6vh;
-            color:white;
-            font-size:5.5vh;
+    .pagar{
+        padding-top:8vh;
+        & .botonPagar{
+            cursor:pointer;
+            color:black !important;
+            font-weight: 900;
+            background-color: goldenrod;
+            border-radius: 2vh;
+            border: 0.6vh solid rgb(177, 132, 18);
+            padding-inline:2vw;
+            padding-block: 2vh;
+    
         }
+    
+    }
+    .cantidadBtn {
+        width: 5vw;
+        height: 5.2vw;
+        font-size: 18px;
+        border: none;
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
 
-        & h4, h5{
-            color:white;
-        }
-
-        & .totalPago{
-            padding-top:6vh;
-        }
+    .cantidadValue {
+        width: 5vw;
+        height: 5.2vw;
+        font-size: 3.9vw;
+        text-align: center;
+        border: 1px solid #ccc;
     }
 }
 
-.pagar{
-    padding-top:8vh;
-    & .botonPagar{
-        cursor:pointer;
-        color:black !important;
-        font-weight: 900;
-        background-color: goldenrod;
-        border-radius: 2vh;
-        border: 0.6vh solid rgb(177, 132, 18);
-        padding-inline:2vw;
-        padding-block: 2vh;
-
+@media (min-width:576px) and (max-width:768px){
+    #pago {
+        background-color: #464646;
+        padding-bottom: 10vh;
+    
+        & #titulo {
+            padding-top: 5vh;
+    
+            & h1 {
+                color: goldenrod;
+            }
+        }
+    
+        & .pedidos{
+            overflow:auto;
+            margin-bottom: 10vh;
+            max-height:50vh;
+            & .pedido {
+                margin-left:0;
+                margin-bottom:0.5vh;
+                padding:0.7vh;
+                background-color: rgb(41, 38, 38);
+                position: relative;
+                border: 1px solid goldenrod;
+                display: flex;
+                color: goldenrod;
+        
+                & .caratula {
+                    width: 100%;
+                    border-radius: 2vh;
+                }
+        
+                & .datosPedido {
+                    margin: 0;
+                    width: 100%;
+        
+                    & .titulo {
+                        padding-left: 0.5vw;
+                        text-align: start;
+                        margin: 0;
+                    }
+        
+                    & .empresa {
+                        padding-left: 0.5vw;
+                        text-align: start;
+                        margin: 0;
+                    }
+        
+                    & .cantidadPrecio {
+                        display: flex;
+                        justify-content: space-between;
+        
+                        & .cantidad {
+                            position: absolute;
+                            bottom:0;
+                            text-align: start;
+                            margin: 0;
+                            padding-bottom: 1vh;
+                            padding-left: 1vw;
+                            transform: scale(1.2);
+                            & .cantidadCaja {
+                                display: flex;
+                                align-items: center;
+        
+                                &:focus-visible {
+                                    text-decoration: none;
+                                    outline: none;
+                                    border: 0;
+                                }
+        
+                                & .cantidadBtn.menos {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+        
+                                & .cantidadBtn.mas {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                            }
+                        }
+        
+                        & .precio {
+                            font-size:5vh;
+                            position: absolute;
+                            bottom:0;
+                            right:0;
+                            margin: 0;
+                            padding-bottom: 0.4vh;
+                            padding-right: 0.2vw;
+                        }
+                    }
+                }
+            }
+        
+            .quitarPedido {
+                position: absolute;
+                top:0;
+                right:0;
+    
+                cursor: pointer;
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        
+        & .total{
+            margin-left:1vw;
+            border-radius: 3vh;
+            height:50vh;
+            border: 1px solid goldenrod;
+            background-color: rgb(41, 38, 38);
+    
+            & h3{
+                padding-top:6vh;
+                color:white;
+                font-size:5.5vh;
+            }
+    
+            & h4, h5{
+                color:white;
+            }
+    
+            & .totalPago{
+                padding-top:6vh;
+            }
+        }
+    }
+    
+    .pagar{
+        padding-top:8vh;
+        & .botonPagar{
+            cursor:pointer;
+            color:black !important;
+            font-weight: 900;
+            background-color: goldenrod;
+            border-radius: 2vh;
+            border: 0.6vh solid rgb(177, 132, 18);
+            padding-inline:2vw;
+            padding-block: 2vh;
+    
+        }
+    
+    }
+    .cantidadBtn {
+        width: 3vw;
+        height: 3.2vw;
+        font-size: 18px;
+        border: none;
+        background-color: #f1f1f1;
+        cursor: pointer;
     }
 
+    .cantidadValue {
+        width: 3vw;
+        height: 3.2vw;
+        font-size: 1.9vw;
+        text-align: center;
+        border: 1px solid #ccc;
+    }
+}
+
+@media (min-width:768px) {
+    #pago {
+        background-color: #464646;
+        padding-bottom: 10vh;
+    
+        & #titulo {
+            padding-top: 5vh;
+    
+            & h1 {
+                color: goldenrod;
+            }
+        }
+    
+        & .pedidos{
+            overflow:auto;
+            margin-bottom: 10vh;
+            max-height:50vh;
+            & .pedido {
+                margin-left:0;
+                margin-bottom:0.5vh;
+                padding:0.7vh;
+                background-color: rgb(41, 38, 38);
+                position: relative;
+                border: 1px solid goldenrod;
+                display: flex;
+                color: goldenrod;
+        
+                & .caratula {
+                    width: 100%;
+                    border-radius: 2vh;
+                }
+        
+                & .datosPedido {
+                    margin: 0;
+                    width: 100%;
+        
+                    & .titulo {
+                        padding-left: 0.5vw;
+                        text-align: start;
+                        margin: 0;
+                    }
+        
+                    & .empresa {
+                        padding-left: 0.5vw;
+                        text-align: start;
+                        margin: 0;
+                    }
+        
+                    & .cantidadPrecio {
+                        display: flex;
+                        justify-content: space-between;
+        
+                        & .cantidad {
+                            position: absolute;
+                            bottom:0;
+                            text-align: start;
+                            margin: 0;
+                            padding-bottom: 1vh;
+                            padding-left: 1vw;
+                            transform: scale(1.2);
+                            & .cantidadCaja {
+                                display: flex;
+                                align-items: center;
+        
+                                &:focus-visible {
+                                    text-decoration: none;
+                                    outline: none;
+                                    border: 0;
+                                }
+        
+                                & .cantidadBtn.menos {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+        
+                                & .cantidadBtn.mas {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                            }
+                        }
+        
+                        & .precio {
+                            font-size:5vh;
+                            position: absolute;
+                            bottom:0;
+                            right:0;
+                            margin: 0;
+                            padding-bottom: 0.4vh;
+                            padding-right: 0.2vw;
+                        }
+                    }
+                }
+            }
+        
+            .quitarPedido {
+                position: absolute;
+                top:0;
+                right:0;
+    
+                cursor: pointer;
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        
+        & .total{
+            margin-left:1vw;
+            border-radius: 3vh;
+            height:50vh;
+            border: 1px solid goldenrod;
+            background-color: rgb(41, 38, 38);
+    
+            & h3{
+                padding-top:6vh;
+                color:white;
+                font-size:5.5vh;
+            }
+    
+            & h4, h5{
+                color:white;
+            }
+    
+            & .totalPago{
+                padding-top:6vh;
+            }
+        }
+    }
+    
+    .pagar{
+        padding-top:8vh;
+        & .botonPagar{
+            cursor:pointer;
+            color:black !important;
+            font-weight: 900;
+            background-color: goldenrod;
+            border-radius: 2vh;
+            border: 0.6vh solid rgb(177, 132, 18);
+            padding-inline:2vw;
+            padding-block: 2vh;
+    
+        }
+    
+    }
+    .cantidadBtn {
+        width: 2vw;
+        height: 1.8vw;
+        font-size: 18px;
+        border: none;
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .cantidadValue {
+        width: 2vw;
+        height: 1.8vw;
+        font-size: 1.5vw;
+        text-align: center;
+        border: 1px solid #ccc;
+    }
 }

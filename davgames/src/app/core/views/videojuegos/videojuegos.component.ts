@@ -17,13 +17,15 @@ export class VideojuegosComponent {
     videojuegosMostrados!: Videojuego[];
     animaciones: { [key: string]: boolean } = {};
     busquedaTexto: string = "";
-    ordenacion: string = "alfabeticamente_DES";
-    ordenacionTxt: string = "alfabeticamente (A-Z)"
+    ordenacion!: string;
+    ordenacionTxt!: string;
 
     constructor(private videojuegosService: VideojuegosService, private filtroService: FiltradoVideojuegoService, private busquedaService: BusquedaService) {
     }
 
     ngOnInit() {
+        this.ordenacion = "alfabeticamente_DES";
+        this.ordenacionTxt = "Alfabeticamente (A-Z)";
         if(this.busquedaService.getBusqueda()!=""){
             this.busquedaTexto=this.busquedaService.getBusqueda()
         }

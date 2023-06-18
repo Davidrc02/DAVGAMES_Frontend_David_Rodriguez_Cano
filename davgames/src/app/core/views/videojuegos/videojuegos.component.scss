@@ -99,7 +99,19 @@ img{
             border-radius: 0 0 2vh 2vh; 
             background-color: rgb(90, 93, 90); 
             color:white;
-            height:4vw;
+            @media (min-width:0px) {
+                height:12vw;
+            }
+            @media (min-width:576px) {
+                height:9vw;
+            }
+            @media (min-width:768px) {
+                height:6vw;
+            }
+            @media (min-width:1200px) {
+                height:4vw;
+            }
+            
             & > .row{
                 width:100%;
                 padding-block: 1vw;

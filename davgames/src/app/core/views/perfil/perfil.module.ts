@@ -7,6 +7,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { MisFacturasComponent } from './mis-facturas/mis-facturas.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DavcoinComponent } from '../../shared/davcoin/davcoin.component';
 
 @NgModule({
   declarations: [

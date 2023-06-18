@@ -73,7 +73,7 @@ export class AuthService {
     if(!token){
       token=""
     }
-    const url = 'http://localhost:8080/v0/proyectoJWT/auth/verifyToken';
+    const url = 'http://localhost:8080/v0/davgames/auth/verifyToken';
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': token
@@ -118,5 +118,31 @@ export class AuthService {
       return this.nombre;
     }
     return null  
+  }
+
+  cambiarContrasenna(usuario:Usuario, contrasenna:string): Observable<any>{
+    const url = 'http://localhost:8080/v0/davgames/api/usuarios/cambiarContrasenna/'+usuario.email;
+    const body = {
+      mensaje: contrasenna
+    };
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
+
+    return this.http.put<any>(url, body, {headers:headers, observe:'response'}).pipe(
+      tap(response=>{
+        console.log(response);
+      })
+    );
+  }
+
+  editarUsuario(id:number|undefined, usuario:Usuario): Observable<any>{
+    const url = 'http://localhost:8080/v0/davgames/api/usuarios/'+id;
+    const body = usuario;
+
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
+    return this.http.put<any>(url, body, {headers:headers, observe:'response'}).pipe(
+      tap(response=>{
+        console.log(response);
+      })
+    );
   }
 }

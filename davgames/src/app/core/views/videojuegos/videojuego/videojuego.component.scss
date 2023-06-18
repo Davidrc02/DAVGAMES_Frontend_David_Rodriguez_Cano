@@ -11,8 +11,12 @@
     & .contenedorDatos{
         height:100%;
         & .datosVideojuego{
+            @media (min-width: 1200px){
+                min-height: 22.4vw;
+            }
             padding-top: 3vh;
-            height:22.5vw;
+            padding-bottom:3vh;
+            height:auto;
             margin-inline:1vw;
 
             box-shadow: 18px 18px 60px black;

@@ -12,18 +12,18 @@
         <div class="row justify-content-center d-flex align-items-center">
             <div class="col-10 p-0">
                 <div class="row">
-                    <div class="col-8 pedidos ps-0">
+                    <div class="col-lg-8 pedidos ps-0">
                         <div class="row pedido" *ngFor="let pedido of pedidos">
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-4 p-0">
+                                    <div class="col-12 col-sm-6 col-md-4 p-0">
                                         <img class="caratula " src="../../../../assets/caratulas/{{pedido.videojuego.url}}.jpg" onerror="this.src='../../../../assets/caratulas/404-not-found.jpg'" alt="">
                                     </div>
-                                    <div class="col-8 p-0">
+                                    <div class="col-12 col-sm-6 col-md-8 p-0 pt-3">
                                         <div class="datosPedido">
                                             <h2 class="titulo">{{pedido.videojuego.nombreVideojuego}}</h2>
-                                            <h5 class="empresa">{{pedido.videojuego.nombreConsola}}</h5>
-                                            <div class="cantidadPrecio">
+                                            <h5 class="empresa d-none d-md-flex">{{pedido.videojuego.nombreConsola}}</h5>
+                                            <div class="cantidadPrecio pt-5 pt-md-0">
                                                 <h5 class="cantidad">
                                                     <div class="cantidadCaja">
                                                         <button (click)="reduceCantidad(pedido)" class="cantidadBtn menos">-</button>
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 ">
+                    <div class="col-lg-4 ">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row d-flex justify-content-center align-items-center">

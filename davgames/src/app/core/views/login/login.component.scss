@@ -31,8 +31,6 @@
         & #login {
             opacity:1;
             height: 62vh;
-            margin-left: 3em;
-            margin-top: 3em;
             border-radius: 10px;
 
             & #contenedor-login{
@@ -62,7 +60,7 @@
 
 .input-container {
     position: relative;
-    margin-bottom: 5.5vh;
+    height:12vh;
 }
 
 input {
@@ -138,4 +136,91 @@ a {
 
 .underline-progress:hover::before {
     width: 100%;
+}
+
+.error-message{
+    font-size: 1.8vh;
+    color:rgb(0, 0, 0);
+}
+
+
+@media (min-width: 0px) and (max-width:576px){
+    #login{
+        margin-left: 6vw;
+        margin-top: 6vw;
+    }
+}
+@media (min-width: 576px) and (max-width:644px){
+    #login{
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+    .cuerpo{
+        background-position: -50vw;
+    }
+}
+
+@media (min-width: 644px) and (max-width:700px){
+    #login{
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+    .cuerpo{
+        background-position: -40vw;
+    }
+}
+
+@media (min-width: 700px) and (max-width:768px){
+    #login{
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+    .cuerpo{
+        background-position: -30vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width:850px){
+    #login{
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+    .cuerpo{
+        background-position: -25vw;
+    }
+}
+
+@media (min-width: 850px) and (max-width:900px){
+    #login{
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+    .cuerpo{
+        background-position: -20vw;
+    }
+}
+
+@media (min-width: 900px) and (max-width:992px){
+    #login{
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+    .cuerpo{
+        background-position: -10vw;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width:1200px){
+    #login{
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+}
+
+@media (min-width: 1200px) {
+    #login{
+        margin-left: 3em;
+        margin-top: 3em;
+    }
 }

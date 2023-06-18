@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +12,49 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username: string ="";
   password: string ="";
+  loginForm!: FormGroup;
+  formSubmitted:boolean = false;
+  erroresCampos: any = {
+    required: 'El campo es requerido',
+  };
 
-  constructor(private authService: AuthService, private router:Router){}
+  constructor(private authService: AuthService,private formBuilder: FormBuilder, private router:Router){}
+
+  ngOnInit(){
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  getErrorMessage(fieldName: string): string {
+    const field = this.loginForm.get(fieldName);
+    if(field){
+      if (field.hasError('required')) {
+        return this.erroresCampos.required;
+      }
+    }
+    return '';
+  }
 
   //Método para enviar los datos a la API e introducir el token en localStorage
   onSubmit():void{
-    this.authService.login(this.username, this.password).subscribe(response => {
+    this.formSubmitted=true;
+
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(response => {
       //Podríamos guardar la respuesta aquí pero la vamos a guardar en el local storage
+      Swal.fire({
+        title: 'Has iniciado sesión de forma satisfactoria',
+        icon: 'info',
+        confirmButtonColor: 'goldenrod',
+        background:'#474747',
+        color:'#ffffff',
+        confirmButtonText: 'OK',
+      })
       this.router.navigate(["/"])
     })
   }

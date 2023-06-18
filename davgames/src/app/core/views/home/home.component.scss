@@ -1,20 +1,283 @@
 
 
-@keyframes apareceBuscador{
-    0%{
-        display:none;
-        visibility: hidden;
+@media (min-width: 0px) and (max-width: 576px) {
+    
+    
+    #home, #cuerpo{
+        background-color: #464646;
     }
-    60%{
-        display:block;
-        visibility: hidden;
+    
+    #buscador {
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        border-radius: 45px;
+        background-color: white;
+         
+        & #textoBuscador{
+            width:55.3vw;
+                
+            & #busqueda {
+                width:100%;
+                display:block;
+                visibility: visible;
+                border: 0;
+        
+                &:focus {
+                    border: 0;
+                    outline: none;
+                }
+            }
+        }
+    
+        & #icono {
+            display: flex;
+            justify-content: end;
+            width:13vw;
+            padding: 10px;
+            border-radius: 45px;
+            background-color: rgb(241, 172, 69);
+    
+            & span {
+                cursor: pointer;
+                transform: scale(1.5);
+            }
+        }
     }
-    70%{
-        display:block;
-        visibility: visible;
+    
+    .dropdown{
+        cursor: pointer;
+        color:goldenrod;
+        & .dropdown-menu {
+            --bs-dropdown-min-width: 0;
+        }
+        & ul{
+            background-color: #333232;
+            & li{
+                
+                & a{
+                    cursor: pointer;
+                    color:white;
+                    &:hover{
+                        background-color: #424141;
+                    }
+                }
+            }
+        }
+        
     }
+
 }
 
+@media (min-width: 576px) and (max-width: 768px) {
+
+    
+    #home, #cuerpo{
+        background-color: #464646;
+    }
+    
+    #buscador {
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        border-radius: 45px;
+        background-color: white;
+         
+        & #textoBuscador{
+            width:50.3vw;
+                
+            & #busqueda {
+                width:100%;
+                display:block;
+                visibility: visible;
+                border: 0;
+        
+                &:focus {
+                    border: 0;
+                    outline: none;
+                }
+            }
+        }
+    
+        & #icono {
+            display: flex;
+            justify-content: end;
+            width:12vw;
+            padding: 10px;
+            border-radius: 45px;
+            background-color: rgb(241, 172, 69);
+    
+            & span {
+                cursor: pointer;
+                transform: scale(1.5);
+            }
+        }
+    }
+    
+    .dropdown{
+        cursor: pointer;
+        color:goldenrod;
+        & .dropdown-menu {
+            --bs-dropdown-min-width: 0;
+        }
+        & ul{
+            background-color: #333232;
+            & li{
+                
+                & a{
+                    cursor: pointer;
+                    color:white;
+                    &:hover{
+                        background-color: #424141;
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+    
+    #home, #cuerpo{
+        background-color: #464646;
+    }
+    
+    #buscador {
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        border-radius: 45px;
+        background-color: white;
+         
+        & #textoBuscador{
+            width:35.3vw;
+                
+            & #busqueda {
+                width:100%;
+                display:block;
+                visibility: visible;
+                border: 0;
+        
+                &:focus {
+                    border: 0;
+                    outline: none;
+                }
+            }
+        }
+    
+        & #icono {
+            display: flex;
+            justify-content: end;
+            width:8vw;
+            padding: 10px;
+            border-radius: 45px;
+            background-color: rgb(241, 172, 69);
+    
+            & span {
+                cursor: pointer;
+                transform: scale(1.5);
+            }
+        }
+    }
+    
+    .dropdown{
+        cursor: pointer;
+        color:goldenrod;
+        & .dropdown-menu {
+            --bs-dropdown-min-width: 0;
+        }
+        & ul{
+            background-color: #333232;
+            & li{
+                
+                & a{
+                    cursor: pointer;
+                    color:white;
+                    &:hover{
+                        background-color: #424141;
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    
+
+    #home, #cuerpo{
+        background-color: #464646;
+    }
+    
+    #buscador {
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        border-radius: 45px;
+        background-color: white;
+         
+        & #textoBuscador{
+            width:25.3vw;
+                
+            & #busqueda {
+                width:100%;
+                display:block;
+                visibility: visible;
+                border: 0;
+        
+                &:focus {
+                    border: 0;
+                    outline: none;
+                }
+            }
+        }
+    
+        & #icono {
+            display: flex;
+            justify-content: end;
+            width:6vw;
+            padding: 10px;
+            border-radius: 45px;
+            background-color: rgb(241, 172, 69);
+    
+            & span {
+                cursor: pointer;
+                transform: scale(1.5);
+            }
+        }
+    }
+    
+    .dropdown{
+        cursor: pointer;
+        color:goldenrod;
+        & .dropdown-menu {
+            --bs-dropdown-min-width: 0;
+        }
+        & ul{
+            background-color: #333232;
+            & li{
+                
+                & a{
+                    cursor: pointer;
+                    color:white;
+                    &:hover{
+                        background-color: #424141;
+                    }
+                }
+            }
+        }
+        
+    }
+
+}
+
+@media (min-width: 1200px){
+    
 #home, #cuerpo{
     background-color: #464646;
 }
@@ -60,9 +323,6 @@
 .dropdown{
     cursor: pointer;
     color:goldenrod;
-    animation-name: alargar; /* nombre del keyframe */
-    animation-duration: 2s; /* duración de la animación en segundos */
-    animation-fill-mode: forwards;
     & .dropdown-menu {
         --bs-dropdown-min-width: 0;
     }
@@ -81,3 +341,6 @@
     }
     
 }
+}
+
+

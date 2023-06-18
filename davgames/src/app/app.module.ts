@@ -15,6 +15,7 @@ import { VideojuegoComponent } from './core/views/videojuegos/videojuego/videoju
 import { HomeModule } from './core/views/home/home.module';
 import { PerfilComponent } from './core/views/perfil/perfil.component';
 import { PerfilModule } from './core/views/perfil/perfil.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PerfilModule } from './core/views/perfil/perfil.module';
     FormsModule,
     SharedModule,
     HomeModule,
-    PerfilModule
+    PerfilModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

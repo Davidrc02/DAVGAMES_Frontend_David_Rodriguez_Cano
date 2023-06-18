@@ -2,9 +2,67 @@
     <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
         <app-logo></app-logo>
     </div>
-    <div class="col-4">
-        <div class="row h-100 d-flex justify-content-end align-items-center">
-            <div *ngIf="isAdmin()" class="col-5 d-flex justify-content-center align-items-center">
+    <div class="col-12 col-md-4 navContainer">
+        <div class="row h-100 d-flex d-md-none justify-content-center justify-content-md-end align-items-center navegador">
+            <div (click)="cambiaMenu()" class="col-12 d-flex justify-content-center justify-content-md-end py-4 pe-4">
+                <span  class="material-symbols-outlined">
+                    menu
+                </span>
+            </div>
+            <div class="col-12 " *ngIf="menuAbierto">
+                <div class="row">
+                    <div *ngIf="isAdmin()" class="py-3 col-8 d-flex justify-content-center align-items-center">
+                        <div class="row">
+                            <div class="col-12 d-flex align-items-center">
+                                <div>
+                                    <h6>
+                                        <a class="underline-progress" routerLink="/administrador">
+                                            Administrar tienda
+                                        </a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col py-3">
+                        <div class="row h-100">
+                            <div class="col-12 d-flex justify-content-center align-items-center carrito">
+                                <div (click)="toggleCarrito()">
+                                    <span class="dropdown-toggle material-symbols-outlined" >
+                                        shopping_cart
+                                    </span>
+                                    <span *ngIf="pedidos.length!=0" class="contadorCarrito">
+                                        {{pedidos.length}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col py-3">
+                        <div class="row h-100">
+                            <div class="col-12 d-flex justify-content-center align-items-center">
+                                <div ngbDropdown class="dropdown">
+                                    <span id="dropdownMenuButton2" ngbDropdownToggle class="h-100 material-symbols-outlined">
+                                        account_circle
+                                    </span>
+                                    <ul class="lista" ngbDropdownMenu aria-labelledby="dropdownMenuButton2">
+                                        <li *ngIf="isAuthenticated()" routerLink="/perfil"><a ngbDropdownItem>Bienvenido, <span class="usuario">{{usuario}}</span>!<br><span class="davcoins d-flex align-items-center">{{saldo | number}}<app-davcoin class="moneda"></app-davcoin></span></a></li>
+                                        <li *ngIf="!isAuthenticated()"><a routerLink="/login" ngbDropdownItem>Iniciar Sesión</a>
+                                        </li>
+                                        <li *ngIf="isAuthenticated()"><a class="cerrarSesion" (click)="logout()"
+                                                ngbDropdownItem><span>Cerrar Sesión</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="row h-100 d-none d-md-flex justify-content-end align-items-center navegador">
+            <div *ngIf="isAdmin()" class="col-5 col-md-6 col-xl-6 d-flex justify-content-center align-items-center">
                 <div class="row">
                     <div class="col-12 d-flex align-items-center">
                         <div>
@@ -18,12 +76,13 @@
                 </div>
             </div>
 
-            <div class="col-2">
+            <div class="col-3">
                 <div class="row h-100">
                     <div class="col-12 d-flex justify-content-center align-items-center carrito">
-                        <div (click)="toggleCarrito()">
+                        <div (click)="toggleCarrito()" class="carro">
                             <span class="dropdown-toggle material-symbols-outlined" >
                                 shopping_cart
+                                
                             </span>
                             <span *ngIf="pedidos.length!=0" class="contadorCarrito">
                                 {{pedidos.length}}
@@ -33,7 +92,7 @@
                 </div>
             </div>
 
-            <div class="col-2">
+            <div class="col-3">
                 <div class="row h-100">
                     <div class="col-12 d-flex justify-content-center align-items-center">
                         <div ngbDropdown class="dropdown">
@@ -41,7 +100,7 @@
                                 account_circle
                             </span>
                             <ul class="lista" ngbDropdownMenu aria-labelledby="dropdownMenuButton2">
-                                <li *ngIf="isAuthenticated()" routerLink="/perfil"><a ngbDropdownItem>Bienvenido, <span class="usuario">{{usuario}}</span>!<br><span class="davcoins d-flex align-items-center">{{saldo}}<app-davcoin class="moneda"></app-davcoin></span></a></li>
+                                <li *ngIf="isAuthenticated()" routerLink="/perfil"><a ngbDropdownItem>Bienvenido, <span class="usuario">{{usuario}}</span>!<br><span class="davcoins d-flex align-items-center">{{saldo | number}}<app-davcoin class="moneda"></app-davcoin></span></a></li>
                                 <li *ngIf="!isAuthenticated()"><a routerLink="/login" ngbDropdownItem>Iniciar Sesión</a>
                                 </li>
                                 <li *ngIf="isAuthenticated()"><a class="cerrarSesion" (click)="logout()"

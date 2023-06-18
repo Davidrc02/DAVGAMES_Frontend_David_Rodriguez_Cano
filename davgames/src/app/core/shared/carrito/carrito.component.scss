@@ -1,25 +1,5 @@
-@keyframes apareceCarrito {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 29.5vw;
-    }
-}
-
-@keyframes apareceBoton {
-    from {
-        right: -1.5vw;
-    }
-
-    to {
-        right: 28vw;
-    }
-}
 
 .bloqueCarrito {
-    width: 29.5vw;
     position: fixed;
     top: 50%;
     padding-top: 22vh;
@@ -40,7 +20,6 @@
     padding-top: 3vh;
     background-color: #2d2c2c;
     height: 100%;
-    width:27.9vw;
     color: #f1ac45;
 }
 
@@ -109,7 +88,6 @@
     border: 2px solid black;
     background-color: #f1ac45;
     color: rgb(0, 0, 0);
-    right: 28vw;
     top: calc(33% + 23vh);
     z-index: 1500;
 }
@@ -225,3 +203,135 @@
 .total{
     padding-bottom: 8vh;
 }
+
+@media (min-width:0px) and (max-width:576px){
+    @keyframes apareceCarrito {
+        from {
+            width: 0;
+        }
+    
+        to {
+            width: 79.5vw;
+        }
+    }
+    
+    @keyframes apareceBoton {
+        from {
+            right: -1.5vw;
+        }
+    
+        to {
+            right: 78vw;
+        }
+    }
+
+    .bloqueCarrito {
+        width: 79.5vw;
+    }
+    .contenidoCarrito {
+        width:77.9vw;
+    }
+    .botonCierre {
+        right: 78vw;
+    }
+}
+
+@media (min-width:576px) and (max-width:768px){
+
+    @keyframes apareceCarrito {
+        from {
+            width: 0;
+        }
+    
+        to {
+            width: 59.5vw;
+        }
+    }
+    
+    @keyframes apareceBoton {
+        from {
+            right: -1.5vw;
+        }
+    
+        to {
+            right: 58vw;
+        }
+    }
+
+    .bloqueCarrito {
+        width: 59.5vw;
+    }
+    .contenidoCarrito {
+        width:57.9vw;
+    }
+    .botonCierre {
+        right: 58vw;
+    }
+}
+
+@media (min-width:768px) and (max-width:992px){
+
+    @keyframes apareceCarrito {
+        from {
+            width: 0;
+        }
+    
+        to {
+            width: 39.5vw;
+        }
+    }
+    
+    @keyframes apareceBoton {
+        from {
+            right: -1.5vw;
+        }
+    
+        to {
+            right: 38vw;
+        }
+    }
+
+    .bloqueCarrito {
+        width: 39.5vw;
+    }
+    .contenidoCarrito {
+        width:37.9vw;
+    }
+    .botonCierre {
+        right: 38vw;
+    }
+}
+
+@media (min-width:992px) {
+
+    @keyframes apareceCarrito {
+        from {
+            width: 0;
+        }
+    
+        to {
+            width: 29.5vw;
+        }
+    }
+    
+    @keyframes apareceBoton {
+        from {
+            right: -1.5vw;
+        }
+    
+        to {
+            right: 28vw;
+        }
+    }
+
+    .bloqueCarrito {
+        width: 29.5vw;
+    }
+    .contenidoCarrito {
+        width:27.9vw;
+    }
+    .botonCierre {
+        right: 28vw;
+    }
+}
+

@@ -1,12 +1,312 @@
+@media (min-width: 0px) and (max-width: 300px) {
+    .contenedor-imagen {
+        position: relative;
+        display: inline-block;
+    
+        & img {
+            width: 100%;
+            height:40vh;
+        }
+    }
+    
+    .titulo {
+        & .assassins{
+            font-family: fuenteAssassins, sans-serif;
+        }
+        & .callofduty{
+            font-family: fuenteCallofDuty, sans-serif;
+        }
+        position: absolute;
+        width:35%;
+        top: 30%;
+        padding:20px;
+        background-color: rgba(255,255,255,0.4);
+        border: 1px solid rgba(0,0,0,0.5);
+        border-radius: 10px;
+        text-align: center;
+        left: 60%;
+        color: rgb(0, 0, 0);
+        & h2{
+            font-size: 2vh;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline 1.5px solid rgba(0,0,0,0.7);
+            }
+    
+        }
+        & h3{
+            cursor: pointer;
+            padding:7px;
+            margin:auto;
+            font-size: 1.5vh;
+            background-color: goldenrod;
+            border-radius: 5px;
+            width:min-content;
+            transition: 0.3s;
+            border: 2px solid black;
+            transform: scale(1.2);     
+        }
+    }
+}
 
+@media (min-width: 300px) and (max-width: 420px) {
+    .contenedor-imagen {
+        position: relative;
+        display: inline-block;
+    
+        & img {
+            width: 100%;
+            height:40vh;
+        }
+    }
+    
+    .titulo {
+        & .assassins{
+            font-family: fuenteAssassins, sans-serif;
+        }
+        & .callofduty{
+            font-family: fuenteCallofDuty, sans-serif;
+        }
+        position: absolute;
+        width:35%;
+        top: 30%;
+        padding:20px;
+        background-color: rgba(255,255,255,0.4);
+        border: 1px solid rgba(0,0,0,0.5);
+        border-radius: 10px;
+        text-align: center;
+        left: 60%;
+        color: rgb(0, 0, 0);
+        & h2{
+            font-size: 2vh;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline 1.5px solid rgba(0,0,0,0.7);
+            }
+    
+        }
+        & h3{
+            cursor: pointer;
+            padding:7px;
+            margin:auto;
+            font-size: 1.5vh;
+            background-color: goldenrod;
+            border-radius: 5px;
+            width:min-content;
+            transition: 0.3s;
+            border: 2px solid black;
+            transform: scale(1.2);     
+        }
+    }
+}
 
+@media (min-width: 420px) and (max-width: 576px) {
+    .contenedor-imagen {
+        position: relative;
+        display: inline-block;
+    
+        & img {
+            width: 100%;
+            height:45vh;
+        }
+    }
+    
+    .titulo {
+        & .assassins{
+            font-family: fuenteAssassins, sans-serif;
+        }
+        & .callofduty{
+            font-family: fuenteCallofDuty, sans-serif;
+        }
+        position: absolute;
+        width:30%;
+        top: 40%;
+        padding:20px;
+        background-color: rgba(255,255,255,0.4);
+        border: 1px solid rgba(0,0,0,0.5);
+        border-radius: 10px;
+        text-align: center;
+        left: 60%;
+        color: rgb(0, 0, 0);
+        & h2{
+            font-size: 2.5vh;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline 1.5px solid rgba(0,0,0,0.7);
+            }
+    
+        }
+        & h3{
+            cursor: pointer;
+            padding:7px;
+            margin:auto;
+            font-size: 2vh;
+            background-color: goldenrod;
+            border-radius: 5px;
+            width:min-content;
+            transition: 0.3s;
+            border: 2px solid black;
+            transform: scale(1.2);     
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .contenedor-imagen {
+        position: relative;
+        display: inline-block;
+    
+        & img {
+            width: 100%;
+            height:65vh;
+        }
+    }
+    
+    .titulo {
+        & .assassins{
+            font-family: fuenteAssassins, sans-serif;
+        }
+        & .callofduty{
+            font-family: fuenteCallofDuty, sans-serif;
+        }
+        position: absolute;
+        width:30%;
+        top: 40%;
+        padding:20px;
+        background-color: rgba(255,255,255,0.4);
+        border: 1px solid rgba(0,0,0,0.5);
+        border-radius: 10px;
+        text-align: center;
+        left: 65%;
+        color: rgb(0, 0, 0);
+        & h2{
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline 1.5px solid rgba(0,0,0,0.7);
+            }
+    
+        }
+        & h3{
+            cursor: pointer;
+            padding:7px;
+            margin:auto;
+            background-color: goldenrod;
+            border-radius: 5px;
+            width:min-content;
+            transition: 0.3s;
+            border: 2px solid black;
+            transform: scale(1.2);     
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .contenedor-imagen {
+        position: relative;
+        display: inline-block;
+    
+        & img {
+            width: 100%;
+            height:80vh;
+        }
+    }
+    
+    .titulo {
+        & .assassins{
+            font-family: fuenteAssassins, sans-serif;
+        }
+        & .callofduty{
+            font-family: fuenteCallofDuty, sans-serif;
+        }
+        position: absolute;
+        width:27%;
+        top: 40%;
+        padding:20px;
+        background-color: rgba(255,255,255,0.4);
+        border: 1px solid rgba(0,0,0,0.5);
+        border-radius: 10px;
+        text-align: center;
+        left: 65%;
+        color: rgb(0, 0, 0);
+        & h2{
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline 1.5px solid rgba(0,0,0,0.7);
+            }
+    
+        }
+        & h3{
+            cursor: pointer;
+            padding:7px;
+            margin:auto;
+            background-color: goldenrod;
+            border-radius: 5px;
+            width:min-content;
+            transition: 0.3s;
+            border: 2px solid black;
+            transform: scale(1.2);     
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .contenedor-imagen {
+        position: relative;
+        display: inline-block;
+    
+        & img {
+            width: 100%;
+            height:95vh;
+        }
+    }
+    
+    .titulo {
+        & .assassins{
+            font-family: fuenteAssassins, sans-serif;
+        }
+        & .callofduty{
+            font-family: fuenteCallofDuty, sans-serif;
+        }
+        position: absolute;
+        width:20%;
+        top: 40%;
+        padding:20px;
+        background-color: rgba(255,255,255,0.4);
+        border: 1px solid rgba(0,0,0,0.5);
+        border-radius: 10px;
+        text-align: center;
+        left: 75%;
+        color: rgb(0, 0, 0);
+        & h2{
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline 1.5px solid rgba(0,0,0,0.7);
+            }
+    
+        }
+        & h3{
+            cursor: pointer;
+            padding:7px;
+            margin:auto;
+            background-color: goldenrod;
+            border-radius: 5px;
+            width:min-content;
+            transition: 0.3s;
+            border: 2px solid black;
+            transform: scale(1.2);     
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    
 .contenedor-imagen {
     position: relative;
     display: inline-block;
 
     & img {
         width: 100%;
-        height:95vh;
+        height:120vh;
     }
 }
 
@@ -46,6 +346,8 @@
         transform: scale(1.2);     
     }
 }
+}
+
 
 
 a{

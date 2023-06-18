@@ -2,12 +2,12 @@
 <div class="row videojuego">
     <div class="col-12">
         <div class="row justify-content-center d-flex align-items-center">
-            <div class="col-10">
+            <div class="col-12 col-lg-10">
                 <div class="row" *ngIf="videojuego">
-                    <div class="col-lg-6">
+                    <div class="col-sm-6">
                         <img class="caratula" src="../../../../../assets/caratulas/{{videojuego.url}}.jpg" onerror="this.src='../../../../../assets/caratulas/404-not-found.jpg'" alt="Imagen">
                     </div>
-                    <div class="col-lg-6 contenedorDatos">
+                    <div class="col-sm-6 pt-3 pt-sm-0 contenedorDatos">
                         <div class="row datosVideojuego m-0">
                             <div class="col-12 ">
                                 <div class="row nombre justify-content-center d-flex">
@@ -23,13 +23,16 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-center d-flex precio">
-                                    <div class="col-10">
+                                    <div class="col-10 d-flex justify-content-around align-items-center">
+                                        <div class="row d-flex justify-content-center align-items-center">
+                                            Stock: {{videojuego.stock}}
+                                        </div>
                                         <div class="row">
                                             <div class="col-6 d-flex justify-content-end align-items-center">
-                                                <h6>Precio de venta: </h6>
+                                                <h6 class="m-0">Precio de venta: </h6>
                                             </div>
                                             <div class="col-6 d-flex justify-content-start align-items-center">
-                                                <h1>{{videojuego.precio}}€</h1>
+                                                <h1 class="m-0">{{videojuego.precio}}€</h1>
                                             </div>
                                         </div>
                                     </div>

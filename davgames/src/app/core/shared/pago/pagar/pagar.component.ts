@@ -13,77 +13,80 @@ import Swal from 'sweetalert2';
   styleUrls: ['./pagar.component.scss']
 })
 export class PagarComponent {
-  pedidos:Pedido[]=[];
-  eleccion!:string;
-  saldo!:number;
-  @Input('pagoAbierto') pagoAbierto!:Boolean;
+  pedidos: Pedido[] = [];
+  eleccion!: string;
+  saldo!: number;
+  cargaPago: boolean = false;
+  @Input('pagoAbierto') pagoAbierto!: Boolean;
   @Output() valueEmitter: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
-  constructor(private carritoService: CarritoService, private authService:AuthService, private pagoService: PagoService, private router: Router){
+  constructor(private carritoService: CarritoService, private authService: AuthService, private pagoService: PagoService, private router: Router) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.carritoService.getPedidos().then(resultado => {
       this.pedidos = resultado;
     });
     this.pedidos = this.carritoService.pedidos;
-    if(this.authService.usuario){
+    if (this.authService.usuario) {
       this.saldo = this.authService.usuario.saldo
     }
   }
 
-  get total():number{
-    var total=0;
-    if(this.carritoService.pedidos.length==0){
+  get total(): number {
+    var total = 0;
+    if (this.carritoService.pedidos.length == 0) {
       return total;
     }
-    else{
+    else {
       this.carritoService.pedidos.forEach(pedido => {
-        total+=pedido.cantidad*pedido.videojuego.precio;
+        total += pedido.cantidad * pedido.videojuego.precio;
       });
       return total;
     }
   }
 
-  cambiaEleccion(eleccion:string){
-    this.eleccion=eleccion;
+  cambiaEleccion(eleccion: string) {
+    this.eleccion = eleccion;
   }
 
-  cerrarPago(){
+  cerrarPago() {
     this.valueEmitter.emit(true);
   }
 
-  pagar(){
-    if(this.authService.usuario){
-      this.pagoService.pagar(this.authService.usuario, this.carritoService.pedidos).pipe(
-        tap(response=>{
-          Swal.fire({
-            title: response.body.mensaje,
-            icon: 'info',
-            confirmButtonColor: 'goldenrod',
-            background:'#474747',
-            color:'#ffffff',
-            confirmButtonText: 'OK',
+  pagar() {
+    if (this.cargaPago == false) {
+      this.cargaPago = true;
+      if (this.authService.usuario) {
+        this.pagoService.pagar(this.authService.usuario, this.carritoService.pedidos).pipe(
+          tap(response => {
+            Swal.fire({
+              title: response.body.mensaje,
+              icon: 'info',
+              confirmButtonColor: 'goldenrod',
+              background: '#474747',
+              color: '#ffffff',
+              confirmButtonText: 'OK',
+            })
+            this.cerrarPago();
+            this.carritoService.vaciarCarrito();
+            this.router.navigate(['']);
+          }),
+          catchError(error => {
+            console.error("Ocurrió un error al realizar el pago")
+            Swal.fire({
+              title: 'Ocurrió un error al realizar el pago',
+              icon: 'warning',
+              confirmButtonColor: 'goldenrod',
+              background: '#474747',
+              color: '#ffffff',
+              confirmButtonText: 'OK',
+            })
+            this.cerrarPago();
+            return of(null);
           })
-          this.cerrarPago();
-          this.carritoService.vaciarCarrito();
-          this.router.navigate(['']);
-        }),
-        catchError(error=>{
-          console.error("Ocurrió un error al realizar el pago")
-          Swal.fire({
-            title: 'Ocurrió un error al realizar el pago',
-            icon: 'warning',
-            confirmButtonColor: 'goldenrod',
-            background:'#474747',
-            color:'#ffffff',
-            confirmButtonText: 'OK',
-          })
-          this.cerrarPago();
-          return of(null);
-        })
-      ).subscribe();
+        ).subscribe();
+      }
     }
-    
   }
 }

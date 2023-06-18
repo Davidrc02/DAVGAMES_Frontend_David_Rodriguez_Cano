@@ -9,6 +9,8 @@ import { CarritoService } from '../../services/carrito.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+  menuAbierto:boolean=false;
+
   constructor(private authService: AuthService, private carritoService: CarritoService) {
   }
 
@@ -59,5 +61,9 @@ export class DashboardComponent {
 
   isAdmin(){
     return this.authService.isAdmin();
+  }
+
+  cambiaMenu(){
+    this.menuAbierto=!this.menuAbierto;
   }
 }

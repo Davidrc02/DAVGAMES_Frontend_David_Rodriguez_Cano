@@ -3,7 +3,7 @@
     <div class="row d-flex justify-content-center " id="home">
         <div class="col-10 pt-5 pb-5">
             <div class="row d-flex  align-items-center">
-                <div class="col-4 offset-4 justify-content-center d-flex">
+                <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 justify-content-center d-flex">
                     <div id="buscador" [ngClass]="{'busquedaActivada':buscador}" class="row">
                         <div id="textoBuscador" class="d-flex justify-content-start align-items-center">
                             <input (keyup.enter)="buscar()" [(ngModel)]="this.busqueda" type="text" placeholder="Introduzca un título" name="busqueda" id="busqueda" >
@@ -15,113 +15,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Función a futuro -->
-                <!-- <div class="col-4 busquedaAvanzada">
-                    <div class="row">
-                        <div class="dropContainer col-4 d-flex justify-content-center align-items-center">
-                            <div ngbDropdown class="dropdown">
-                                <span ngbDropdownToggle class="ddtoggle">
-                                    Consolas
-                                </span>
-                                <ul ngbDropdownMenu>
-                                    <li *ngFor="let consola of getConsolas()"><a ngbDropdownItem >{{consola}}</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="dropContainer col-4  d-flex justify-content-center align-items-center">
-                            <div ngbDropdown class="dropdown">
-                                <span ngbDropdownToggle class="ddtoggle">
-                                    Generos
-                                </span>
-                                <ul ngbDropdownMenu>
-                                    <li *ngFor="let genero of getGeneros()"><a ngbDropdownItem >{{genero}}</a></li>
-                                </ul>
-                            </div>
-                        </div>
-            
-                        <div class="dropContainer col-4 d-flex justify-content-center align-items-center">
-                            <div ngbDropdown class="dropdown">
-                                <span ngbDropdownToggle class="ddtoggle">
-                                    Ordenar por 
-                                </span>
-                                <ul ngbDropdownMenu>
-                                    <li >
-                                        <div class="d-flex align-items-center">
-                                            <a ngbDropdownItem class="h-100 d-flex">
-                                                <span>
-                                                    Mayor a Menor precio &nbsp;
-                                                </span>
-                                                <span class="material-symbols-outlined">
-                                                    arrow_downward
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-flex align-items-center">
-                                            <a ngbDropdownItem class="h-100 d-flex">
-                                                <span>
-                                                     Menor a Mayor precio &nbsp;
-                                                </span>
-                                                <span class="material-symbols-outlined">
-                                                    arrow_upward
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li >
-                                        <div class="d-flex align-items-center">
-                                            <a ngbDropdownItem class="h-100 d-flex">
-                                                <span>
-                                                     Por fecha de lanzamiento &nbsp;
-                                                </span>
-                                                <span class="material-symbols-outlined">
-                                                    arrow_downward
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-flex align-items-center">
-                                            <a ngbDropdownItem class="h-100 d-flex">
-                                                <span>
-                                                    Por fecha de lanzamiento &nbsp;
-                                                </span>
-                                                <span class="material-symbols-outlined">
-                                                    arrow_upward
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li >
-                                        <div class="d-flex align-items-center">
-                                            <a ngbDropdownItem class="h-100 d-flex">
-                                                <span>
-                                                     Alfabeticamente (A-Z) &nbsp;
-                                                </span>
-                                                <span class="material-symbols-outlined">
-                                                    arrow_downward
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-flex align-items-center">
-                                            <a ngbDropdownItem class="h-100 d-flex">
-                                                <span>
-                                                    Alfabeticamente (Z-A) &nbsp;
-                                                </span>
-                                                <span class="material-symbols-outlined">
-                                                    arrow_upward
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -135,6 +28,5 @@
 
             <app-franquicia *ngIf="this.videojuegosFranquicia.length!=0" [videojuegosFranquiciaPadre]="this.videojuegosFranquicia[number]"></app-franquicia>
         </div>
-        
     </div>
 

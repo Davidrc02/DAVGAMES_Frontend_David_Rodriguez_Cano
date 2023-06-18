@@ -1,6 +1,6 @@
 <div class="col-12 py-5">
     <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-10">
+        <div class="col-11 col-xl-10">
             <h1>Franquicia : {{this.videojuegosFranquicia[0].franquicia}}</h1>
             <div class="row">
                 <div class="col-12">
@@ -18,12 +18,12 @@
                                             </div>
                                             <div class="col-12 info d-flex justify-content-center ">
                                                 <div class="row">
-                                                    <div class="col-9 d-flex align-items-center justify-content-start texto">
+                                                    <div class="col-7 col-lg-8 col-xl-9 d-flex align-items-center justify-content-start texto">
                                                         <h5 class="truncate-text" [ngClass]="{'animacion':animaciones[videojuego.nombreVideojuego]}" (mouseenter)="startAnimation(videojuego.nombreVideojuego)" (mouseleave)="stopAnimation(videojuego.nombreVideojuego)">
                                                             {{videojuego.nombreVideojuego}}
                                                         </h5>
                                                     </div>
-                                                    <div class="col-3 d-flex align-items-center justify-content-center">
+                                                    <div class="col-5 col-lg-4 col-xl-3 d-flex align-items-center justify-content-center">
                                                         <div class="precio" >
                                                             <h5>
                                                                 {{videojuego.precio}}€ 

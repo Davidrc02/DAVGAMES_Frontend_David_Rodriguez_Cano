@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/core/interfaces/usuario';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { tap } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-mi-perfil',
@@ -24,7 +26,7 @@ export class MiPerfilComponent {
     notEqual: 'Las contraseñas no coinciden'
   };
 
-  constructor(private authService:AuthService, private formBuilder: FormBuilder){}
+  constructor(private authService:AuthService, private formBuilder: FormBuilder, private router:Router){}
 
   ngOnInit(){
     this.obtenerUsuario();
@@ -95,10 +97,25 @@ export class MiPerfilComponent {
     if (this.cambioContrasenaForm.invalid) {
       return;
     }
-    const nuevaContrasena = this.cambioContrasenaForm.value.nuevaContrasena;
-    const confirmarContrasena = this.cambioContrasenaForm.value.confirmarContrasena;
-  
-    
+    const nuevaContrasena = this.cambioContrasenaForm.value.contrasenna;
+    const confirmarContrasena = this.cambioContrasenaForm.value.confirContrasenna;
+    if(nuevaContrasena==confirmarContrasena){
+      this.authService.cambiarContrasenna(this.usuario, nuevaContrasena).pipe(
+        tap(response=>{
+          if(response){
+            Swal.fire({
+              title: response.body.mensaje,
+              icon: 'info',
+              confirmButtonColor: 'goldenrod',
+              background:'#474747',
+              color:'#ffffff',
+              confirmButtonText: 'OK',
+            })
+            this.router.navigate([''])
+          }
+        })
+      ).subscribe();
+    }
   }
 
   submitFormCambios() {
@@ -109,5 +126,26 @@ export class MiPerfilComponent {
     const nombre = this.cambioDatosForm.value.nombre;
     const apellidos = this.cambioDatosForm.value.apellidos;
   
+    if(usuario && nombre && apellidos){
+      this.usuario.username = usuario;
+      this.usuario.nombre = nombre;
+      this.usuario.apellidos = apellidos;
+
+      this.authService.editarUsuario(this.usuario.id, this.usuario).pipe(
+        tap(response=>{
+          if(response){
+            Swal.fire({
+              title: response.body.mensaje,
+              icon: 'info',
+              confirmButtonColor: 'goldenrod',
+              background:'#474747',
+              color:'#ffffff',
+              confirmButtonText: 'OK',
+            })
+            this.router.navigate([''])
+          }
+        })
+      ).subscribe();
+    }
   }
 }

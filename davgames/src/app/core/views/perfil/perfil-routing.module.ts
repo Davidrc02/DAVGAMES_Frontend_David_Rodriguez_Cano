@@ -10,7 +10,7 @@ const routes: Routes = [
     component: PerfilComponent,
     children: [
       { path: ":usuario", component: MiPerfilComponent },
-      { path: ":usuario/facturas", component: MisFacturasComponent },
+      { path: ":usuario/facturas", component: MisFacturasComponent }
     ]
   },
 ];

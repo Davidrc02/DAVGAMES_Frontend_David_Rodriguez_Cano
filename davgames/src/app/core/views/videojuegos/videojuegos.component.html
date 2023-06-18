@@ -2,24 +2,24 @@
 <div class="row videojuegosComponent">
     <div class="col-12">
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-10 ">
+            <div class="col-11 col-md-10">
                 <div class="row titulo">
-                    <div class="col-4">
+                    <div class="col-xl-4">
                         <h1>Videojuegos</h1>
                     </div>
 
-                    <div class="col-8 p-0 d-flex justify-content-center filtros">
+                    <div class="col-12 col-xl-8 p-0 d-flex justify-content-center filtros">
                         <div class="row w-100 h-100 d-flex align-items-center">
-                            <div class="col-6 input-wrapper p-0">
+                            <div class="col-md-10 col-xl-5 input-wrapper p-0">
                                 <input (keyup)="buscarJuegos()" id="busquedaTexto" class="input w-100 py-2" type="text"
                                     placeholder="Introduzca el titulo a buscar" [(ngModel)]="busquedaTexto">
                                 <span class="icono material-symbols-outlined ">
                                     search
                                 </span>
                             </div>
-                            <div class="col-6 ">
+                            <div class="col-12 col-sm-9 col-md-9 col-lg-5 col-xl-7 pt-xl-0 pt-4 p-0">
                                 <div class="row">
-                                    <div class="dropContainer col-4 d-flex justify-content-center align-items-center">
+                                    <div class="dropContainer col-6 col-md-4 pb-3 pb-md-0 d-flex justify-content-xl-center align-items-center">
                                         <div ngbDropdown class="dropdown">
                                             <span ngbDropdownToggle class="ddtoggle">
                                                 Consolas
@@ -31,7 +31,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="dropContainer col-4  d-flex justify-content-center align-items-center">
+                                    <div class="dropContainer col-6 col-md-4 pb-3 pb-md-0 d-flex justify-content-center align-items-center">
                                         <div ngbDropdown class="dropdown">
                                             <span ngbDropdownToggle class="ddtoggle">
                                                 Generos
@@ -44,7 +44,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="dropContainer col-4 d-flex justify-content-center align-items-center">
+                                    <div class="dropContainer col-6 col-md-4 pt-md-0 pt-4 d-flex justify-content-start align-items-center">
                                         <div ngbDropdown class="dropdown">
                                             <span ngbDropdownToggle class="ddtoggle">
                                                 Ordenar por
@@ -157,7 +157,7 @@
                 <div class="row cuerpo">
                     <div class="videojuegos">
                         <div class="row" *ngIf="getVideojuegosMostrados()?.length!=0">
-                            <div class="videojuego col-4 p-0" *ngFor="let videojuego of getVideojuegosMostrados()">
+                            <div class="videojuego col-sm-6 col-lg-4 p-0" *ngFor="let videojuego of getVideojuegosMostrados()">
                                 <div class="p-3 contenedorVideojuego"
                                     routerLink="/videojuegos/{{videojuego.nombreVideojuego}}/{{videojuego.nombreConsola}}">
                                     <div class="col-12 p-0 caratula">

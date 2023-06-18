@@ -27,7 +27,7 @@
                         <div class="row d-flex">
                             <div><label for="usuario">Usuario: </label></div>
                             <div>
-                                <input type="text" class="campoInput" id="usuario" formControlName="usuario">
+                                <input type="text" class="campoInput" id="usuario" formControlName="usuario" autocomplete="off">
                             </div>
                             <div class="error-message" *ngIf="cambioDatosForm.get('usuario')?.invalid && cambioDatosForm.get('usuario')?.touched">
                                 {{ getErrorMessage('usuario') }}
@@ -38,7 +38,7 @@
                         <div class="row d-flex">
                             <div><label for="nombre">Nombre: </label></div>
                             <div>
-                                <input type="text" class="campoInput" id="nombre" formControlName="nombre">
+                                <input type="text" class="campoInput" id="nombre" formControlName="nombre" autocomplete="off">
                             </div>
                             <div class="error-message" *ngIf="cambioDatosForm.get('nombre')?.invalid && cambioDatosForm.get('nombre')?.touched">
                                 {{ getErrorMessage('nombre') }}
@@ -49,7 +49,7 @@
                         <div class="row d-flex">
                             <div><label for="apellidos">Apellidos: </label></div>
                             <div>
-                                <input type="text" class="campoInput" id="apellidos" formControlName="apellidos">
+                                <input type="text" class="campoInput" id="apellidos" formControlName="apellidos" autocomplete="off">
                             </div>
                             <div class="error-message" *ngIf="cambioDatosForm.get('apellidos')?.invalid && cambioDatosForm.get('apellidos')?.touched">
                                 {{ getErrorMessage('apellidos') }}
@@ -87,7 +87,7 @@
                     <div class="dato">
                         <div class="row d-flex">
                             <div><label for="contrasenna">Contraseña: </label></div>
-                            <div><input type="text" name="contrasenna" id="contrasenna" formControlName="contrasenna" class="campoInput"></div>
+                            <div><input type="password" autocomplete="off" name="contrasenna" id="contrasenna" formControlName="contrasenna" class="campoInput"></div>
                             <div class="error-message" *ngIf="cambioContrasenaForm.get('contrasenna')?.invalid && cambioContrasenaForm.get('contrasenna')?.touched">
                                 {{ getErrorCCMessage('contrasenna') }}
                             </div>
@@ -96,7 +96,7 @@
                     <div class="dato">
                         <div class="row d-flex">
                             <div><label for="confirContrasenna">Confirmar Contraseña: </label></div>
-                            <div><input type="text" name="confirContrasenna" id="confirContrasenna" formControlName="confirContrasenna" class="campoInput"></div>
+                            <div><input type="password" autocomplete="off" name="confirContrasenna" id="confirContrasenna" formControlName="confirContrasenna" class="campoInput"></div>
                             <div class="error-message" *ngIf="cambioContrasenaForm.get('contrasenna')?.invalid && cambioContrasenaForm.get('contrasenna')?.touched">
                                 {{ getErrorCCMessage('confirContrasenna') }}
                             </div>

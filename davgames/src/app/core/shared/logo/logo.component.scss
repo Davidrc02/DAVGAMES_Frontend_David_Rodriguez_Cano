@@ -1,3 +1,4 @@
+
 h1[name=logo]{
     user-select: none;
     color:goldenrod;
@@ -13,5 +14,26 @@ a{
     text-decoration: none;
     &:hover{
         cursor: pointer;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 576px) {
+    h1[name=logo]{
+        font-size: 35px;
+        background-size: 55%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    h1[name=logo]{
+        font-size: 40px;
+        background-size: 55%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    h1[name=logo]{
+        font-size: 40px;
+        background-size: 50%;
     }
 }

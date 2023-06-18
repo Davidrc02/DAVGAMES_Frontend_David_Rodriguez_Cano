@@ -33,7 +33,8 @@ import { PagarComponent } from './pago/pagar/pagar.component';
     CarritoComponent,
     DashboardSecundarioComponent,
     DashboardComponent,
-    PagarComponent
+    PagarComponent,
+    DavcoinComponent
   ]
 })
 export class SharedModule { }

@@ -8,6 +8,30 @@
   'opsz' 48
 }
 
+@keyframes slideIn {
+    0% {
+      transform: translateX(0%);
+    }
+    90% {
+      transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.verMas{
+    border:3px solid rgb(205, 95, 239);
+    user-select: none;
+    background-color: rgb(30, 31, 31); 
+    border-radius: 0 0 2vh 2vh; 
+    cursor:pointer;
+
+    & h4{
+        color:rgb(255, 255, 255);
+    }
+}
+
 h1{
     font-weight: 700;
     color:goldenrod;
@@ -18,10 +42,374 @@ h1{
     border-bottom: 0;
     border-radius: 2vh 2vh 0 0;
     width:100%;
-    position: relative;
-    
+    position: relative; 
 }
 
+@media (min-width: 0px) and (max-width:576px){
+       
+.contenedor .slider{
+    border-radius: 2vh 2vh 0 0;
+    display:flex;
+    width:100%;
+    overflow:hidden;
+    height:70.28481012658228vw;
+    scroll-behavior: smooth;
+}
+
+img{
+    border-radius: 2vh 2vh 0 0;
+    width:82.2vw;
+}
+
+.control{
+    color:white;
+    position:absolute;
+    width:8vh;
+    height:100%;
+    
+    background-color: rgba(0,0,0,0.6);
+    cursor:pointer;
+    object-fit:cover;
+    font-size: 4vh;
+    padding-top:2vh;
+    padding-left:2vh;
+
+    &.prev{
+        z-index: 999;
+        user-select: none;
+        border-radius: 2vh 0 0 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        left:0;
+        top:0;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+
+    &.post{
+        z-index: 999;
+        user-select: none;
+        border-radius: 0 2vh  0 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        right:0;
+        top:0;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+}
+
+.videojuego{
+    background-color: rgb(48, 48, 48);
+   
+    & .contenedorVideojuego{
+       
+        border-radius: 1vw;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            transform: scale(1.05);
+        }
+        & .caratula{
+            cursor:pointer;
+            border-radius:  2vh 2vh 0 0; 
+            background-color: rgb(55, 0, 255); 
+            height:46vw;
+        }
+        & .info{
+            cursor:pointer;
+            border-radius: 0 0 2vh 2vh; 
+            background-color: rgb(90, 93, 90); 
+            color:white;
+            height:8vh;
+            & > .row{
+                width:85.5vw;
+                padding-block: 1vw;
+            }
+            & .texto{
+                overflow: hidden; /* Oculta el contenido que excede el ancho */
+                & .truncate-text {
+                    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+                    overflow: hidden; /* Oculta cualquier contenido que exceda el ancho */ /* Agrega puntos suspensivos al final del texto */
+                    &.animacion{
+                        animation: slideIn 5s linear infinite;
+                        overflow: visible;
+                    }
+                }
+            }
+
+            & .precio{
+                cursor: pointer;
+                background-color: goldenrod;
+                padding:1vh;
+                border-radius: 1vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height:5vh;
+
+                & h5{
+                    margin:0;
+                }                
+            }
+        }
+    }
+}
+
+}
+
+@media (min-width: 576px) and (max-width:768px){
+       
+.contenedor .slider{
+    border-radius: 2vh 2vh 0 0;
+    display:flex;
+    width:100%;
+    overflow:hidden;
+    height:44.28481012658228vw;
+    scroll-behavior: smooth;
+}
+
+img{
+    border-radius: 2vh 2vh 0 0;
+    width:55.2vw;
+}
+
+.control{
+    color:white;
+    position:absolute;
+    width:8vh;
+    height:100%;
+    
+    background-color: rgba(0,0,0,0.6);
+    cursor:pointer;
+    object-fit:cover;
+    font-size: 4vh;
+    padding-top:2vh;
+    padding-left:2vh;
+
+    &.prev{
+        z-index: 999;
+        user-select: none;
+        border-radius: 2vh 0 0 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        left:0;
+        top:0;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+
+    &.post{
+        z-index: 999;
+        user-select: none;
+        border-radius: 0 2vh  0 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        right:0;
+        top:0;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+}
+
+.videojuego{
+    background-color: rgb(48, 48, 48);
+   
+    & .contenedorVideojuego{
+       
+        border-radius: 1vw;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            transform: scale(1.05);
+        }
+        & .caratula{
+            cursor:pointer;
+            border-radius:  2vh 2vh 0 0; 
+            background-color: rgb(55, 0, 255); 
+            height:31vw;
+        }
+        & .info{
+            cursor:pointer;
+            border-radius: 0 0 2vh 2vh; 
+            background-color: rgb(90, 93, 90); 
+            color:white;
+            height:8vh;
+            & > .row{
+                width:57.5vw;
+                padding-block: 1vw;
+            }
+            & .texto{
+                overflow: hidden; /* Oculta el contenido que excede el ancho */
+                & .truncate-text {
+                    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+                    overflow: hidden; /* Oculta cualquier contenido que exceda el ancho */ /* Agrega puntos suspensivos al final del texto */
+                    &.animacion{
+                        animation: slideIn 5s linear infinite;
+                        overflow: visible;
+                    }
+                }
+            }
+
+            & .precio{
+                cursor: pointer;
+                background-color: goldenrod;
+                padding:1vh;
+                border-radius: 1vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height:5vh;
+
+                & h5{
+                    margin:0;
+                }                
+            }
+        }
+    }
+}
+
+}
+
+@media (min-width: 768px) and (max-width:992px){
+       
+.contenedor .slider{
+    border-radius: 2vh 2vh 0 0;
+    display:flex;
+    width:100%;
+    overflow:hidden;
+    height:36.28481012658228vw;
+    scroll-behavior: smooth;
+}
+
+img{
+    border-radius: 2vh 2vh 0 0;
+    width:45.2vw;
+}
+
+.control{
+    color:white;
+    position:absolute;
+    width:8vh;
+    height:100%;
+    
+    background-color: rgba(0,0,0,0.6);
+    cursor:pointer;
+    object-fit:cover;
+    font-size: 4vh;
+    padding-top:2vh;
+    padding-left:2vh;
+
+    &.prev{
+        z-index: 999;
+        user-select: none;
+        border-radius: 2vh 0 0 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        left:0;
+        top:0;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+
+    &.post{
+        z-index: 999;
+        user-select: none;
+        border-radius: 0 2vh  0 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        right:0;
+        top:0;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+}
+
+.videojuego{
+    background-color: rgb(48, 48, 48);
+   
+    & .contenedorVideojuego{
+       
+        border-radius: 1vw;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            transform: scale(1.05);
+        }
+        & .caratula{
+            cursor:pointer;
+            border-radius:  2vh 2vh 0 0; 
+            background-color: rgb(55, 0, 255); 
+            height:24.1vw;
+        }
+        & .info{
+            cursor:pointer;
+            border-radius: 0 0 2vh 2vh; 
+            background-color: rgb(90, 93, 90); 
+            color:white;
+            height:10vh;
+            & > .row{
+                width:45.5vw;
+                padding-block: 1vw;
+            }
+            & .texto{
+                overflow: hidden; /* Oculta el contenido que excede el ancho */
+                & .truncate-text {
+                    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+                    overflow: hidden; /* Oculta cualquier contenido que exceda el ancho */ /* Agrega puntos suspensivos al final del texto */
+                    &.animacion{
+                        animation: slideIn 5s linear infinite;
+                        overflow: visible;
+                    }
+                }
+            }
+
+            & .precio{
+                cursor: pointer;
+                background-color: goldenrod;
+                padding:1vh;
+                border-radius: 1vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height:5vh;
+
+                & h5{
+                    margin:0;
+                }                
+            }
+        }
+    }
+}
+
+}
+
+@media (min-width: 992px) {
+    
 .contenedor .slider{
     border-radius: 2vh 2vh 0 0;
     display:flex;
@@ -29,7 +417,6 @@ h1{
     overflow:hidden;
     height:21.28481012658228vw;
     scroll-behavior: smooth;
-    
 }
 
 img{
@@ -141,27 +528,4 @@ img{
     }
 }
 
-
-@keyframes slideIn {
-    0% {
-      transform: translateX(0%);
-    }
-    90% {
-      transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-  }
-
-.verMas{
-    border:3px solid rgb(205, 95, 239);
-    user-select: none;
-    background-color: rgb(30, 31, 31); 
-    border-radius: 0 0 2vh 2vh; 
-    cursor:pointer;
-
-    & h4{
-        color:rgb(255, 255, 255);
-    }
 }

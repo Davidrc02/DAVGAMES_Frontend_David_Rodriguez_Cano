@@ -12,7 +12,7 @@ export class PagoService {
   constructor(private http: HttpClient) { }
 
   pagar(usuario:Usuario, pedidos:Pedido[]): Observable<any> {
-    var url = "http://localhost:8080/v0/davgames/api/realizarFactura";
+    var url = "http://localhost:8080/v0/davgames/api/facturas/realizarFactura";
     var token = localStorage.getItem("token");
     var headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
     var body = {
