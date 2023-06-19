@@ -16,6 +16,7 @@ import { HomeModule } from './core/views/home/home.module';
 import { PerfilComponent } from './core/views/perfil/perfil.component';
 import { PerfilModule } from './core/views/perfil/perfil.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PerfilModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
