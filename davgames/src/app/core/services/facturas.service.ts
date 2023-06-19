@@ -13,14 +13,14 @@ export class FacturasService {
     }
     
     getFacturas(usuario:Usuario){
-        var url = "http://localhost:8080/v0/davgames/api/facturas/"+usuario.email;
+        var url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/facturas/"+usuario.email;
         var headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
         return this.http.get<any>(url, {headers:headers, observe: 'response'}).pipe()
     }
 
     getPedidos(factura:Factura): Observable<any>{
-        var url = "http://localhost:8080/v0/davgames/api/facturas/obtenerPedidos/"+factura.id;
+        var url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/facturas/obtenerPedidos/"+factura.id;
         var headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
         return this.http.get<any>(url, {headers:headers, observe: 'response'}).pipe()

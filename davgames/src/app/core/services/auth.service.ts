@@ -21,7 +21,7 @@ export class AuthService {
   }
   
   login(usernameOrEmail: string, password:string): Observable<any> {
-    const url = 'http://localhost:8080/v0/davgames/auth/login';
+    const url = 'http://localhost:8080/DAVGAMES_Backend/v0/davgames/auth/login';
     const body = {
         usernameOrEmail:usernameOrEmail,
         password:password
@@ -38,7 +38,7 @@ export class AuthService {
   }
 
   register(usuario: Usuario): Observable<any> {
-    const url = 'http://localhost:8080/v0/davgames/auth/register';
+    const url = 'http://localhost:8080/DAVGAMES_Backend/v0/davgames/auth/register';
     const body = usuario;
     return this.http.post<any>(url, body).pipe(
         tap(response => {
@@ -58,7 +58,7 @@ export class AuthService {
   }
 
   obtenerUsuario(token:string){
-    const url = 'http://localhost:8080/v0/davgames/api/usuarios/'+this.nombre;
+    const url = 'http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/usuarios/'+this.nombre;
 
     const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
 
@@ -73,7 +73,7 @@ export class AuthService {
     if(!token){
       token=""
     }
-    const url = 'http://localhost:8080/v0/davgames/auth/verifyToken';
+    const url = 'http://localhost:8080/DAVGAMES_Backend/v0/davgames/auth/verifyToken';
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': token
@@ -121,7 +121,7 @@ export class AuthService {
   }
 
   cambiarContrasenna(usuario:Usuario, contrasenna:string): Observable<any>{
-    const url = 'http://localhost:8080/v0/davgames/api/usuarios/cambiarContrasenna/'+usuario.email;
+    const url = 'http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/usuarios/cambiarContrasenna/'+usuario.email;
     const body = {
       mensaje: contrasenna
     };
@@ -135,7 +135,7 @@ export class AuthService {
   }
 
   editarUsuario(id:number|undefined, usuario:Usuario): Observable<any>{
-    const url = 'http://localhost:8080/v0/davgames/api/usuarios/'+id;
+    const url = 'http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/usuarios/'+id;
     const body = usuario;
 
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);

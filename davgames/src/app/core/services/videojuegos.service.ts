@@ -12,7 +12,7 @@ export class VideojuegosService {
   constructor(private http: HttpClient) { }
 
   getVideojuegos(): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/videojuegos";
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/videojuegos";
 
     return this.http.get<any>(url, {observe: 'response' }).pipe(
       map((response) => {
@@ -28,7 +28,7 @@ export class VideojuegosService {
   }
 
   getVideojuego(nombreVideojuego: string, consola:string): Observable<any> {
-    let url = "http://localhost:8080/v0/davgames/api/videojuegos/"+nombreVideojuego+"/"+consola;
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/videojuegos/"+nombreVideojuego+"/"+consola;
   
     return this.http.get<any>(url, { observe: 'response' }).pipe(
       map((response) => {
@@ -52,7 +52,7 @@ export class VideojuegosService {
   }
 
   crearVideojuego(videojuego: Videojuego): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/videojuegos";
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/videojuegos";
     const body = videojuego;
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
@@ -70,7 +70,7 @@ export class VideojuegosService {
   }
 
   editarVideojuego(videojuego: Videojuego): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/videojuegos/"+videojuego.nombreVideojuego+"/"+videojuego.nombreConsola;
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/videojuegos/"+videojuego.nombreVideojuego+"/"+videojuego.nombreConsola;
     const body = videojuego;
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
@@ -88,14 +88,14 @@ export class VideojuegosService {
   }
 
   eliminarVideojuego(nombreVideojuego: string, consola:string): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/videojuegos/"+nombreVideojuego+"/"+consola;
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/videojuegos/"+nombreVideojuego+"/"+consola;
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
     return this.http.delete<any>(url, {headers, observe: 'response'}).pipe();
   }
 
   obtenerConsolasPorNombreVideojuego(nombreVideojuego: string): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/videojuegos/obtenerConsolasPorNombreVideojuego/"+nombreVideojuego;
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/videojuegos/obtenerConsolasPorNombreVideojuego/"+nombreVideojuego;
 
     return this.http.get<any>(url, { observe: 'response'}).pipe();
   }

@@ -11,7 +11,7 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   getUsuarios(): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/usuarios";
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/usuarios";
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
     return this.http.get<any>(url, { headers, observe: 'response' }).pipe(
@@ -29,7 +29,7 @@ export class UsuarioService {
   }
 
   getUsuario(id: number): Observable<any> {
-    let url = `http://localhost:8080/v0/davgames/api/usuarios/${id}`;
+    let url = `http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/usuarios/${id}`;
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
   
     return this.http.get<any>(url, { headers, observe: 'response' }).pipe(
@@ -54,7 +54,7 @@ export class UsuarioService {
   }
 
   crearUsuario(usuario: Usuario): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/usuarios";
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/usuarios";
     const body = usuario;
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
@@ -72,7 +72,7 @@ export class UsuarioService {
   }
 
   editarUsuario(usuario: Usuario): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/usuarios/"+usuario.id;
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/usuarios/"+usuario.id;
     const body = usuario;
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
@@ -90,7 +90,7 @@ export class UsuarioService {
   }
 
   eliminarUsuario(id: number): Observable<any>{
-    let url = "http://localhost:8080/v0/davgames/api/usuarios/"+id;
+    let url = "http://localhost:8080/DAVGAMES_Backend/v0/davgames/api/usuarios/"+id;
     const headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("token")}`);
 
     return this.http.delete<any>(url, {headers, observe: 'response'}).pipe();
