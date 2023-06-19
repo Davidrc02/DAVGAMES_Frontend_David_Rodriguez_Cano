@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { catchError, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
   loginForm!: FormGroup;
   formSubmitted:boolean = false;
   erroresCampos: any = {
-    required: 'El campo es requerido',
+    required: 'El campo es requerido'
   };
 
   constructor(private authService: AuthService,private formBuilder: FormBuilder, private router:Router){}
@@ -45,17 +46,31 @@ export class LoginComponent {
       return;
     }
 
-    this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(response => {
-      //Podríamos guardar la respuesta aquí pero la vamos a guardar en el local storage
-      Swal.fire({
-        title: 'Has iniciado sesión de forma satisfactoria',
-        icon: 'info',
-        confirmButtonColor: 'goldenrod',
-        background:'#474747',
-        color:'#ffffff',
-        confirmButtonText: 'OK',
+    this.authService.login(this.loginForm.value.username, this.loginForm.value.password).pipe(
+      tap(response => {
+        //Podríamos guardar la respuesta aquí pero la vamos a guardar en el local storage
+        Swal.fire({
+          title: 'Has iniciado sesión de forma satisfactoria',
+          icon: 'info',
+          confirmButtonColor: 'goldenrod',
+          background:'#474747',
+          color:'#ffffff',
+          confirmButtonText: 'OK',
+        })
+        this.router.navigate(["/"])
+      }),
+      catchError((error) => {
+        console.error(error);
+        Swal.fire({
+          title: 'El usuario o la contraseña son incorrectos',
+          icon: 'warning',
+          confirmButtonColor: 'goldenrod',
+          background:'#474747',
+          color:'#ffffff',
+          confirmButtonText: 'OK',
+        })
+        return of(null);
       })
-      this.router.navigate(["/"])
-    })
+    ).subscribe()
   }
 }

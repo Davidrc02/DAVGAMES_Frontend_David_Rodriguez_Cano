@@ -68,6 +68,11 @@
             color:rgb(255, 255, 255);
             font-weight: 900;
             width: max-content;
+            transition: 0.3s;
+            &:hover{
+                transition: 0.3s;
+                transform: scale(1.2);
+            }
         }
     }
 

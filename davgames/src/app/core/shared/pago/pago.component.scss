@@ -141,14 +141,18 @@
         padding-top:8vh;
         & .botonPagar{
             cursor:pointer;
-            color:black !important;
+            color:rgb(0, 0, 0) !important;
             font-weight: 900;
             background-color: goldenrod;
             border-radius: 2vh;
             border: 0.6vh solid rgb(177, 132, 18);
             padding-inline:2vw;
             padding-block: 2vh;
-    
+            transition: 0.4s;
+            &:hover{
+                transition: 0.4s;
+                transform: scale(1.15);
+            }
         }
     
     }
@@ -313,7 +317,11 @@
             border: 0.6vh solid rgb(177, 132, 18);
             padding-inline:2vw;
             padding-block: 2vh;
-    
+            transition: 0.4s;
+            &:hover{
+                transition: 0.4s;
+                transform: scale(1.15);
+            }
         }
     
     }
@@ -478,7 +486,11 @@
             border: 0.6vh solid rgb(177, 132, 18);
             padding-inline:2vw;
             padding-block: 2vh;
-    
+            transition: 0.4s;
+            &:hover{
+                transition: 0.4s;
+                transform: scale(1.15);
+            }
         }
     
     }

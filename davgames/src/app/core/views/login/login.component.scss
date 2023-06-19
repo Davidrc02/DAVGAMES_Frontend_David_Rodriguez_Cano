@@ -92,17 +92,23 @@ input:valid+label {
 
 button {
     margin-top: 0.2em;
-    padding-block:0.5vh;
-    padding-inline:0.7vw;
+    padding-block:1.5vh;
+    padding-inline:1.7vw;
     border-radius: 1vh;
     background-color: #000000;
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
     font-family: fuenteStarWars, sans-serif;
+    transition:0.5s;
+    font-size: 2.3vh;
     &:hover {
         background-color: #000000;
         border: 1px solid rgb(223, 151, 68);
         color: rgb(219, 164, 62);
+    }
+    &:hover{
+        transform: scale(1.2);
+        transition: 0.5s;
     }
 }
 

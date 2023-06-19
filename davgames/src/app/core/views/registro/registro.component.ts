@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Usuario } from '../../interfaces/usuario';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { catchError, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-registro',
@@ -89,17 +90,31 @@ export class RegistroComponent {
       facturas: [],
       saldo: 1000000
     }
-    this.authService.register(usuario).subscribe(response => {
-      Swal.fire({
-        title: 'Te has registrado de forma satisfactoria',
-        icon: 'info',
-        confirmButtonColor: 'goldenrod',
-        background:'#474747',
-        color:'#ffffff',
-        confirmButtonText: 'OK',
+    this.authService.register(usuario).pipe(
+      tap(response=>{
+        Swal.fire({
+          title: 'Te has registrado de forma satisfactoria',
+          icon: 'info',
+          confirmButtonColor: 'goldenrod',
+          background:'#474747',
+          color:'#ffffff',
+          confirmButtonText: 'OK',
+        })
+        this.router.navigate(["/login"])
+      }),
+      catchError((error)=>{
+        console.error(error)
+        Swal.fire({
+          title: 'Ha ocurrido un error en tu registro',
+          icon: 'info',
+          confirmButtonColor: 'goldenrod',
+          background:'#474747',
+          color:'#ffffff',
+          confirmButtonText: 'OK',
+        })
+        return of(null)
       })
-      this.router.navigate(["/login"])
-    })
+    ).subscribe();
   }
 
 }
